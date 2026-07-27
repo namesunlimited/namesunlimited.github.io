@@ -98,3 +98,166 @@ function generateUsernameList(count = 50){
   }
   return out;
 }
+
+/* ---- Additional generators (Japanese, Elf, Band, City, School) ----
+   Appended without modifying anything above; existing tools are unaffected. */
+
+const JAPANESE_DB = {
+  male: [
+    "Haruto","Yuto","Sota","Yuki","Hayato","Ren","Kaito","Sora","Riku","Itsuki",
+    "Minato","Asahi","Aoi","Yamato","Kenta","Takumi","Shota","Daiki","Ryota","Kenji",
+    "Hiroshi","Kazuki","Naoki","Tatsuya","Yosuke","Masaru","Isamu","Tsubasa","Ryusei","Haru",
+    "Yuma","Ryo","Kohei","Shun","Taiga","Kaoru","Jun","Satoshi","Akira","Noboru"
+  ],
+  female: [
+    "Yui","Aoi","Yuna","Rin","Hina","Koharu","Akari","Mei","Sakura","Yuzuki",
+    "Ichika","Hana","Riko","Miyu","Ema","Nanami","Kokoro","Himari","Tsumugi","Sara",
+    "Yumi","Ayaka","Rina","Nao","Kanon","Momoka","Suzu","Airi","Chinatsu","Erika",
+    "Kaori","Misaki","Natsuki","Reina","Shiori","Yoko","Yuki","Mio","Wakana","Hikari"
+  ],
+  last: [
+    "Sato","Suzuki","Takahashi","Tanaka","Watanabe","Ito","Yamamoto","Nakamura","Kobayashi","Kato",
+    "Yoshida","Yamada","Sasaki","Yamaguchi","Matsumoto","Inoue","Kimura","Hayashi","Shimizu","Saito",
+    "Mori","Abe","Ikeda","Hashimoto","Yamashita","Ishikawa","Ogawa","Goto","Okada","Hasegawa",
+    "Murakami","Kondo","Ishii","Sakamoto","Endo","Aoki","Fujita","Nishimura","Fukuda","Ota"
+  ]
+};
+
+function randomJapaneseFirst(gender){
+  if(gender === "male") return pick(JAPANESE_DB.male);
+  if(gender === "female") return pick(JAPANESE_DB.female);
+  return pick(Math.random() < 0.5 ? JAPANESE_DB.male : JAPANESE_DB.female);
+}
+
+function generateJapaneseNameList({ type = "full", gender = "both", count = 50 }){
+  const out = []; const seen = new Set(); let attempts = 0;
+  while(out.length < count && attempts < count * 20){
+    attempts++;
+    let name;
+    if(type === "first"){ name = randomJapaneseFirst(gender); }
+    else if(type === "last"){ name = pick(JAPANESE_DB.last); }
+    else { name = `${randomJapaneseFirst(gender)} ${pick(JAPANESE_DB.last)}`; }
+    const key = name.toLowerCase();
+    if(seen.has(key)) continue;
+    seen.add(key); out.push(name);
+  }
+  return out;
+}
+
+const ELF_DB = {
+  male: [
+    "Thalendir","Caelith","Faelar","Ithrandor","Silvaen","Aerendyl","Voranthiel","Belegorn","Nimrodel","Calenmir",
+    "Erevan","Galinor","Miraval","Sylvaris","Threndil","Aldarion","Ceredhil","Duvarian","Elrendal","Fyrandor",
+    "Isilmar","Lorendil","Maethriel","Naeloth","Ondariel","Peredhil","Quellith","Rivendal","Serathil","Talvorin"
+  ],
+  female: [
+    "Aelindra","Sylvanwe","Elowyn","Faelivara","Nimriel","Ithrenya","Caladwen","Miravel","Thalassiel","Vaelira",
+    "Amariel","Belorien","Celestwyn","Dornya","Elaneth","Fynwen","Ilsevel","Lunariel","Maelithra","Naevys",
+    "Oriwen","Perenwyn","Quiravel","Rithwen","Selenya","Talwenna","Ulvarien","Vyrenne","Wrenithil","Ysolwen"
+  ],
+  last: [
+    "Moonshadow","Silverleaf","Starweaver","Windwhisper","Nightbloom","Duskwalker","Dawnbringer","Frostvale","Thornwood","Silverbrook",
+    "Emberfall","Mistrunner","Wyldwood","Ashgrove","Riversong","Stormrune","Suncrest","Shadowmere","Wraithwind","Glimmerfen"
+  ]
+};
+
+function randomElfFirst(gender){
+  if(gender === "male") return pick(ELF_DB.male);
+  if(gender === "female") return pick(ELF_DB.female);
+  return pick(Math.random() < 0.5 ? ELF_DB.male : ELF_DB.female);
+}
+
+function generateElfNameList({ type = "full", gender = "both", count = 50 }){
+  const out = []; const seen = new Set(); let attempts = 0;
+  while(out.length < count && attempts < count * 20){
+    attempts++;
+    let name;
+    if(type === "first"){ name = randomElfFirst(gender); }
+    else if(type === "last"){ name = pick(ELF_DB.last); }
+    else { name = `${randomElfFirst(gender)} ${pick(ELF_DB.last)}`; }
+    const key = name.toLowerCase();
+    if(seen.has(key)) continue;
+    seen.add(key); out.push(name);
+  }
+  return out;
+}
+
+const BAND_DB = {
+  adjectives: [
+    "Broken","Electric","Velvet","Crimson","Silent","Wild","Golden","Neon","Hollow","Restless",
+    "Wandering","Radiant","Feral","Lucid","Blind","Copper","Midnight","Sonic","Static","Crooked",
+    "Faded","Vivid","Reckless","Distant","Sacred","Savage","Endless","Rogue","Fractured","Rusted"
+  ],
+  nouns: [
+    "Wolves","Ravens","Machines","Echoes","Riot","Static","Empire","Bones","Signals","Ghosts",
+    "Horizon","Kingdom","Rebels","Circuit","Storm","Serpents","Vultures","Compass","Wildfire","Anthem",
+    "Voyage","Cascade","Renegades","Hollows","Mirage","Fable","Halo","Static","Fever","Waves"
+  ],
+  singleWords: [
+    "Aftershock","Paperclip","Windmill","Tangerine","Gravity","Sundial","Static","Voyager","Meridian",
+    "Halcyon","Threadbare","Kaleidoscope","Afterglow","Waypoint","Lowtide","Sparrow","Nightbus","Amplitude"
+  ]
+};
+
+function generateBandNameList(count = 50){
+  const out = []; const seen = new Set(); let attempts = 0;
+  while(out.length < count && attempts < count * 25){
+    attempts++;
+    const style = Math.floor(Math.random() * 4);
+    let name;
+    if(style === 0) name = `The ${pick(BAND_DB.adjectives)} ${pick(BAND_DB.nouns)}`;
+    else if(style === 1) name = `${pick(BAND_DB.nouns)} & The ${pick(BAND_DB.adjectives)}`;
+    else if(style === 2) name = pick(BAND_DB.singleWords);
+    else name = `${pick(BAND_DB.adjectives)} ${pick(BAND_DB.singleWords)}`;
+    if(seen.has(name)) continue;
+    seen.add(name); out.push(name);
+  }
+  return out;
+}
+
+const CITY_DB = {
+  prefixes: ["New","North","South","East","West","Port","Lake","Fort","Mount","San","Fair","Green","Silver","Oak","Stone"],
+  roots: ["haven","field","brook","dale","ridge","wood","ford","view","hollow","crest","bury","mont","gate","spring","vale","meadow","glen","harbor","hurst","wick"],
+  suffixes: ["ton","ville","burg","shire","port","land","holm","stead","boro","ham"],
+  standalone: ["Rivermouth","Ashfall","Copperfield","Redcliff","Millbrook","Windermoor","Stonebridge","Blackwater","Ironforge","Wheatland"]
+};
+
+function generateCityNameList(count = 50){
+  const out = []; const seen = new Set(); let attempts = 0;
+  while(out.length < count && attempts < count * 25){
+    attempts++;
+    const style = Math.floor(Math.random() * 4);
+    let name;
+    if(style === 0) name = `${pick(CITY_DB.prefixes)} ${pick(CITY_DB.roots).replace(/^./, c => c.toUpperCase())}`;
+    else if(style === 1) name = `${pick(CITY_DB.roots).replace(/^./, c => c.toUpperCase())}${pick(CITY_DB.suffixes)}`;
+    else if(style === 2) name = pick(CITY_DB.standalone);
+    else name = `${pick(CITY_DB.prefixes)} ${pick(CITY_DB.standalone)}`;
+    if(seen.has(name)) continue;
+    seen.add(name); out.push(name);
+  }
+  return out;
+}
+
+const SCHOOL_DB = {
+  names: [
+    "Lincoln","Riverside","Jefferson","Franklin","Madison","Oakwood","Maplewood","Fairview","Kennedy","Washington",
+    "Hillcrest","Westbrook","Sunnyvale","Greenfield","Northgate","Cedar Ridge","Eastwood","Clearview","Brookside","Highland"
+  ],
+  types: {
+    elementary: ["Elementary School","Primary School"],
+    high: ["High School","Senior High School"],
+    college: ["Academy","Preparatory Academy","Institute","College"]
+  }
+};
+
+function generateSchoolNameList({ type = "high", count = 50 }){
+  const out = []; const seen = new Set(); let attempts = 0;
+  const pool = SCHOOL_DB.types[type] || SCHOOL_DB.types.high;
+  while(out.length < count && attempts < count * 25){
+    attempts++;
+    const name = `${pick(SCHOOL_DB.names)} ${pick(pool)}`;
+    if(seen.has(name)) continue;
+    seen.add(name); out.push(name);
+  }
+  return out;
+}

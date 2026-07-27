@@ -77,17 +77,31 @@
       return d.innerHTML;
     }
 
+    const RESULT_NOUN = {
+      names: "names", username: "usernames", japanese: "names", elf: "names",
+      band: "band names", city: "city names", school: "school names"
+    };
+
+    function runGenerator(n) {
+      switch (mode) {
+        case "username": return generateUsernameList(n);
+        case "japanese": return generateJapaneseNameList({ type: state.type, gender: state.gender, count: n });
+        case "elf": return generateElfNameList({ type: state.type, gender: state.gender, count: n });
+        case "band": return generateBandNameList(n);
+        case "city": return generateCityNameList(n);
+        case "school": return generateSchoolNameList({ type: state.type, count: n });
+        default: return generateNameList({ type: state.type, gender: state.gender, count: n });
+      }
+    }
+
     function updateCountLabel() {
-      if (countLabel) countLabel.innerHTML = `<b>${state.results.length}</b> ${mode === "username" ? "usernames" : "names"} generated`;
+      if (countLabel) countLabel.innerHTML = `<b>${state.results.length}</b> ${RESULT_NOUN[mode] || "names"} generated`;
     }
 
     if (generateBtn) {
       generateBtn.addEventListener("click", () => {
         const n = Math.max(1, Math.min(5000, state.count || 50));
-        state.results =
-          mode === "username"
-            ? generateUsernameList(n)
-            : generateNameList({ type: state.type, gender: state.gender, count: n });
+        state.results = runGenerator(n);
         render(state.results);
         updateCountLabel();
         if (searchBox) searchBox.value = "";
