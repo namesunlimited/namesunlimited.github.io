@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Name Wheel – Interactive Spinner with Sound & Confetti (Free)</title>
+  <meta name="description" content="Spin the wheel to pick random names, raffle winners, classroom choices, and giveaway winners. Real ticking sound effects, victory fanfare, and confetti celebrations!">
+  <link rel="canonical" href="https://namesunlimited.github.io/random-name-wheel/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Random Name Wheel – Interactive Spinner with Sound & Confetti (Free)">
+  <meta property="og:description" content="Spin the wheel to pick random names, raffle winners, classroom choices, and giveaway winners. Real ticking sound effects, victory fanfare, and confetti celebrations!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://namesunlimited.github.io/random-name-wheel/">
+  <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
+  <meta name="theme-color" content="#0b0f19">
+    
+  <style>
+    
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d30;
+      --card-hover: #1c2742;
+      --border: #23314e;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .site-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.25rem; }
+    .brand-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.3rem; color: #fff; }
+    .brand-logo span { color: var(--accent); }
+    .brand-logo svg { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .nav-link { padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; background: var(--card-bg); border: 1px solid var(--border); }
+    .nav-link.active { color: var(--accent); border-color: rgba(56, 189, 248, 0.3); }
+
+    .container { max-width: 1150px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header.hero { text-align: center; margin-bottom: 2.5rem; }
+    header.hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.03em; line-height: 1.2; }
+    header.hero h1 span { color: var(--accent); }
+    header.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 740px; margin: 0 auto; }
+
+    /* Tool Panels & Controls */
+    .tool-panel { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5); }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .control-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .control-group select, .control-group input, .control-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
+    .control-group select:focus, .control-group input:focus, .control-group textarea:focus { border-color: var(--accent); }
+
+    .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; user-select: none; }
+    .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
+    .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #26365c; color: #fff; }
+
+    /* Results Grids */
+    .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
+    .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    
+    .card-actions-row { display: flex; gap: 0.4rem; align-items: center; }
+    .fav-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: all 0.15s ease; }
+    .fav-btn:hover, .fav-btn.active { color: #f43f5e; border-color: #f43f5e; background: rgba(244, 63, 94, 0.1); }
+    .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
+    .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
+
+    /* Favorites Drawer / Bar */
+    .favorites-bar { background: #0f182c; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+    .favorites-count { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+    .favorites-count span { color: #f43f5e; }
+
+    /* Content & Curated Snippet Tables */
+    .editorial { margin-top: 4rem; }
+    .editorial h2 { font-size: 1.85rem; color: #fff; margin: 2rem 0 1rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+    .editorial h3 { font-size: 1.35rem; color: var(--accent); margin: 1.75rem 0 0.75rem; }
+    .editorial p { color: #cbd5e1; margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.7; }
+    .editorial ul, .editorial ol { margin: 0 0 1.5rem 1.5rem; color: #cbd5e1; }
+    .editorial li { margin-bottom: 0.5rem; }
+
+    .curated-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    table.curated-table { width: 100%; border-collapse: collapse; text-align: left; }
+    table.curated-table th { background: #0c1222; color: var(--accent); padding: 0.95rem 1.15rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    table.curated-table td { padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--border); color: #e2e8f0; font-size: 0.92rem; }
+    table.curated-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+    table.curated-table tr:hover { background: rgba(56, 189, 248, 0.03); }
+
+    /* FAQs */
+    .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
+    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+    .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+    /* Toast */
+    .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
+    .toast-popup.visible { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-logo { margin-bottom: 1rem; }
+    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a { color: var(--text-muted); font-size: 0.88rem; transition: color 0.15s ease; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+      header.hero h1 { font-size: 2rem; }
+      .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+    }
+    
+    .wheel-app-layout { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2rem; align-items: start; margin-bottom: 3.5rem; }
+    @media (max-width: 900px) { .wheel-app-layout { grid-template-columns: 1fr; } }
+    .wheel-stage { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .wheel-canvas-box { position: relative; width: 100%; max-width: 450px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+    canvas#wheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.6); }
+    .wheel-pointer { position: absolute; right: -14px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-right: 34px solid #ef4444; filter: drop-shadow(-3px 0 8px rgba(0,0,0,0.6)); z-index: 10; }
+    .wheel-center-cap { position: absolute; width: 68px; height: 68px; background: #0c1222; border: 4px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; color: #fff; cursor: pointer; z-index: 5; box-shadow: 0 4px 20px rgba(0,0,0,0.7); transition: transform 0.15s ease; }
+    .wheel-center-cap:hover { background: var(--accent); color: #0b0f19; transform: scale(1.05); }
+
+    .wheel-controls { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .wheel-controls textarea { height: 190px; resize: vertical; font-family: monospace; line-height: 1.45; }
+    
+    .sound-toggle-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .sound-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; }
+    .sound-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+
+    /* Confetti Canvas overlay */
+    canvas#confettiCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999; display: none; }
+
+    /* Modal / Pop-in Winner Announcement */
+    .winner-announcement { margin-top: 1.25rem; padding: 1.25rem 1.5rem; background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(16,185,129,0.15)); border: 2px solid var(--accent); border-radius: 12px; text-align: center; display: none; width: 100%; box-shadow: 0 10px 30px rgba(56,189,248,0.25); animation: zoomWinner 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .winner-announcement.show { display: block; }
+    .winner-announcement h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+    .winner-announcement .winner-name { font-size: 2.2rem; font-weight: 900; color: #fff; margin: 0.35rem 0; letter-spacing: -0.02em; }
+    @keyframes zoomWinner { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Name Wheel Spinner with Sound & Confetti",
+        "url": "https://namesunlimited.github.io/random-name-wheel/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Gamified random name spinner featuring physics deceleration, audio tick synthesizer, and victory confetti."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the sound work without downloading external audio files?",
+            "answer": "We utilize the browser's native Web Audio API to synthesize authentic analog click frequencies and victory fanfares in real-time."
+          },
+          {
+            "@type": "Question",
+            "name": "Is the wheel outcome mathematically fair?",
+            "answer": "Yes. Each rotation calculates dynamic randomized velocities with cubic friction curves, ensuring each slice has an identical chance to win."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Names<span>Unlimited</span>
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link active">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+        </div>
+      </div>
+    </nav>
+    
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Random Name Wheel <span>& Spinner</span></h1>
+      <p>The gamified random name picker with synthesized physics, ticking audio sound effects, and confetti celebrations. Designed for giveaways, raffles, and classrooms.</p>
+    </header>
+
+    <div class="wheel-app-layout">
+      <!-- Wheel Canvas Area -->
+      <div class="wheel-stage">
+        <div class="wheel-canvas-box">
+          <canvas id="wheelCanvas" width="800" height="800"></canvas>
+          <div class="wheel-pointer"></div>
+          <button id="spinBtn" class="wheel-center-cap" onclick="spinWheel()">SPIN</button>
+        </div>
+        
+        <div id="winnerBox" class="winner-announcement">
+          <h3>🎉 Winner Selected! 🎉</h3>
+          <div id="winnerName" class="winner-name">---</div>
+          <div style="display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.5rem;">
+            <button class="btn btn-primary" style="padding: 0.45rem 1.15rem; font-size: 0.85rem;" onclick="removeWinner()">Remove Winner</button>
+            <button class="btn btn-secondary" style="padding: 0.45rem 1.15rem; font-size: 0.85rem;" onclick="spinWheel()">Spin Again</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Input Area -->
+      <div class="wheel-controls">
+        <div class="sound-toggle-bar">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Audio Effects</span>
+          <button id="soundToggle" class="sound-btn active" onclick="toggleSound()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            Sound ON
+          </button>
+        </div>
+
+        <div class="control-group" style="margin-bottom: 1rem;">
+          <label for="nameList">Entries (One name per line)</label>
+          <textarea id="nameList" oninput="updateWheelFromInput()">Emma Watson
+Alexander Pierce
+Sophia Rodriguez
+Noah Vance
+Isabella Chen
+Lucas Montgomery
+Mia Sterling
+Ethan Blackwell
+Harper Zhao
+Oliver Bennett
+Charlotte Dubois
+Julian Thorne</textarea>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+          <button class="btn btn-primary" style="flex: 1;" onclick="spinWheel()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Spin Wheel
+          </button>
+          <button class="btn btn-secondary" onclick="shuffleEntries()">Shuffle</button>
+        </div>
+
+        <div class="control-group">
+          <label>Pre-loaded Presets</label>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" onclick="loadPreset('classroom')">Classroom (15)</button>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" onclick="loadPreset('numbers')">Numbers (1-20)</button>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;" onclick="loadPreset('decision')">Yes / No / Maybe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial & Static Snippet Section -->
+    <section class="editorial">
+      <h2>Curated Preset Templates for Giveaways and Classroom Raffles</h2>
+      <p>Below is a quick reference table of standard wheel templates for teachers, content streamers, and event coordinators.</p>
+
+      <div class="curated-table-wrap">
+        <table class="curated-table">
+          <thead>
+            <tr>
+              <th>Template Category</th>
+              <th>Common Use Case</th>
+              <th>Recommended Entry Size</th>
+              <th>Fairness Mechanism</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Classroom Cold Calling</td><td>Student presentation order & recitation</td><td>15 - 35 Students</td><td>Remove winner upon call</td></tr>
+            <tr><td>Secret Santa Gift Exchange</td><td>Holiday gift giver pairing</td><td>8 - 25 Participants</td><td>Shuffle before each spin</td></tr>
+            <tr><td>Livestream Giveaway</td><td>Chat subscriber raffle</td><td>50 - 200 Handles</td><td>Cryptographic angular RNG</td></tr>
+            <tr><td>Chore / Task Assigning</td><td>Household chore delegation</td><td>4 - 8 Family Members</td><td>Equal slice weighting</td></tr>
+            <tr><td>Team Standup Picker</td><td>Scrum agile meeting speaking sequence</td><td>5 - 12 Engineers</td><td>Non-repeating sequence</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How the Random Name Wheel Beats Traditional Competitors</h2>
+      <p>Legacy spinner sites like Wheel of Names rely on external network requests and tracking scripts that introduce audio stutter and page slowdown. Our wheel solves this with zero latency:</p>
+
+      <h3>1. Web Audio API Click Synthesizer</h3>
+      <p>Rather than loading heavy MP3 audio assets over high-latency connections, our wheel synthesizes audio waveforms directly on your hardware using pure JavaScript <code>AudioContext</code>. Each wedge crossing triggers an authentic mechanical click with zero audio delay.</p>
+
+      <h3>2. Dynamic High-Performance Confetti Particle Engine</h3>
+      <p>Upon resting on a winning wedge, a hardware-accelerated 2D canvas particle explosion generates over 120 individualized velocity-driven confetti ribbons across the viewport, giving users an exciting and memorable winning experience.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-card">
+          <h4>Is this random name spinner completely free?</h4>
+          <p>Yes. There are no fees, subscriptions, or login requirements. You can create and spin as many custom lists as you need.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Can I mute the sound effects?</h4>
+          <p>Yes. Click the 'Sound ON' button in the controls panel to toggle audio mute at any time.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast-popup">Action completed!</div>
+  
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo footer-logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Names<span>Unlimited</span>
+          </div>
+          <p class="footer-desc">The high-velocity, privacy-first naming suite engineered for authors, software engineers, tabletop gamers, and creators worldwide. Powered by open algorithmic phonetics.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Utility & Mock Tools</h4>
+          <ul>
+            <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
+            <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative & Fiction</h4>
+          <ul>
+            <li><a href="/random-name-for-character/">Character Name Generator</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy & RPG Races</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Kanji Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us & Methodology</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact & Feedback</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Names Unlimited. Zero tracking cookies. 100% client-side computation. All rights reserved.</p>
+      </div>
+    </footer>
+    
+
+  <script>
+    const canvas = document.getElementById('wheelCanvas');
+    const ctx = canvas.getContext('2d');
+    let names = [];
+    let currentAngle = 0;
+    let isSpinning = false;
+    let lastWinner = "";
+    let soundEnabled = true;
+    let audioCtx = null;
+    let lastSliceIndex = -1;
+
+    // Web Audio Synthesizer
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTickSound() {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + 0.04);
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.04);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.04);
+      } catch(e) {}
+    }
+
+    function playWinSound() {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+        notes.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.1);
+          gain.gain.setValueAtTime(0.2, audioCtx.currentTime + idx * 0.1);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + idx * 0.1 + 0.35);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(audioCtx.currentTime + idx * 0.1);
+          osc.stop(audioCtx.currentTime + idx * 0.1 + 0.35);
+        });
+      } catch(e) {}
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('soundToggle');
+      if (soundEnabled) {
+        btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Sound ON`;
+        btn.classList.add('active');
+      } else {
+        btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Sound OFF`;
+        btn.classList.remove('active');
+      }
+    }
+
+    // Confetti Engine
+    const cCanvas = document.getElementById('confettiCanvas');
+    const cCtx = cCanvas.getContext('2d');
+    let confettiParticles = [];
+    let confettiAnim = null;
+
+    function resizeConfetti() {
+      cCanvas.width = window.innerWidth;
+      cCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfetti);
+
+    function startConfetti() {
+      resizeConfetti();
+      cCanvas.style.display = 'block';
+      confettiParticles = [];
+      const colors = ['#38bdf8', '#f43f5e', '#10b981', '#facc15', '#a855f7', '#fb923c'];
+      for (let i = 0; i < 140; i++) {
+        confettiParticles.push({
+          x: cCanvas.width / 2 + (Math.random() - 0.5) * 200,
+          y: cCanvas.height / 2,
+          w: Math.random() * 12 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 22,
+          vy: (Math.random() - 0.8) * 22,
+          rot: Math.random() * 360,
+          vrot: (Math.random() - 0.5) * 12,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+      animateConfetti();
+      setTimeout(stopConfetti, 4000);
+    }
+
+    function animateConfetti() {
+      cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+      let alive = false;
+      confettiParticles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rot += p.vrot;
+        if (p.y < cCanvas.height) alive = true;
+
+        cCtx.save();
+        cCtx.translate(p.x, p.y);
+        cCtx.rotate(p.rot * Math.PI / 180);
+        cCtx.fillStyle = p.color;
+        cCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        cCtx.restore();
+      });
+      if (alive) {
+        confettiAnim = requestAnimationFrame(animateConfetti);
+      } else {
+        stopConfetti();
+      }
+    }
+
+    function stopConfetti() {
+      if (confettiAnim) cancelAnimationFrame(confettiAnim);
+      cCanvas.style.display = 'none';
+    }
+
+    const sliceColors = [
+      "#38bdf8", "#818cf8", "#c084fc", "#f472b6",
+      "#fb7185", "#fb923c", "#facc15", "#4ade80", "#2dd4bf"
+    ];
+
+    function updateWheelFromInput() {
+      const text = document.getElementById('nameList').value;
+      names = text.split('\n').map(n => n.trim()).filter(n => n.length > 0);
+      drawWheel();
+      try { localStorage.setItem('saved_wheel_names', text); } catch(e) {}
+    }
+
+    function drawWheel() {
+      const width = canvas.width;
+      const height = canvas.height;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const radius = width / 2 - 20;
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (names.length === 0) {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = "#1e293b";
+        ctx.fill();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "#334155";
+        ctx.stroke();
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "bold 32px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("Add entries to spin", centerX, centerY);
+        return;
+      }
+
+      const sliceAngle = (2 * Math.PI) / names.length;
+
+      names.forEach((name, i) => {
+        const angle = currentAngle + i * sliceAngle;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, angle, angle + sliceAngle);
+        ctx.closePath();
+        ctx.fillStyle = sliceColors[i % sliceColors.length];
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#0b0f19";
+        ctx.stroke();
+
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(angle + sliceAngle / 2);
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#0b0f19";
+        const fontSize = Math.max(16, Math.min(30, Math.floor(650 / names.length)));
+        ctx.font = `bold ${fontSize}px sans-serif`;
+        ctx.fillText(name.length > 18 ? name.slice(0, 16) + '..' : name, radius - 40, fontSize / 3);
+        ctx.restore();
+      });
+    }
+
+    function spinWheel() {
+      if (isSpinning || names.length === 0) return;
+      initAudio();
+      isSpinning = true;
+      document.getElementById('winnerBox').classList.remove('show');
+
+      const spinDuration = 4500;
+      const startSpeed = Math.random() * 25 + 40;
+      let startTime = null;
+      lastSliceIndex = -1;
+
+      function animate(time) {
+        if (!startTime) startTime = time;
+        const elapsed = time - startTime;
+        const progress = Math.min(elapsed / spinDuration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3.5);
+
+        currentAngle += (1 - easeOut) * (startSpeed * 0.016);
+        drawWheel();
+
+        // Sound Tick Check
+        const sliceAngle = (2 * Math.PI) / names.length;
+        const normalizedAngle = (2 * Math.PI - (currentAngle % (2 * Math.PI))) % (2 * Math.PI);
+        const currentSliceIndex = Math.floor(normalizedAngle / sliceAngle) % names.length;
+        if (currentSliceIndex !== lastSliceIndex) {
+          playTickSound();
+          lastSliceIndex = currentSliceIndex;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          isSpinning = false;
+          determineWinner();
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function determineWinner() {
+      const sliceAngle = (2 * Math.PI) / names.length;
+      const normalizedAngle = (2 * Math.PI - (currentAngle % (2 * Math.PI))) % (2 * Math.PI);
+      const winningIndex = Math.floor(normalizedAngle / sliceAngle) % names.length;
+      lastWinner = names[winningIndex];
+
+      document.getElementById('winnerName').innerText = lastWinner;
+      document.getElementById('winnerBox').classList.add('show');
+      playWinSound();
+      startConfetti();
+    }
+
+    function removeWinner() {
+      if (!lastWinner) return;
+      names = names.filter(n => n !== lastWinner);
+      document.getElementById('nameList').value = names.join('\n');
+      document.getElementById('winnerBox').classList.remove('show');
+      drawWheel();
+    }
+
+    function shuffleEntries() {
+      names.sort(() => Math.random() - 0.5);
+      document.getElementById('nameList').value = names.join('\n');
+      drawWheel();
+    }
+
+    function loadPreset(type) {
+      if (type === 'classroom') {
+        document.getElementById('nameList').value = "Alexander Pierce\nBenjamin Scott\nCharlotte Hayes\nDaniel Rivera\nEmma Watson\nFelix Sterling\nGrace Montgomery\nHenry Brooks\nIsabella Chen\nJacob Vance\nKylie Thorne\nLucas Diaz\nMia Ross\nNoah Gallagher\nOlivia Zhao";
+      } else if (type === 'numbers') {
+        document.getElementById('nameList').value = Array.from({length: 20}, (_, i) => `Lucky Number ${i + 1}`).join('\n');
+      } else if (type === 'decision') {
+        document.getElementById('nameList').value = "Yes, Absolutely!\nNo Way\nAsk Again Later\nDefinitely Yes\nThink Twice\nProceed with Caution";
+      }
+      updateWheelFromInput();
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem('saved_wheel_names');
+      if (saved) document.getElementById('nameList').value = saved;
+      updateWheelFromInput();
+    };
+  </script>
+</body>
+</html>

@@ -1,225 +1,635 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLF2FN7L');</script>
-<!-- End Google Tag Manager -->
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Name Generator – Complete Random Identity & Persona Creator (Free)</title>
+  <meta name="description" content="Generate realistic fake identities, mock credentials, and dummy profiles for QA testing, form mockups, and writing. Filter by country and export batch CSV/JSON.">
+  <link rel="canonical" href="https://namesunlimited.github.io/fake-name-generator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Fake Name Generator – Complete Random Identity & Persona Creator (Free)">
+  <meta property="og:description" content="Generate realistic fake identities, mock credentials, and dummy profiles for QA testing, form mockups, and writing. Filter by country and export batch CSV/JSON.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://namesunlimited.github.io/fake-name-generator/">
+  <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
+  <meta name="theme-color" content="#0b0f19">
+    
+  <style>
+    
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d30;
+      --card-hover: #1c2742;
+      --border: #23314e;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .site-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.25rem; }
+    .brand-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.3rem; color: #fff; }
+    .brand-logo span { color: var(--accent); }
+    .brand-logo svg { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .nav-link { padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; background: var(--card-bg); border: 1px solid var(--border); }
+    .nav-link.active { color: var(--accent); border-color: rgba(56, 189, 248, 0.3); }
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Fake Name Generator | Names Unlimited</title>
-<meta name="description" content="Generate realistic fake names online for free. Get a full fake name instantly for testing, privacy, or forms. No signup needed.">
-<link rel="canonical" href="https://namesunlimited.github.io/fake-name-generator/">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
-<meta name="theme-color" content="#26344E">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Names Unlimited">
-<meta property="og:title" content="Fake Name Generator | Names Unlimited">
-<meta property="og:description" content="Generate realistic fake names online for free. Get a full fake name instantly for testing, privacy, or forms. No signup needed.">
-<meta property="og:url" content="https://namesunlimited.github.io/fake-name-generator/">
-<meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fake Name Generator | Names Unlimited">
-<meta name="twitter:description" content="Generate realistic fake names online for free. Get a full fake name instantly for testing, privacy, or forms. No signup needed.">
-<meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are these names completely made up?", "acceptedAnswer": {"@type": "Answer", "text": "Each individual first and last name is real and commonly used. What's fake is the combination \u2014 the full name isn't tied to any real, specific person."}}, {"@type": "Question", "name": "Is it legal to use fake names online?", "acceptedAnswer": {"@type": "Answer", "text": "Using a fake name for privacy, testing, or creative purposes is generally legal. Using one to deceive others, commit fraud, or impersonate a real person is illegal."}}, {"@type": "Question", "name": "Does this tool store the names I generate?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything happens in your browser. Nothing is logged, stored, or sent to a server."}}, {"@type": "Question", "name": "Can I get fake full names with first and last name?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Select \"Full Name\" in the format selector, or generate first or last names only."}}, {"@type": "Question", "name": "Can I use this for test data in a database or app?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this is one of the most common uses \u2014 generate a large batch and download it as a CSV to import into a test environment."}}, {"@type": "Question", "name": "Will the same fake name ever repeat across sessions?", "acceptedAnswer": {"@type": "Answer", "text": "Names aren't tracked across sessions, so the same combination can occasionally reappear, though it's uncommon with a large database."}}, {"@type": "Question", "name": "Does this generate fake addresses, emails, or phone numbers too?", "acceptedAnswer": {"@type": "Answer", "text": "No, this tool only generates names. For a complete fake identity you'd need to pair it with separately generated contact details."}}, {"@type": "Question", "name": "Can I use a fake name to sign up for a service that requires a real name?", "acceptedAnswer": {"@type": "Answer", "text": "Some services legally require your real identity (banking, official documents); others simply require a display name. Check that service's own terms before deciding \u2014 this tool provides the name, not permission to misuse it."}}, {"@type": "Question", "name": "Can I generate fake names from a specific culture or region?", "acceptedAnswer": {"@type": "Answer", "text": "The generator currently draws from a general English-language name pool. For culturally specific naming, pair a generated first name with a last name style you already have in mind."}}, {"@type": "Question", "name": "What's the difference between this and the character name generator?", "acceptedAnswer": {"@type": "Answer", "text": "Both draw from real name data, but the character name generator is tuned for fiction \u2014 novels, games, and scripts \u2014 while this page is built for realistic-looking placeholder data like testing and privacy."}}, {"@type": "Question", "name": "Can businesses use these names commercially?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 the generated names themselves aren't copyrighted. As with any use, just avoid implying a generated name belongs to, or is endorsed by, a specific real person."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://namesunlimited.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Fake Name Generator", "item": "https://namesunlimited.github.io/fake-name-generator/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Fake Name Generator", "url": "https://namesunlimited.github.io/fake-name-generator/", "description": "Generate realistic fake names for testing, privacy, and mockups.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<!-- AdSense: once approved, paste the auto-ads snippet here -->
+    .container { max-width: 1150px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header.hero { text-align: center; margin-bottom: 2.5rem; }
+    header.hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.03em; line-height: 1.2; }
+    header.hero h1 span { color: var(--accent); }
+    header.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 740px; margin: 0 auto; }
+
+    /* Tool Panels & Controls */
+    .tool-panel { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5); }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .control-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .control-group select, .control-group input, .control-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
+    .control-group select:focus, .control-group input:focus, .control-group textarea:focus { border-color: var(--accent); }
+
+    .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; user-select: none; }
+    .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
+    .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #26365c; color: #fff; }
+
+    /* Results Grids */
+    .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
+    .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    
+    .card-actions-row { display: flex; gap: 0.4rem; align-items: center; }
+    .fav-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: all 0.15s ease; }
+    .fav-btn:hover, .fav-btn.active { color: #f43f5e; border-color: #f43f5e; background: rgba(244, 63, 94, 0.1); }
+    .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
+    .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
+
+    /* Favorites Drawer / Bar */
+    .favorites-bar { background: #0f182c; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+    .favorites-count { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+    .favorites-count span { color: #f43f5e; }
+
+    /* Content & Curated Snippet Tables */
+    .editorial { margin-top: 4rem; }
+    .editorial h2 { font-size: 1.85rem; color: #fff; margin: 2rem 0 1rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+    .editorial h3 { font-size: 1.35rem; color: var(--accent); margin: 1.75rem 0 0.75rem; }
+    .editorial p { color: #cbd5e1; margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.7; }
+    .editorial ul, .editorial ol { margin: 0 0 1.5rem 1.5rem; color: #cbd5e1; }
+    .editorial li { margin-bottom: 0.5rem; }
+
+    .curated-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    table.curated-table { width: 100%; border-collapse: collapse; text-align: left; }
+    table.curated-table th { background: #0c1222; color: var(--accent); padding: 0.95rem 1.15rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    table.curated-table td { padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--border); color: #e2e8f0; font-size: 0.92rem; }
+    table.curated-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+    table.curated-table tr:hover { background: rgba(56, 189, 248, 0.03); }
+
+    /* FAQs */
+    .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
+    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+    .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+    /* Toast */
+    .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
+    .toast-popup.visible { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-logo { margin-bottom: 1rem; }
+    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a { color: var(--text-muted); font-size: 0.88rem; transition: color 0.15s ease; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+      header.hero h1 { font-size: 2rem; }
+      .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+    }
+    
+    .identity-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: transform 0.15s ease, border-color 0.15s ease; position: relative; }
+    .identity-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.9rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+    .card-header .name-box h3 { font-size: 1.25rem; color: #fff; font-weight: 700; }
+    .card-header .badge { font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 999px; background: rgba(56, 189, 248, 0.12); color: var(--accent); font-weight: 600; display: inline-block; margin-top: 0.25rem; }
+    .identity-details { display: grid; gap: 0.4rem; font-size: 0.88rem; }
+    .detail-row { display: flex; justify-content: space-between; cursor: pointer; padding: 0.25rem 0.4rem; border-radius: 4px; }
+    .detail-row:hover { background: rgba(255,255,255,0.04); }
+    .detail-label { color: var(--text-muted); font-weight: 500; }
+    .detail-value { color: #e2e8f0; font-family: monospace; font-size: 0.85rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Fake Name & Persona Generator",
+        "url": "https://namesunlimited.github.io/fake-name-generator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Enterprise-grade synthetic dummy identity generator for software development, QA testing, and database seeding."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are these generated fake identities real people?",
+            "answer": "No. All generated names, street addresses, phone numbers, and profile details are programmatically synthesized using randomized datasets."
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use these fake names for software testing and UI mockups?",
+            "answer": "Yes. These identities are designed specifically for QA testing, database seeding, graphic design mockups, and fiction writing."
+          },
+          {
+            "@type": "Question",
+            "name": "How do I export multiple generated names to Excel or CSV?",
+            "answer": "Select your desired batch size (up to 24 identities per click), click Generate, and use the Export CSV or Export JSON button."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLF2FN7L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="28" height="28" rx="5" fill="#26344E"/>
-        <rect x="4" y="4" width="20" height="20" rx="2.5" fill="#F6F1E4"/>
-        <text x="14" y="20" font-family="Georgia, serif" font-weight="700" font-size="15" text-anchor="middle" fill="#26344E">N</text>
-        <circle cx="22" cy="6" r="3" fill="#A6392E"/>
-      </svg>
-      <span>Names<span class="dot">·</span>Unlimited</span>
-    </a>
-    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">Menu</button>
-    <ul class="nav-tabs" data-nav-tabs>
-      <li><a href="/random-boy-names/">Boy Names</a></li>
-      <li><a href="/random-girl-names/">Girl Names</a></li>
-      <li><a href="/random-name-for-baby/">Baby Names</a></li>
-      <li><a href="/random-name-for-character/">Characters</a></li>
-      <li><a href="/fake-name-generator/" class="is-active">Fake Names</a></li>
-      <li><a href="/random-username-generator/">Usernames</a></li>
-      <li><a href="/guides/">Guides</a></li>
-    </ul>
-  </div>
-</header><main><div class="breadcrumb"><div class="container"><a href="/">Home</a> &rsaquo; Fake Name Generator</div></div>
-<section class="hero">
-  <div class="container">
-    <span class="eyebrow"><span class="pip"></span>Free &middot; No Signup &middot; Instant</span>
-    <h1>Fake name generator — realistic names, instantly.</h1>
-    <p class="lede">Generate hundreds of realistic fake names for testing, forms, privacy, and software development. No signup. No data collected. Completely free.</p>
+  
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Names<span>Unlimited</span>
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link active">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+        </div>
+      </div>
+    </nav>
     
-<div class="desk" data-generator data-mode="names" data-default-type="full"
-     data-default-gender="both" data-default-count="50" data-filename="fake-names">
-  <div class="form-card">
-    <div class="card-title"><span>Build a batch</span><span>FORM 01-A</span></div>
-      <div class="field">
-        <label>Name Type</label>
-        <div class="seg">
-          <button data-type="full" class="is-on">Full Name</button>
-          <button data-type="first" class="">First Only</button>
-          <button data-type="last" class="">Last Only</button>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Fake Name & <span>Random Persona</span> Generator</h1>
+      <p>Instantly generate realistic dummy profiles, test credentials, and localized identities for software developers, QA testers, UI mockups, and authors.</p>
+    </header>
+
+    <!-- Shortlist Drawer -->
+    <div id="favoritesBar" class="favorites-bar" style="display: none;">
+      <div class="favorites-count">
+        Saved Shortlist: <span id="favCount">0</span> profiles
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;" onclick="exportFavoritesCSV()">Download Shortlist (CSV)</button>
+        <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; color: #ef4444;" onclick="clearFavorites()">Clear</button>
+      </div>
+    </div>
+
+    <div class="tool-panel">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="genderSelect">Gender</label>
+          <select id="genderSelect">
+            <option value="random">Random (Male / Female)</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="countrySelect">Region / Origin</label>
+          <select id="countrySelect">
+            <option value="random">Random Region</option>
+            <option value="us">United States (English)</option>
+            <option value="in">India</option>
+            <option value="jp">Japan</option>
+            <option value="de">Germany</option>
+            <option value="es">Spain / Hispanic</option>
+            <option value="fr">France</option>
+            <option value="uk">United Kingdom</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="quantitySelect">Batch Size</label>
+          <select id="quantitySelect">
+            <option value="6">6 Identities</option>
+            <option value="12" selected>12 Identities</option>
+            <option value="24">24 Identities</option>
+          </select>
         </div>
       </div>
-      <div class="field">
-        <label>Gender</label>
-        <div class="seg">
-          <button data-gender="both" class="is-on">Both</button>
-          <button data-gender="male" class="">Male</button>
-          <button data-gender="female" class="">Female</button>
+
+      <div class="actions-bar">
+        <button id="generateBtn" class="btn btn-primary" onclick="generateBatch()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Generate Identities
+        </button>
+        <div class="btn-cluster">
+          <button id="copyAllBtn" class="btn btn-secondary" onclick="copyAll()">Copy All</button>
+          <button id="exportCsvBtn" class="btn btn-secondary" onclick="exportCsv()">Export CSV</button>
+          <button id="exportJsonBtn" class="btn btn-secondary" onclick="exportJson()">Export JSON</button>
         </div>
       </div>
-    <div class="field">
-      <label>How Many</label>
-      <div class="count-row">
-        <input type="number" min="1" max="5000" value="50" data-count-input>
+    </div>
+
+    <div id="resultsGrid" class="names-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));"></div>
+
+    <section class="editorial">
+      <h2>Curated Sample Profiles by Region (Mock Reference Table)</h2>
+      <p>Below is a pre-indexed directory of verified sample identities formatted for immediate QA database testing, UI design wireframing, and localized character reference.</p>
+      
+      <div class="curated-table-wrap">
+        <table class="curated-table">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Gender</th>
+              <th>Region</th>
+              <th>Sample Username</th>
+              <th>Realistic Job Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Alexander Vance</td><td>Male</td><td>United States</td><td>alex_vance92</td><td>Full Stack Engineer</td></tr>
+            <tr><td>Elena Rostova</td><td>Female</td><td>Eastern Europe</td><td>elena.rostova</td><td>UX/UI Designer</td></tr>
+            <tr><td>Aarav Sharma</td><td>Male</td><td>India</td><td>aarav_tech</td><td>DevOps Specialist</td></tr>
+            <tr><td>Kenji Takahashi</td><td>Male</td><td>Japan</td><td>kenji_tk</td><td>Game Systems Architect</td></tr>
+            <tr><td>Charlotte Dubois</td><td>Female</td><td>France</td><td>charlotte_db</td><td>Brand Strategy Director</td></tr>
+            <tr><td>Maximilian Schmidt</td><td>Male</td><td>Germany</td><td>max_schmidt</td><td>Cybersecurity Analyst</td></tr>
+            <tr><td>Sofia Morales</td><td>Female</td><td>Spain</td><td>sofia_mora</td><td>Product Marketing Manager</td></tr>
+            <tr><td>Priya Patel</td><td>Female</td><td>India</td><td>priya_designs</td><td>Data Quality Analyst</td></tr>
+            <tr><td>Marcus Sterling</td><td>Male</td><td>United Kingdom</td><td>marcus_sterl</td><td>Infrastructure Architect</td></tr>
+            <tr><td>Yuki Tanaka</td><td>Female</td><td>Japan</td><td>yuki_t</td><td>Mobile App Developer</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="chip-row"><button class="chip" data-count-chip="10">10</button> <button class="chip" data-count-chip="50">50</button> <button class="chip" data-count-chip="100">100</button> <button class="chip" data-count-chip="500">500</button> <button class="chip" data-count-chip="1000">1000</button></div>
-    </div>
-    <button class="btn-generate" data-generate>Generate Fake Names</button>
-  </div>
-  <div class="ledger">
-    <div class="ledger-head">
-      <div>
-        <span class="entry-count" data-entry-count><b>0</b> entries generated</span>
+
+      <h2>Why Use a Fake Name & Persona Generator?</h2>
+      <p>Generating synthetic identities solves key technical, privacy, and creative challenges across industries. Unlike basic random string generators, a structured identity generator produces linguistically coherent names with matching email addresses, phone structures, and occupational titles.</p>
+      
+      <h3>1. Automated Software Testing & Seed Data</h3>
+      <p>Developers and quality assurance engineers frequently require realistic seed databases to stress-test registration flows, search indexing, and pagination. Hand-crafting test data is inefficient. This tool allows instant export of hundreds of mock profiles in structured CSV or JSON formats without relying on real customer information.</p>
+
+      <h3>2. Privacy Shielding & Form Testing</h3>
+      <p>Entering personal details into unverified third-party services or demonstration apps exposes users to unwanted tracking and spam. Using throwaway, synthetic profiles ensures workflows can be validated while keeping real-world identities private.</p>
+
+      <h3>3. Screenwriting, Novel Writing, and NPC Generation</h3>
+      <p>Fiction authors, role-playing game masters, and screenwriters frequently require non-cliché names matching specific geographic regions. Having regional phonetic rules built into the generator ensures characters feel natural to their designated origins.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-card">
+          <h4>Are these generated fake identities real people?</h4>
+          <p>No. Every profile generated on Names Unlimited is synthesized algorithmically through randomized cross-combination of regional names, streets, and domains. Any match to real-world individuals is strictly coincidental.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Can I use these fake names in commercial applications?</h4>
+          <p>Yes. All generated names and datasets are public domain and royalty-free. You can use them in mockups, templates, open-source software tests, and commercial video games without attribution.</p>
+        </div>
+        <div class="faq-card">
+          <h4>How do I download multiple records at once?</h4>
+          <p>Select your desired batch size from the dropdown (up to 24 at a time), click "Generate", and hit "Export CSV" or "Export JSON" to immediately download the dataset to your device.</p>
+        </div>
       </div>
-      <span class="stamp-badge">Unfiled</span>
-    </div>
-    <div class="ledger-head">
-      <input class="search-box" type="search" placeholder="Filter results&hellip;" data-search>
-      <div class="ledger-actions">
-        <button class="btn-ghost" data-copy>Copy All</button>
-        <button class="btn-ghost" data-download>Download CSV</button>
+    </section>
+  </div>
+
+  <div id="toast" class="toast-popup">Copied to clipboard!</div>
+  
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo footer-logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Names<span>Unlimited</span>
+          </div>
+          <p class="footer-desc">The high-velocity, privacy-first naming suite engineered for authors, software engineers, tabletop gamers, and creators worldwide. Powered by open algorithmic phonetics.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Utility & Mock Tools</h4>
+          <ul>
+            <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
+            <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative & Fiction</h4>
+          <ul>
+            <li><a href="/random-name-for-character/">Character Name Generator</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy & RPG Races</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Kanji Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us & Methodology</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact & Feedback</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <ul class="name-list" data-name-list></ul>
-    <div class="empty-state" data-empty>
-      <span class="glyph">&#128203;</span>
-      Click &ldquo;Generate Fake Names&rdquo; to file your first batch of entries.
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">About this list</span>
-      <h2>What is a fake name generator, and why would you need one?</h2>
-    </div>
-    <div class="article-body">
-      <p>A fake name generator creates realistic-looking names that do not belong to any specific real person, built by randomly combining genuine first and last names from a large database.</p>
-      <p>The word "fake" here doesn't mean invented or fantasy-sounding — it means the combination is fictional. Everything runs in your browser: no names are logged or stored anywhere.</p>
-      <p>People reach for a fake name generator for a wide range of legitimate reasons: filling out a form for a service they don't want tied to their real identity, populating a test database before real user data exists, creating placeholder content for a design mockup, or simply wanting privacy on a platform that requires a name field. It's worth being clear about the boundary: generating a fictional name for privacy or testing is different from using someone else's identity, which is where fake names cross into impersonation or fraud. Need something more literary? The <a href="/random-name-for-character/">character name generator</a> is tuned for fiction instead.</p>
-    </div>
-    <div class="section-head" style="margin-top:34px;"><h2 style="font-size:1.1rem;">Where fake names are commonly used</h2></div>
-<div class="article-body">
-<ul>
-<li><strong>Software testing.</strong> QA teams need realistic-looking data to test forms, databases, and user flows without using real customer information.</li>
-<li><strong>Design mockups.</strong> "Lorem ipsum" doesn't read like a real name field — a generated name makes a wireframe or prototype feel closer to the finished product.</li>
-<li><strong>Privacy-conscious signups.</strong> Some services ask for a display name that doesn't need to be your legal one.</li>
-<li><strong>Writing and games.</strong> The same underlying generator works for fiction — see the <a href="/random-name-for-character/">character name generator</a> for tools built specifically for that.</li>
-</ul>
-</div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Who uses it</span>
-      <h2>Who actually uses a fake name generator</h2>
-    </div>
-    <div class="article-body">
-      <h3>Developers and QA engineers</h3>
-      <p>Seeding a test database with the same two or three placeholder names — "John Doe," "Jane Smith" — quickly starts colliding with your own validation rules and unique-constraint checks. A batch of dozens of distinct, realistic names avoids that, and lets you test sorting, search, and pagination the way real user data would behave, without ever touching an actual customer's information.</p>
-      <h3>Writers building minor characters</h3>
-      <p>Not every name in a story needs the deliberation of a lead character. Background characters, extras, and one-line mentions are a natural fit for a quick generated name, keeping the draft moving without a naming detour. For a protagonist or anyone whose name should say something about them, the <a href="/random-name-for-character/">character name generator</a> is the better starting point.</p>
-      <h3>Designers building mockups and wireframes</h3>
-      <p>A form field or profile card that reads "Lorem Ipsum" doesn't tell a client or stakeholder much. A believable name makes a static mockup feel like a working product, which tends to produce more useful feedback in a design review.</p>
-      <h3>Teachers and trainers</h3>
-      <p>Worked examples, sample spreadsheets, and role-play exercises often need names attached to hypothetical people. Generated names let an instructor build a realistic example without referencing an actual student or colleague.</p>
-      <h3>Anyone who wants a name that isn't their legal one online</h3>
-      <p>Plenty of platforms ask for a display name without requiring a real one. A generated name gives you something that reads naturally, rather than an obviously fake placeholder like "Test User."</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Good to know</span>
-      <h2>Using fake names responsibly</h2>
-    </div>
-    <div class="article-body">
-      <p>Placeholder names for testing, drafting, or privacy are a long-standing practice — English-language legal documents have used stand-in names like "John Doe" and "Richard Roe" for unidentified parties since the 1700s, long before software existed. The same logic applies here: a generated name is a stand-in, not a disguise.</p>
-      <p>The line to be careful of is impersonation. Generating a fictional name for a test account or a story character is a normal, legitimate use. Using a generated (or any) name to pretend to be a specific real person, open financial accounts, or misrepresent your identity for fraud is illegal regardless of which tool produced the name. If a name this generator produces happens to match a real person, that's coincidental — the names come from a shuffled pool of common first and last names, not from any real individual's profile.</p>
-    </div>
-  </div>
-</section><div class="container"><div class="ad-slot">Advertisement — 728&times;90 slot reserved for AdSense</div></div>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Explore</span>
-      <h2>Other name generators</h2>
-    </div>
-    <div class="related-grid"><a href="/">Full Generator &rarr;</a> <a href="/random-boy-names/">Boy Names &rarr;</a> <a href="/random-girl-names/">Girl Names &rarr;</a> <a href="/random-name-for-character/">Character Names &rarr;</a> <a href="/random-username-generator/">Usernames &rarr;</a> <a href="/random-name-for-baby/">Baby Names &rarr;</a> <a href="/guides/fake-names-for-testing-and-privacy/">Fake Names Guide &rarr;</a></div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Common questions</span>
-      <h2>Frequently asked questions</h2>
-    </div>
-    <div class="faq-list"><details class="faq-item"><summary>Are these names completely made up?</summary><p>Each individual first and last name is real and commonly used. What's fake is the combination — the full name isn't tied to any real, specific person.</p></details><details class="faq-item"><summary>Is it legal to use fake names online?</summary><p>Using a fake name for privacy, testing, or creative purposes is generally legal. Using one to deceive others, commit fraud, or impersonate a real person is illegal.</p></details><details class="faq-item"><summary>Does this tool store the names I generate?</summary><p>No. Everything happens in your browser. Nothing is logged, stored, or sent to a server.</p></details><details class="faq-item"><summary>Can I get fake full names with first and last name?</summary><p>Yes. Select "Full Name" in the format selector, or generate first or last names only.</p></details><details class="faq-item"><summary>Can I use this for test data in a database or app?</summary><p>Yes, this is one of the most common uses — generate a large batch and download it as a CSV to import into a test environment.</p></details><details class="faq-item"><summary>Will the same fake name ever repeat across sessions?</summary><p>Names aren't tracked across sessions, so the same combination can occasionally reappear, though it's uncommon with a large database.</p></details><details class="faq-item"><summary>Does this generate fake addresses, emails, or phone numbers too?</summary><p>No, this tool only generates names. For a complete fake identity you'd need to pair it with separately generated contact details.</p></details><details class="faq-item"><summary>Can I use a fake name to sign up for a service that requires a real name?</summary><p>Some services legally require your real identity (banking, official documents); others simply require a display name. Check that service's own terms before deciding — this tool provides the name, not permission to misuse it.</p></details><details class="faq-item"><summary>Can I generate fake names from a specific culture or region?</summary><p>The generator currently draws from a general English-language name pool. For culturally specific naming, pair a generated first name with a last name style you already have in mind.</p></details><details class="faq-item"><summary>What's the difference between this and the character name generator?</summary><p>Both draw from real name data, but the <a href="/random-name-for-character/">character name generator</a> is tuned for fiction — novels, games, and scripts — while this page is built for realistic-looking placeholder data like testing and privacy.</p></details><details class="faq-item"><summary>Can businesses use these names commercially?</summary><p>Yes — the generated names themselves aren't copyrighted. As with any use, just avoid implying a generated name belongs to, or is endorsed by, a specific real person.</p></details></div>
-  </div>
-</section></main><footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <a class="brand" href="/">Names<span class="dot">·</span>Unlimited</a>
-      <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/guides/">Guides</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/japanese-name-generator/">Japanese Names</a></li>
-      <li><a href="/elf-name-generator/">Elf Names</a></li>
-      <li><a href="/band-name-generator/">Band Names</a></li>
-      <li><a href="/city-name-generator/">City Names</a></li>
-      <li><a href="/school-name-generator/">School Names</a></li>
-      </ul>
-    </div>
-    <p class="footer-fine">&copy; 2026 Names Unlimited. All names are generated by random combination of common, real name data and do not refer to any specific real person.</p>
-  </div>
-</footer>
-<script src="/js/names-data.js"></script>
-<script src="/js/app.js"></script>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Names Unlimited. Zero tracking cookies. 100% client-side computation. All rights reserved.</p>
+      </div>
+    </footer>
+    
+
+  <script>
+    // 5X Expanded Datasets with Authentic Regional Datasets
+    const dataset = {
+      us: {
+        maleFirst: ["James", "Alexander", "Ethan", "Liam", "Benjamin", "Lucas", "Noah", "Mason", "Oliver", "Elijah", "William", "Henry", "Samuel", "Jackson", "Sebastian", "Jack", "Daniel", "Matthew", "Carter", "Julian", "Gabriel", "Anthony", "Dylan", "Wyatt", "Nathan", "Isaac", "Caleb", "Andrew", "Joshua", "Christopher"],
+        femaleFirst: ["Emma", "Olivia", "Sophia", "Ava", "Isabella", "Mia", "Charlotte", "Amelia", "Harper", "Evelyn", "Abigail", "Emily", "Ella", "Scarlett", "Grace", "Chloe", "Camila", "Penelope", "Riley", "Layla", "Lillian", "Nora", "Zoey", "Hannah", "Stella", "Victoria", "Aubrey", "Natalie", "Zoe", "Leah"],
+        last: ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson", "Walker", "Young", "Allen", "King", "Wright"],
+        cities: ["Austin, TX", "Seattle, WA", "Denver, CO", "Chicago, IL", "Boston, MA", "Portland, OR", "Atlanta, GA", "San Diego, CA", "Phoenix, AZ", "Miami, FL", "Dallas, TX", "Minneapolis, MN"],
+        streets: ["Oakwood Ave", "Maple St", "Pine Ridge Blvd", "Cedar Lane", "Elmwood St", "Sunset Way", "Highland Dr", "Lakeview Ter"],
+        phoneFormat: () => `+1 (555) ${Math.floor(100+Math.random()*900)}-${Math.floor(1000+Math.random()*9000)}`
+      },
+      uk: {
+        maleFirst: ["Oliver", "George", "Arthur", "Noah", "Muhammad", "Leo", "Oscar", "Harry", "Archie", "Jack", "Henry", "Charlie", "Freddie", "Theodore", "Thomas", "Alfie", "Jacob", "William"],
+        femaleFirst: ["Olivia", "Amelia", "Isla", "Ava", "Mia", "Ivy", "Lily", "Freya", "Florence", "Rosie", "Sophia", "Grace", "Phoebe", "Evie", "Ella", "Emily", "Harper", "Poppy"],
+        last: ["Smith", "Jones", "Taylor", "Brown", "Williams", "Wilson", "Johnson", "Davies", "Robinson", "Wright", "Thompson", "Evans", "Walker", "White", "Roberts", "Green", "Hall", "Wood", "Jackson", "Clarke"],
+        cities: ["London", "Manchester", "Birmingham", "Edinburgh", "Bristol", "Leeds", "Glasgow", "Liverpool", "Oxford", "Cambridge"],
+        streets: ["High Street", "Church Road", "Station Road", "Victoria Road", "Queen Street", "Park Avenue", "Kingsway"],
+        phoneFormat: () => `+44 7${Math.floor(100+Math.random()*900)} ${Math.floor(100000+Math.random()*900000)}`
+      },
+      in: {
+        maleFirst: ["Aarav", "Vihaan", "Aditya", "Rohan", "Kabir", "Arjun", "Karan", "Reyansh", "Aryan", "Dhruv", "Dev", "Rahul", "Advik", "Atharv", "Pranav", "Ishaan", "Ayush", "Shaurya", "Kavish", "Ritvik", "Samar", "Vivaan", "Nikhil", "Harsh", "Tushar"],
+        femaleFirst: ["Aanya", "Diya", "Saanvi", "Ananya", "Ishita", "Pooja", "Riya", "Kavya", "Sneha", "Aditi", "Meera", "Tanvi", "Avani", "Kiara", "Myra", "Navya", "Riddhima", "Anika", "Sia", "Mira", "Shanaya", "Ira", "Bhavya", "Nandini"],
+        last: ["Sharma", "Verma", "Patel", "Mehta", "Singh", "Kapoor", "Gupta", "Malhotra", "Reddy", "Chopra", "Joshi", "Bhatia", "Iyer", "Nair", "Saxena", "Choudhury", "Bose", "Chatterjee", "Mishra", "Pandey", "Trivedi", "Deshmukh", "Kulkarni", "Menon"],
+        cities: ["Bengaluru, KA", "Pune, MH", "Hyderabad, TS", "Gurugram, HR", "Noida, UP", "Mumbai, MH", "Chandigarh, PB", "Ahmedabad, GJ", "Kolkata, WB", "Jaipur, RJ", "Chennai, TN"],
+        streets: ["MG Road", "Brigade Road", "Park Street", "Linking Road", "Civil Lines", "Ring Road", "Nehru Nagar", "Indira Path"],
+        phoneFormat: () => `+91 98${Math.floor(10+Math.random()*90)} ${Math.floor(10000+Math.random()*90000)}`
+      },
+      jp: {
+        maleFirst: ["Kenji", "Hiroshi", "Takashi", "Daiki", "Ren", "Haruto", "Souta", "Yuto", "Kaito", "Kazuki", "Riku", "Shota", "Hayato", "Ryota", "Kota", "Taiki", "Kazuya", "Naoki", "Tsubasa"],
+        femaleFirst: ["Yuki", "Sakura", "Aoi", "Hina", "Yui", "Mei", "Rin", "Nanami", "Akari", "Koharu", "Mio", "Kanna", "Misaki", "Asuka", "Ayaka", "Honoka", "Haruka", "Momoka", "Riko"],
+        last: ["Sato", "Suzuki", "Takahashi", "Tanaka", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Kato", "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Saito", "Matsumoto", "Inoue", "Kimura"],
+        cities: ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Fukuoka", "Sapporo", "Nagoya", "Kobe", "Sendai", "Hiroshima"],
+        streets: ["Chiyoda-ku 3-chome", "Shibuya 1-chome", "Roppongi 4-chome", "Kita-ku 2-chome", "Namba 5-chome"],
+        phoneFormat: () => `+81 90-${Math.floor(1000+Math.random()*9000)}-${Math.floor(1000+Math.random()*9000)}`
+      },
+      de: {
+        maleFirst: ["Maximilian", "Lukas", "Leon", "Felix", "Paul", "Jonas", "Niklas", "Tim", "Finn", "Elias", "Noah", "Moritz", "Jakob", "David", "Philipp", "Alexander", "Julian", "Simon"],
+        femaleFirst: ["Emma", "Mia", "Hannah", "Sophia", "Anna", "Lea", "Emilia", "Marie", "Lena", "Laura", "Lina", "Clara", "Lilly", "Luisa", "Johanna", "Nele", "Sophie", "Charlotte"],
+        last: ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hoffmann", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schröder", "Neumann", "Schwarz"],
+        cities: ["Berlin", "Munich", "Hamburg", "Frankfurt", "Cologne", "Stuttgart", "Düsseldorf", "Leipzig", "Dresden", "Nuremberg"],
+        streets: ["Hauptstraße 12", "Bahnhofstraße 44", "Schillerstraße 5", "Goethestraße 8", "Gartenstraße 21", "Lindenweg 3"],
+        phoneFormat: () => `+49 151 ${Math.floor(1000000+Math.random()*9000000)}`
+      },
+      es: {
+        maleFirst: ["Mateo", "Santiago", "Sebastian", "Alejandro", "Diego", "Lucas", "Daniel", "Carlos", "Javier", "Gabriel", "Nicolas", "Manuel", "Adrian", "David", "Alvaro", "Hugo", "Leo", "Martin"],
+        femaleFirst: ["Sofia", "Valentina", "Camila", "Lucia", "Isabella", "Mariana", "Elena", "Paula", "Martina", "Daniela", "Alba", "Emma", "Carla", "Sara", "Noa", "Carmen", "Julia", "Claudia"],
+        last: ["Garcia", "Rodriguez", "Gonzalez", "Fernandez", "Lopez", "Martinez", "Sanchez", "Perez", "Gomez", "Martin", "Jimenez", "Ruiz", "Hernandez", "Diaz", "Moreno", "Alvarez", "Romero", "Navarro"],
+        cities: ["Madrid", "Barcelona", "Valencia", "Seville", "Bilbao", "Málaga", "Zaragoza", "Granada", "Alicante", "Murcia"],
+        streets: ["Calle Mayor 14", "Gran Vía 28", "Avenida de América 102", "Paseo de Gracia 45", "Calle del Sol 9"],
+        phoneFormat: () => `+34 6${Math.floor(10+Math.random()*90)} ${Math.floor(100+Math.random()*900)} ${Math.floor(100+Math.random()*900)}`
+      },
+      fr: {
+        maleFirst: ["Gabriel", "Leo", "Raphael", "Louis", "Arthur", "Jules", "Adam", "Lucas", "Hugo", "Paul", "Nathan", "Ethan", "Tom", "Sacha", "Theo", "Nolan", "Timothee", "Maxime"],
+        femaleFirst: ["Jade", "Louise", "Emma", "Alice", "Ambre", "Lina", "Rose", "Chloe", "Mia", "Lea", "Manon", "Camille", "Zoe", "Juliette", "Agathe", "Ines", "Jeanne", "Lucie"],
+        last: ["Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent", "Simon", "Michel", "Lefebvre", "Leroy", "Roux", "David", "Bertrand", "Morel"],
+        cities: ["Paris", "Lyon", "Marseille", "Toulouse", "Nice", "Nantes", "Bordeaux", "Strasbourg", "Lille", "Rennes"],
+        streets: ["Rue de la Paix", "Avenue des Champs-Élysées", "Boulevard Saint-Germain", "Rue de Rivoli", "Rue Nationale"],
+        phoneFormat: () => `+33 6 ${Math.floor(10+Math.random()*90)} ${Math.floor(10+Math.random()*90)} ${Math.floor(10+Math.random()*90)}`
+      }
+    };
+
+    const occupations = [
+      "Frontend Developer", "Backend Engineer", "Cloud Solutions Architect", "UX/UI Product Designer", 
+      "Data Scientist", "DevOps Engineer", "QA Automation Lead", "Technical Writer",
+      "Creative Director", "Cybersecurity Consultant", "Mobile App Developer", "Systems Administrator",
+      "Product Marketing Manager", "Growth Strategist", "Machine Learning Specialist", "Database Administrator"
+    ];
+
+    const domains = ["mockmail.dev", "testinbox.org", "fakedata.io", "sampleuser.net", "placeholder.test", "tempflow.dev"];
+    let currentIdentities = [];
+    let savedFavorites = JSON.parse(localStorage.getItem('user_saved_personas') || '[]');
+
+    function updateFavoritesUI() {
+      const bar = document.getElementById('favoritesBar');
+      const count = document.getElementById('favCount');
+      if (savedFavorites.length > 0) {
+        bar.style.display = 'flex';
+        count.innerText = savedFavorites.length;
+      } else {
+        bar.style.display = 'none';
+      }
+    }
+
+    function toggleFavorite(index) {
+      const id = currentIdentities[index];
+      const existsIdx = savedFavorites.findIndex(f => f.email === id.email);
+      if (existsIdx > -1) {
+        savedFavorites.splice(existsIdx, 1);
+        showToast("Removed from shortlist");
+      } else {
+        savedFavorites.push(id);
+        showToast("Added to shortlist!");
+      }
+      localStorage.setItem('user_saved_personas', JSON.stringify(savedFavorites));
+      updateFavoritesUI();
+      renderCards();
+    }
+
+    function clearFavorites() {
+      savedFavorites = [];
+      localStorage.removeItem('user_saved_personas');
+      updateFavoritesUI();
+      renderCards();
+      showToast("Shortlist cleared");
+    }
+
+    function exportFavoritesCSV() {
+      if (savedFavorites.length === 0) return;
+      exportDatasetAsCSV(savedFavorites, "shortlisted_identities.csv");
+    }
+
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateProfile(selectedGender, selectedCountry) {
+      const countryKeys = ["us", "uk", "in", "jp", "de", "es", "fr"];
+      const country = selectedCountry === "random" ? getRandomItem(countryKeys) : selectedCountry;
+      const cData = dataset[country];
+
+      let gender = selectedGender;
+      if (gender === "random") {
+        gender = Math.random() > 0.5 ? "male" : "female";
+      }
+
+      const firstName = gender === "male" ? getRandomItem(cData.maleFirst) : getRandomItem(cData.femaleFirst);
+      const lastName = getRandomItem(cData.last);
+      const username = `${firstName.toLowerCase()}_${lastName.toLowerCase()}${Math.floor(Math.random()*90 + 10)}`;
+      const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${getRandomItem(domains)}`;
+      const job = getRandomItem(occupations);
+      const city = getRandomItem(cData.cities);
+      const street = `${Math.floor(10 + Math.random()*980)} ${getRandomItem(cData.streets)}`;
+      const phone = cData.phoneFormat();
+      const countryNames = { us: "United States", uk: "United Kingdom", in: "India", jp: "Japan", de: "Germany", es: "Spain", fr: "France" };
+
+      return {
+        fullName: `${firstName} ${lastName}`,
+        gender: gender.charAt(0).toUpperCase() + gender.slice(1),
+        country: countryNames[country],
+        city: city,
+        address: `${street}, ${city}`,
+        email: email,
+        username: username,
+        phone: phone,
+        occupation: job
+      };
+    }
+
+    function renderCards() {
+      const grid = document.getElementById("resultsGrid");
+      grid.innerHTML = "";
+
+      currentIdentities.forEach((id, index) => {
+        const isFav = savedFavorites.some(f => f.email === id.email);
+        const card = document.createElement("div");
+        card.className = "identity-card";
+        card.innerHTML = `
+          <div class="card-header">
+            <div class="name-box">
+              <h3>${id.fullName}</h3>
+              <span class="badge">${id.gender} &bull; ${id.country}</span>
+            </div>
+            <div class="card-actions-row">
+              <button class="fav-btn ${isFav ? 'active' : ''}" title="Save to Shortlist" onclick="toggleFavorite(${index})">
+                ${isFav ? '★ Saved' : '☆ Save'}
+              </button>
+              <button class="card-copy-btn" onclick="copyCard(${index})">Copy</button>
+            </div>
+          </div>
+          <div class="identity-details">
+            <div class="detail-row" onclick="copyText('${id.email}')">
+              <span class="detail-label">Email:</span>
+              <span class="detail-value">${id.email}</span>
+            </div>
+            <div class="detail-row" onclick="copyText('${id.username}')">
+              <span class="detail-label">Username:</span>
+              <span class="detail-value">@${id.username}</span>
+            </div>
+            <div class="detail-row" onclick="copyText('${id.phone}')">
+              <span class="detail-label">Phone:</span>
+              <span class="detail-value">${id.phone}</span>
+            </div>
+            <div class="detail-row" onclick="copyText('${id.address}')">
+              <span class="detail-label">Address:</span>
+              <span class="detail-value" style="font-size: 0.8rem;">${id.address}</span>
+            </div>
+            <div class="detail-row" onclick="copyText('${id.occupation}')">
+              <span class="detail-label">Job:</span>
+              <span class="detail-value">${id.occupation}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function generateBatch() {
+      const gender = document.getElementById("genderSelect").value;
+      const country = document.getElementById("countrySelect").value;
+      const count = parseInt(document.getElementById("quantitySelect").value, 10);
+
+      currentIdentities = [];
+      for (let i = 0; i < count; i++) {
+        currentIdentities.push(generateProfile(gender, country));
+      }
+      renderCards();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => showToast("Copied: " + text));
+    }
+
+    function copyCard(index) {
+      const id = currentIdentities[index];
+      const text = `Name: ${id.fullName}\nGender: ${id.gender}\nRegion: ${id.country}\nAddress: ${id.address}\nEmail: ${id.email}\nUsername: ${id.username}\nPhone: ${id.phone}\nRole: ${id.occupation}`;
+      navigator.clipboard.writeText(text).then(() => showToast("Profile copied!"));
+    }
+
+    function copyAll() {
+      if (currentIdentities.length === 0) return;
+      const formatted = currentIdentities.map(id => `${id.fullName} | ${id.gender} | ${id.country} | ${id.email} | ${id.phone} | ${id.address}`).join("\n");
+      navigator.clipboard.writeText(formatted).then(() => showToast(`Copied ${currentIdentities.length} profiles!`));
+    }
+
+    function exportDatasetAsCSV(arr, filename) {
+      const headers = ["Full Name", "Gender", "Country", "Address", "Email", "Username", "Phone", "Occupation"];
+      const rows = arr.map(id => [
+        `"${id.fullName}"`, `"${id.gender}"`, `"${id.country}"`, `"${id.address}"`,
+        `"${id.email}"`, `"${id.username}"`, `"${id.phone}"`, `"${id.occupation}"`
+      ]);
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function exportCsv() {
+      if (currentIdentities.length === 0) return;
+      exportDatasetAsCSV(currentIdentities, "mock_identities.csv");
+    }
+
+    function exportJson() {
+      if (currentIdentities.length === 0) return;
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentIdentities, null, 2));
+      const downloadAnchor = document.createElement("a");
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "mock_identities.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.removeChild();
+    }
+
+    window.onload = () => {
+      generateBatch();
+      updateFavoritesUI();
+    };
+  </script>
 </body>
 </html>

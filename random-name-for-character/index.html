@@ -1,245 +1,405 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLF2FN7L');</script>
-<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Character Name Generator – Novelists, RPG & Story Characters</title>
+  <meta name="description" content="Generate compelling character names for novels, screenplays, and games. Filter by genre: Fantasy, Sci-Fi, Historical, Modern, Villains, and Superheroes.">
+  <link rel="canonical" href="https://namesunlimited.github.io/random-name-for-character/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d30;
+      --card-hover: #1c2742;
+      --border: #23314e;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .site-nav { background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.25rem; }
+    .brand-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.25rem; color: #fff; }
+    .brand-logo span { color: var(--accent); }
+    .brand-logo svg { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .nav-link { padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; background: var(--card-bg); border: 1px solid var(--border); }
+    .nav-link.active { color: var(--accent); }
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Random Character Name Generator | Names Unlimited</title>
-<meta name="description" content="Generate random character names for novels, games, and RPGs. Full names, first names, or last names, male or female. Free, instant, no signup.">
-<link rel="canonical" href="https://namesunlimited.github.io/random-name-for-character/">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
-<meta name="theme-color" content="#26344E">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Names Unlimited">
-<meta property="og:title" content="Random Character Name Generator | Names Unlimited">
-<meta property="og:description" content="Generate random character names for novels, games, and RPGs. Full names, first names, or last names, male or female. Free, instant, no signup.">
-<meta property="og:url" content="https://namesunlimited.github.io/random-name-for-character/">
-<meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Random Character Name Generator | Names Unlimited">
-<meta name="twitter:description" content="Generate random character names for novels, games, and RPGs. Full names, first names, or last names, male or female. Free, instant, no signup.">
-<meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will two characters ever get the same name?", "acceptedAnswer": {"@type": "Answer", "text": "Each generated batch avoids duplicate names within that batch, but running the generator again can repeat names from an earlier batch."}}, {"@type": "Question", "name": "Can I generate names for a specific gender only?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 set the gender filter to male or female, or leave it on \"both\" for a mixed cast."}}, {"@type": "Question", "name": "Can I use these names in a published book or game?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. These are common names in random combination, not tied to a real person, so they're generally safe for fiction and commercial projects."}}, {"@type": "Question", "name": "Is there a limit on how many I can generate?", "acceptedAnswer": {"@type": "Answer", "text": "You can generate up to 1000 names per click, and run the generator as many times as you like."}}, {"@type": "Question", "name": "Can I generate just last names for a family or dynasty?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 set \"Name Type\" to \"Last Only\" to get a list of surnames without first names attached."}}, {"@type": "Question", "name": "What if a name accidentally matches a real public figure?", "acceptedAnswer": {"@type": "Answer", "text": "With random combination this is rare, but if it happens, simply regenerate or manually swap the surname."}}, {"@type": "Question", "name": "Is this good for naming background or minor characters quickly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 this is exactly the use case it's fastest for. Generate a large batch and assign names to minor characters as you write, without breaking flow."}}, {"@type": "Question", "name": "Can I generate names that sound period-appropriate for a historical setting?", "acceptedAnswer": {"@type": "Answer", "text": "The database leans toward names common in the last century, so it works best for contemporary or near-historical settings; for older or highly stylised periods, treat generated names as a starting point to adjust rather than a final answer."}}, {"@type": "Question", "name": "How do I name a villain versus a hero?", "acceptedAnswer": {"@type": "Answer", "text": "There's no strict rule, but harder, sharper-sounding names tend to read as antagonists, while softer or more familiar names tend to read as approachable protagonists. Generate a batch and pick based on the sound and feel rather than any formula."}}, {"@type": "Question", "name": "Can this help with a whole cast of characters at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 generate a large batch, use \"Copy All\" or \"Download CSV\" to save it, then assign names to your cast list as you go, checking that no two major characters share a similar-sounding name."}}, {"@type": "Question", "name": "Should I worry about a generated name matching an existing famous character?", "acceptedAnswer": {"@type": "Answer", "text": "Very unlikely with common first and last name combinations, but for a commercial project it's worth a quick search on any name you're seriously considering, just to be safe."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://namesunlimited.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Character Names", "item": "https://namesunlimited.github.io/random-name-for-character/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Character Name Generator", "url": "https://namesunlimited.github.io/random-name-for-character/", "description": "Generate random character names for novels, games, and RPGs.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<!-- AdSense: once approved, paste the auto-ads snippet here -->
+    .container { max-width: 1150px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header.hero { text-align: center; margin-bottom: 2.5rem; }
+    header.hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.03em; line-height: 1.2; }
+    header.hero h1 span { color: var(--accent); }
+    header.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 720px; margin: 0 auto; }
+
+    /* Tool Panels & Controls */
+    .tool-panel { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5); }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .control-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .control-group select, .control-group input, .control-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
+    .control-group select:focus, .control-group input:focus, .control-group textarea:focus { border-color: var(--accent); }
+
+    .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; }
+    .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
+    .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #26365c; color: #fff; }
+
+    /* Results Grids */
+    .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
+    .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
+    .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
+
+    /* Content & Curated Snippet Tables */
+    .editorial { margin-top: 4rem; }
+    .editorial h2 { font-size: 1.85rem; color: #fff; margin: 2rem 0 1rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+    .editorial h3 { font-size: 1.35rem; color: var(--accent); margin: 1.75rem 0 0.75rem; }
+    .editorial p { color: #cbd5e1; margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.7; }
+    .editorial ul, .editorial ol { margin: 0 0 1.5rem 1.5rem; color: #cbd5e1; }
+    .editorial li { margin-bottom: 0.5rem; }
+
+    .curated-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    table.curated-table { width: 100%; border-collapse: collapse; text-align: left; }
+    table.curated-table th { background: #0c1222; color: var(--accent); padding: 0.95rem 1.15rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    table.curated-table td { padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--border); color: #e2e8f0; font-size: 0.92rem; }
+    table.curated-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+    table.curated-table tr:hover { background: rgba(56, 189, 248, 0.03); }
+
+    /* FAQs */
+    .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
+    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+    .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+    /* Toast */
+    .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
+    .toast-popup.visible { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-logo { margin-bottom: 1rem; }
+    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a { color: var(--text-muted); font-size: 0.88rem; transition: color 0.15s ease; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+      header.hero h1 { font-size: 2rem; }
+      .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+    }
+    
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Character Name Generator",
+        "url": "https://namesunlimited.github.io/random-name-for-character/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Comprehensive character name creator for fiction authors and screenwriters."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the character name generator work?",
+            "answer": "It combines genre-specific given names and thematic surnames tailored to specific fictional settings like Sci-Fi, Historical, or Fantasy."
+          },
+          {
+            "@type": "Question",
+            "name": "Can I copy individual names or export lists?",
+            "answer": "Yes. Click any name card to copy instantly, or generate batches of up to 48 names and copy all at once."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLF2FN7L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="28" height="28" rx="5" fill="#26344E"/>
-        <rect x="4" y="4" width="20" height="20" rx="2.5" fill="#F6F1E4"/>
-        <text x="14" y="20" font-family="Georgia, serif" font-weight="700" font-size="15" text-anchor="middle" fill="#26344E">N</text>
-        <circle cx="22" cy="6" r="3" fill="#A6392E"/>
-      </svg>
-      <span>Names<span class="dot">·</span>Unlimited</span>
-    </a>
-    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">Menu</button>
-    <ul class="nav-tabs" data-nav-tabs>
-      <li><a href="/random-boy-names/">Boy Names</a></li>
-      <li><a href="/random-girl-names/">Girl Names</a></li>
-      <li><a href="/random-name-for-baby/">Baby Names</a></li>
-      <li><a href="/random-name-for-character/" class="is-active">Characters</a></li>
-      <li><a href="/fake-name-generator/">Fake Names</a></li>
-      <li><a href="/random-username-generator/">Usernames</a></li>
-      <li><a href="/guides/">Guides</a></li>
-    </ul>
-  </div>
-</header><main><div class="breadcrumb"><div class="container"><a href="/">Home</a> &rsaquo; Character Names</div></div>
-<section class="hero">
-  <div class="container">
-    <span class="eyebrow"><span class="pip"></span>Free &middot; No Signup &middot; Instant</span>
-    <h1>Name your next character in one click.</h1>
-    <p class="lede">Full names, first names, or last names for novels, screenplays, tabletop campaigns, and games — realistic enough to feel real, invented enough to be yours.</p>
+  
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Names<span>Unlimited</span>
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese Names</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link active">Character Names</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+        </div>
+      </div>
+    </nav>
     
-<div class="desk" data-generator data-mode="names" data-default-type="full"
-     data-default-gender="both" data-default-count="50" data-filename="character-names">
-  <div class="form-card">
-    <div class="card-title"><span>Build a batch</span><span>FORM 01-A</span></div>
-      <div class="field">
-        <label>Name Type</label>
-        <div class="seg">
-          <button data-type="full" class="is-on">Full Name</button>
-          <button data-type="first" class="">First Only</button>
-          <button data-type="last" class="">Last Only</button>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Random Character <span>Name Generator</span></h1>
+      <p>Breathe life into your protagonist, antagonist, and secondary story casts across diverse narrative genres and fictional eras.</p>
+    </header>
+
+    <div class="tool-panel">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="charGenre">Genre / Vibe</label>
+          <select id="charGenre">
+            <option value="modern">Modern Fiction & Thriller</option>
+            <option value="scifi">Sci-Fi & Cyberpunk</option>
+            <option value="fantasy">High Fantasy & Medieval</option>
+            <option value="historical">Victorian & 19th Century</option>
+            <option value="villain">Dark Villains & Antiheroes</option>
+            <option value="superhero">Superheroes & Vigilantes</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="charGender">Gender</label>
+          <select id="charGender">
+            <option value="all">Any Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="charBatch">Batch Count</label>
+          <select id="charBatch">
+            <option value="12" selected>12 Names</option>
+            <option value="24">24 Names</option>
+            <option value="48">48 Names</option>
+          </select>
         </div>
       </div>
-      <div class="field">
-        <label>Gender</label>
-        <div class="seg">
-          <button data-gender="both" class="is-on">Both</button>
-          <button data-gender="male" class="">Male</button>
-          <button data-gender="female" class="">Female</button>
+
+      <div class="actions-bar">
+        <button class="btn btn-primary" onclick="generateCharacterNames()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Generate Character Names
+        </button>
+        <div class="btn-cluster">
+          <button class="btn btn-secondary" onclick="copyAllCharacters()">Copy All</button>
         </div>
       </div>
-    <div class="field">
-      <label>How Many</label>
-      <div class="count-row">
-        <input type="number" min="1" max="5000" value="50" data-count-input>
+    </div>
+
+    <div id="characterGrid" class="names-grid"></div>
+
+    <section class="editorial">
+      <h2>Curated Character Archetype Index (Story Inspiration Table)</h2>
+      <p>A reference roster of character names paired with evocative archetypes and genre contexts.</p>
+
+      <div class="curated-table-wrap">
+        <table class="curated-table">
+          <thead>
+            <tr>
+              <th>Character Name</th>
+              <th>Genre</th>
+              <th>Archetype Role</th>
+              <th>Narrative Trait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Julian Cross</td><td>Modern Thriller</td><td>Cynical Detective</td><td>Methodical investigator with a hidden trauma</td></tr>
+            <tr><td>Valeria Voss</td><td>Cyberpunk / Sci-Fi</td><td>Rogue Netrunner</td><td>Mercenary hacker wanted by megacorps</td></tr>
+            <tr><td>Arthur Sterling</td><td>Victorian Historical</td><td>Aristocratic Scholar</td><td>Curator of forbidden occult antiquities</td></tr>
+            <tr><td>Vespera Thorne</td><td>Dark Fantasy</td><td>Gothic Sorceress</td><td>Wields twilight enchantments and blood wards</td></tr>
+            <tr><td>Cassian Drake</td><td>Space Opera</td><td>Starship Pilot</td><td>Smuggler with a heart of reluctant gold</td></tr>
+            <tr><td>Evelyn Blackwood</td><td>Mystery Thriller</td><td>Independent Journalist</td><td>Uncovers corporate corruption in high society</td></tr>
+            <tr><td>Malachi Grimm</td><td>Antihero / Villain</td><td>Vengeful Shadow</td><td>Operates outside legal boundaries to balance debts</td></tr>
+            <tr><td>Nova Vance</td><td>Superhero Fiction</td><td>Cosmic Vigilante</td><td>Channeler of raw electromagnetic kinetic force</td></tr>
+            <tr><td>Clara Bellmont</td><td>Period Romance</td><td>Headstrong Heiress</td><td>Defies societal matrimonial expectations</td></tr>
+            <tr><td>Damian Graves</td><td>Noir Fiction</td><td>Disgraced Attorney</td><td>Navigates criminal underworld cartels</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="chip-row"><button class="chip" data-count-chip="10">10</button> <button class="chip" data-count-chip="50">50</button> <button class="chip" data-count-chip="100">100</button> <button class="chip" data-count-chip="500">500</button></div>
-    </div>
-    <button class="btn-generate" data-generate>Generate Character Names</button>
-  </div>
-  <div class="ledger">
-    <div class="ledger-head">
-      <div>
-        <span class="entry-count" data-entry-count><b>0</b> entries generated</span>
+
+      <h2>How to Choose the Right Character Name for Your Novel</h2>
+      <p>A name is often the first impression a reader has of a character. Effective authors use linguistic cues to subconsciously signal background, class, and moral alignment:</p>
+
+      <h3>1. Rhythm and Syllable Cadence</h3>
+      <p>Punchy, single-syllable names (e.g., <em>Jack Cross, Rex Stone</em>) signal decisive action and direct personalities. Multi-syllabic names with soft cadences (e.g., <em>Alexander Montgomery, Genevieve Bellamy</em>) suggest nobility, education, or complexity.</p>
+
+      <h3>2. Genre Appropriateness</h3>
+      <p>A high-tech cyberpunk narrative demands industrial, sleek surnames (e.g., <em>Vex, Kestrel, Vance</em>), whereas a gaslamp Victorian mystery requires period-accurate patronymics (e.g., <em>Hawthorne, Abernathy, Sinclair</em>).</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-card">
+          <h4>Are these character names copyrighted?</h4>
+          <p>No. Names cannot be copyrighted under intellectual property laws. You can freely use them in commercial novels, scripts, comic books, and video games.</p>
+        </div>
+        <div class="faq-card">
+          <h4>How do I prevent name similarity in my story?</h4>
+          <p>Avoid giving major characters names that start with the same letter or share identical syllable counts (e.g., John and Josh). Mix lengths and sounds to maintain reader clarity.</p>
+        </div>
       </div>
-      <span class="stamp-badge">Unfiled</span>
-    </div>
-    <div class="ledger-head">
-      <input class="search-box" type="search" placeholder="Filter results&hellip;" data-search>
-      <div class="ledger-actions">
-        <button class="btn-ghost" data-copy>Copy All</button>
-        <button class="btn-ghost" data-download>Download CSV</button>
+    </section>
+  </div>
+
+  <div id="toast" class="toast-popup">Copied to clipboard!</div>
+  
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo footer-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Names<span>Unlimited</span>
+          </div>
+          <p class="footer-desc">The open-source, ultra-fast naming engine for writers, developers, gamers, and parents. Zero ads, instant client-side generation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Utility & Testing</h4>
+          <ul>
+            <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
+            <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative & Fiction</h4>
+          <ul>
+            <li><a href="/random-name-for-character/">Character Names</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy & RPG Names</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Names with Kanji</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Real World</h4>
+          <ul>
+            <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <ul class="name-list" data-name-list></ul>
-    <div class="empty-state" data-empty>
-      <span class="glyph">&#128203;</span>
-      Click &ldquo;Generate Character Names&rdquo; to file your first batch of entries.
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">About this list</span>
-      <h2>Built for writers and world-builders</h2>
-    </div>
-    <div class="article-body">
-      <p>Character names in this generator are built from real first and last names, then combined at random — so results read as plausible, grounded names rather than obviously fake fantasy words.</p>
-      <p>Generate a batch, skim for one that fits your character's voice, and regenerate as many times as you like until something clicks.</p>
-      <p>A good character name usually does one of three jobs: it signals background (era, culture, class), it's easy for a reader to say in their head, or it simply gets out of the way so the character's actions carry the weight. Generating a large batch and reading the names aloud is often faster than brainstorming from scratch — you're reacting to real options instead of staring at a blank page. If you need names that read as intentionally fictional rather than plausible, the <a href="/fake-name-generator/">fake name generator</a> works well for that too.</p>
-    </div>
-    <div class="section-head" style="margin-top:34px;"><h2 style="font-size:1.1rem;">Tips for picking a character name from the list</h2></div>
-<div class="article-body">
-<ul>
-<li><strong>Read it aloud.</strong> Names that look fine on the page sometimes trip over the tongue — say a shortlist out loud before committing.</li>
-<li><strong>Check your cast for collisions.</strong> Avoid giving two major characters names that start with the same letter or sound alike, since readers mix them up.</li>
-<li><strong>Match the register.</strong> A gritty crime novel and a cozy small-town romance usually call for different naming styles — generate a large batch and look for the tone that fits.</li>
-<li><strong>Keep a shortlist.</strong> Use "Copy All" to save a batch of twenty or so, then narrow it down over a day instead of deciding on the spot.</li>
-</ul>
-</div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Browse by genre</span>
-      <h2>Character name ideas by genre and archetype</h2>
-    </div>
-    <div class="article-body">
-      <p>Different genres lean on different naming conventions. Here's a starting point for the styles writers search for most — treat these as a jumping-off point and regenerate the tool above for more in the same vein.</p>
-      <h3>Fantasy character names</h3>
-      <p>Fantasy tends to favor invented-sounding but pronounceable names, often built from real-name roots: <strong>Elowen, Caspian, Thessaly, Roran, Isolde, Corvin.</strong></p>
-      <h3>Sci-fi character names</h3>
-      <p>Science fiction often shortens or hardens familiar names, or leans on surname-style callsigns: <strong>Zara Voss, Kael Draxis, Nyla Reyes, Marcus Kade, Elena Sato.</strong></p>
-      <h3>Historical and period-drama names</h3>
-      <p>Grounded, era-appropriate names that wouldn't feel out of place a century or more ago: <strong>Ambrose, Cordelia, Percival, Josephine, Reginald, Beatrice.</strong></p>
-      <h3>Villain and antagonist names</h3>
-      <p>Sharper, harder-edged names read well for antagonists: <strong>Damien Vane, Selene Kroft, Viktor Nash, Cassia Thorne.</strong></p>
-      <h3>Hero and protagonist names</h3>
-      <p>Approachable, easy-to-root-for names that a reader can hold onto across a whole book: <strong>Jonah, Mara, Eli, Wren, Sam, Nora.</strong></p>
-      <h3>Modern and contemporary fiction names</h3>
-      <p>Names that read as ordinary and present-day, for realistic or slice-of-life fiction: <strong>Ava Chen, Jordan Miles, Priya Desai, Sam Whitfield.</strong></p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Naming advice</span>
-      <h2>How to choose the right character name</h2>
-    </div>
-    <div class="article-body">
-      <h3>Match the name to your story's world</h3>
-      <p>A name that works in one setting can feel wrong in another — a character named Zayden will feel out of place in a Victorian drawing-room drama, and a character named Edmund will feel just as wrong piloting a spaceship. Read a shortlist against your setting before deciding.</p>
-      <h3>Let the name hint at the role</h3>
-      <p>Classic storytelling archetypes — hero, mentor, trickster, villain — each tend to carry slightly different naming conventions. A name doesn't have to spell out a character's role, but it shouldn't actively fight against it either.</p>
-      <h3>Decide on full name, first name, or nickname — and stay consistent</h3>
-      <p>Pick early whether your character will be referred to by a full name, first name, surname, or nickname, and keep it consistent unless a shift in how they're addressed is deliberate (a character called "Ben" by friends and "Benedict" by his mother, for instance). Switching inconsistently between forms confuses readers.</p>
-      <h3>Say it out loud, and check it against your cast list</h3>
-      <p>A name that reads fine silently can trip on the tongue out loud. Read your shortlist aloud, and compare it against your existing cast — avoid starting two major characters' names with the same letter or sound, since readers conflate them.</p>
-      <h3>Check for unintended real-world or trademark collisions</h3>
-      <p>If you're naming characters for publication or a commercial project, a quick search helps confirm the name isn't strongly tied to an existing public figure or a well-known franchise character, which can create confusion or, in some cases, legal issues.</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Popular picks</span>
-      <h2>Good starting points</h2>
-    </div>
-    <div class="popular-tags"><span>Elena Voss</span><span>Marcus Wright</span><span>Sadie Cole</span><span>Theo Bennett</span><span>Nadia Reyes</span><span>Owen Blackwood</span></div>
-  </div>
-</section><div class="container"><div class="ad-slot">Advertisement — 728&times;90 slot reserved for AdSense</div></div>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Explore</span>
-      <h2>Other name generators</h2>
-    </div>
-    <div class="related-grid"><a href="/random-boy-names/">Boy Names &rarr;</a> <a href="/random-girl-names/">Girl Names &rarr;</a> <a href="/fake-name-generator/">Fake Names &rarr;</a> <a href="/">Full Generator &rarr;</a> <a href="/random-name-for-baby/">Baby Names &rarr;</a> <a href="/random-username-generator/">Usernames &rarr;</a> <a href="/guides/choosing-a-character-name/">Character Naming Guide &rarr;</a></div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Common questions</span>
-      <h2>Frequently asked questions</h2>
-    </div>
-    <div class="faq-list"><details class="faq-item"><summary>Will two characters ever get the same name?</summary><p>Each generated batch avoids duplicate names within that batch, but running the generator again can repeat names from an earlier batch.</p></details><details class="faq-item"><summary>Can I generate names for a specific gender only?</summary><p>Yes — set the gender filter to male or female, or leave it on "both" for a mixed cast.</p></details><details class="faq-item"><summary>Can I use these names in a published book or game?</summary><p>Yes. These are common names in random combination, not tied to a real person, so they're generally safe for fiction and commercial projects.</p></details><details class="faq-item"><summary>Is there a limit on how many I can generate?</summary><p>You can generate up to 1000 names per click, and run the generator as many times as you like.</p></details><details class="faq-item"><summary>Can I generate just last names for a family or dynasty?</summary><p>Yes — set "Name Type" to "Last Only" to get a list of surnames without first names attached.</p></details><details class="faq-item"><summary>What if a name accidentally matches a real public figure?</summary><p>With random combination this is rare, but if it happens, simply regenerate or manually swap the surname.</p></details><details class="faq-item"><summary>Is this good for naming background or minor characters quickly?</summary><p>Yes — this is exactly the use case it's fastest for. Generate a large batch and assign names to minor characters as you write, without breaking flow.</p></details><details class="faq-item"><summary>Can I generate names that sound period-appropriate for a historical setting?</summary><p>The database leans toward names common in the last century, so it works best for contemporary or near-historical settings; for older or highly stylised periods, treat generated names as a starting point to adjust rather than a final answer.</p></details><details class="faq-item"><summary>How do I name a villain versus a hero?</summary><p>There's no strict rule, but harder, sharper-sounding names tend to read as antagonists, while softer or more familiar names tend to read as approachable protagonists. Generate a batch and pick based on the sound and feel rather than any formula.</p></details><details class="faq-item"><summary>Can this help with a whole cast of characters at once?</summary><p>Yes — generate a large batch, use "Copy All" or "Download CSV" to save it, then assign names to your cast list as you go, checking that no two major characters share a similar-sounding name.</p></details><details class="faq-item"><summary>Should I worry about a generated name matching an existing famous character?</summary><p>Very unlikely with common first and last name combinations, but for a commercial project it's worth a quick search on any name you're seriously considering, just to be safe.</p></details></div>
-  </div>
-</section></main><footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <a class="brand" href="/">Names<span class="dot">·</span>Unlimited</a>
-      <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/guides/">Guides</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/japanese-name-generator/">Japanese Names</a></li>
-      <li><a href="/elf-name-generator/">Elf Names</a></li>
-      <li><a href="/band-name-generator/">Band Names</a></li>
-      <li><a href="/city-name-generator/">City Names</a></li>
-      <li><a href="/school-name-generator/">School Names</a></li>
-      </ul>
-    </div>
-    <p class="footer-fine">&copy; 2026 Names Unlimited. All names are generated by random combination of common, real name data and do not refer to any specific real person.</p>
-  </div>
-</footer>
-<script src="/js/names-data.js"></script>
-<script src="/js/app.js"></script>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Names Unlimited. Fast, privacy-friendly, free forever.</p>
+      </div>
+    </footer>
+    
+
+  <script>
+    const characterData = {
+      modern: {
+        male: ["Julian", "Marcus", "Ethan", "Lucas", "Liam", "Owen", "Nathan", "Gavin", "Zachary", "Colin"],
+        female: ["Evelyn", "Claire", "Harper", "Sienna", "Audrey", "Maya", "Natalie", "Piper", "Zoe", "Elena"],
+        last: ["Cross", "Vance", "Mercer", "Sterling", "Holloway", "Blackwood", "Sinclair", "Hayes", "Barrett", "Monroe"]
+      },
+      scifi: {
+        male: ["Cassian", "Soren", "Zephyr", "Orion", "Tiberius", "Kael", "Rory", "Jaxon", "Dax", "Vane"],
+        female: ["Nova", "Lyra", "Veda", "Astra", "Cyra", "Kestrel", "Zaria", "Nyx", "Echo", "Valeria"],
+        last: ["Voss", "Thorne", "Starlight", "Drake", "Nexus", "Helios", "Vector", "Apex", "Solari", "Cyber"]
+      },
+      fantasy: {
+        male: ["Alistair", "Theodore", "Rowan", "Cedric", "Gideon", "Finnick", "Lucian", "Emrys", "Dorian", "Leopold"],
+        female: ["Evangeline", "Isolde", "Genevieve", "Seraphina", "Guinevere", "Rowena", "Gwendolyn", "Ophelia", "Maeve"],
+        last: ["Ravenshade", "Ironwood", "Silverthorn", "Moonsong", "Stormwarden", "Ashford", "Crowley", "Oakhaven"]
+      },
+      historical: {
+        male: ["Arthur", "Bartholomew", "Archibald", "Edmund", "Reginald", "Percival", "Cornelius", "Horatio", "Thaddeus"],
+        female: ["Beatrice", "Cordelia", "Adelaide", "Constance", "Eleanor", "Florence", "Mabel", "Agnes", "Prudence"],
+        last: ["Bellmont", "Abernathy", "Pemberton", "Hawthorne", "Kensington", "Wellington", "Fairfax", "Chichester"]
+      },
+      villain: {
+        male: ["Malachi", "Draven", "Victor", "Damian", "Balthazar", "Lucien", "Gideon", "Mortimer", "Corvus", "Vane"],
+        female: ["Vespera", "Bellatrix", "Lilith", "Carmilla", "Morgana", "Hecate", "Azira", "Ravenna", "Salome"],
+        last: ["Grimm", "Bane", "Nightshade", "Graves", "Malice", "Shadowborn", "Von Blood", "Carcass", "Dread"]
+      },
+      superhero: {
+        male: ["Apex", "Titan", "Bolt", "Shadow", "Sentinel", "Vanguard", "Rift", "Ignite", "Spectre", "Pulse"],
+        female: ["Radiance", "Mirage", "Valkyrie", "Tempest", "Horizon", "Eclipse", "Seraph", "Prism", "Siren"],
+        last: ["Justice", "Valor", "Steel", "Starlight", "Storm", "Phoenix", "Avenger", "Strike", "Force"]
+      }
+    };
+
+    let currentCharList = [];
+
+    function generateCharacterNames() {
+      const genre = document.getElementById('charGenre').value;
+      const gender = document.getElementById('charGender').value;
+      const count = parseInt(document.getElementById('charBatch').value, 10);
+      const grid = document.getElementById('characterGrid');
+      grid.innerHTML = "";
+      currentCharList = [];
+
+      const gData = characterData[genre];
+
+      for (let i = 0; i < count; i++) {
+        let pool = [];
+        if (gender === 'male') pool = gData.male;
+        else if (gender === 'female') pool = gData.female;
+        else pool = [...gData.male, ...gData.female];
+
+        const first = pool[Math.floor(Math.random() * pool.length)];
+        const last = gData.last[Math.floor(Math.random() * gData.last.length)];
+        const fullName = `${first} ${last}`;
+        currentCharList.push(fullName);
+
+        const card = document.createElement('div');
+        card.className = "name-card";
+        card.innerHTML = `
+          <div class="name-info">
+            <div class="main-name">${fullName}</div>
+            <div class="sub-detail">${genre.toUpperCase()} Cast</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation(); copyChar('${fullName}')">Copy</button>
+        `;
+        card.onclick = () => copyChar(fullName);
+        grid.appendChild(card);
+      }
+    }
+
+    function copyChar(name) {
+      navigator.clipboard.writeText(name).then(() => showToast("Copied: " + name));
+    }
+
+    function copyAllCharacters() {
+      if (currentCharList.length === 0) return;
+      navigator.clipboard.writeText(currentCharList.join('\n')).then(() => showToast(`Copied ${currentCharList.length} character names!`));
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    window.onload = generateCharacterNames;
+  </script>
 </body>
 </html>

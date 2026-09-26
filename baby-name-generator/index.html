@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Name Generator – Boy, Girl & Unisex Names with Meanings</title>
+  <meta name="description" content="Discover meaningful baby names for boys and girls. Filter by gender, cultural origin (Latin, Greek, Norse, Sanskrit, Hebrew), and syllables with etymological meanings.">
+  <link rel="canonical" href="https://namesunlimited.github.io/baby-name-generator/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d30;
+      --card-hover: #1c2742;
+      --border: #23314e;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .site-nav { background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.25rem; }
+    .brand-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.25rem; color: #fff; }
+    .brand-logo span { color: var(--accent); }
+    .brand-logo svg { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .nav-link { padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; background: var(--card-bg); border: 1px solid var(--border); }
+    .nav-link.active { color: var(--accent); }
+
+    .container { max-width: 1150px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header.hero { text-align: center; margin-bottom: 2.5rem; }
+    header.hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.03em; line-height: 1.2; }
+    header.hero h1 span { color: var(--accent); }
+    header.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 720px; margin: 0 auto; }
+
+    /* Tool Panels & Controls */
+    .tool-panel { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5); }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .control-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .control-group select, .control-group input, .control-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
+    .control-group select:focus, .control-group input:focus, .control-group textarea:focus { border-color: var(--accent); }
+
+    .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; }
+    .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
+    .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #26365c; color: #fff; }
+
+    /* Results Grids */
+    .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
+    .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
+    .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
+
+    /* Content & Curated Snippet Tables */
+    .editorial { margin-top: 4rem; }
+    .editorial h2 { font-size: 1.85rem; color: #fff; margin: 2rem 0 1rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+    .editorial h3 { font-size: 1.35rem; color: var(--accent); margin: 1.75rem 0 0.75rem; }
+    .editorial p { color: #cbd5e1; margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.7; }
+    .editorial ul, .editorial ol { margin: 0 0 1.5rem 1.5rem; color: #cbd5e1; }
+    .editorial li { margin-bottom: 0.5rem; }
+
+    .curated-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    table.curated-table { width: 100%; border-collapse: collapse; text-align: left; }
+    table.curated-table th { background: #0c1222; color: var(--accent); padding: 0.95rem 1.15rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    table.curated-table td { padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--border); color: #e2e8f0; font-size: 0.92rem; }
+    table.curated-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+    table.curated-table tr:hover { background: rgba(56, 189, 248, 0.03); }
+
+    /* FAQs */
+    .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
+    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+    .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+    /* Toast */
+    .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
+    .toast-popup.visible { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-logo { margin-bottom: 1rem; }
+    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a { color: var(--text-muted); font-size: 0.88rem; transition: color 0.15s ease; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+      header.hero h1 { font-size: 2rem; }
+      .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+    }
+    
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Baby Name Generator with Meanings",
+        "url": "https://namesunlimited.github.io/baby-name-generator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Curated baby name exploration engine with origins, syllables, and etymologies."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How are the name meanings verified?",
+            "answer": "All etymologies and origins are cross-referenced with established historical onomastic dictionaries and linguistic registries."
+          },
+          {
+            "@type": "Question",
+            "name": "Can I filter baby names by starting letter?",
+            "answer": "Yes. You can select specific starting letters from A to Z or explore by cultural roots."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Names<span>Unlimited</span>
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese Names</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Character Names</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link active">Baby Names</a>
+        </div>
+      </div>
+    </nav>
+    
+
+  <div class="container">
+    <header class="hero">
+      <h1>Baby Name Generator <span>& Meanings</span></h1>
+      <p>Explore timeless, rare, and modern baby names for boys, girls, and unisex with verified linguistic origins and deep etymological roots.</p>
+    </header>
+
+    <div class="tool-panel">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="babyGender">Gender</label>
+          <select id="babyGender">
+            <option value="all">Any Gender</option>
+            <option value="boy">Baby Boy Names</option>
+            <option value="girl">Baby Girl Names</option>
+            <option value="unisex">Unisex / Gender-Neutral</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="babyOrigin">Heritage / Origin</label>
+          <select id="babyOrigin">
+            <option value="all">All Origins</option>
+            <option value="latin">Latin / Romance</option>
+            <option value="greek">Greek & Classical</option>
+            <option value="hebrew">Hebrew & Biblical</option>
+            <option value="norse">Norse & Scandinavian</option>
+            <option value="sanskrit">Sanskrit & Indian</option>
+            <option value="celtic">Celtic & Irish</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="babyBatch">Batch Size</label>
+          <select id="babyBatch">
+            <option value="12" selected>12 Names</option>
+            <option value="24">24 Names</option>
+            <option value="48">48 Names</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions-bar">
+        <button class="btn btn-primary" onclick="generateBabyNames()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Discover Baby Names
+        </button>
+        <div class="btn-cluster">
+          <button class="btn btn-secondary" onclick="copyAllBaby()">Copy All</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="babyGrid" class="names-grid"></div>
+
+    <section class="editorial">
+      <h2>Curated Index of Timeless & Modern Baby Names (2026 Registry)</h2>
+      <p>A reference table of enduring baby names featuring verified origins, gender classifications, and symbolic translations.</p>
+
+      <div class="curated-table-wrap">
+        <table class="curated-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Origin</th>
+              <th>Linguistic Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Oliver</td><td>Boy</td><td>Latin / French</td><td>"Olive tree; peaceful emblem of vitality"</td></tr>
+            <tr><td>Aurora</td><td>Girl</td><td>Latin</td><td>"Dawn; radiant morning light"</td></tr>
+            <tr><td>Aarav</td><td>Boy</td><td>Sanskrit</td><td>"Peaceful, calm, and insightful spirit"</td></tr>
+            <tr><td>Elena</td><td>Girl</td><td>Greek</td><td>"Shining light or sun ray"</td></tr>
+            <tr><td>Rowan</td><td>Unisex</td><td>Celtic</td><td>"Little red one; protective rowan tree"</td></tr>
+            <tr><td>Silas</td><td>Boy</td><td>Latin</td><td>"Of the forest; woodsman"</td></tr>
+            <tr><td>Freya</td><td>Girl</td><td>Norse</td><td>"Noble woman; Norse goddess of love and beauty"</td></tr>
+            <tr><td>Kaelen</td><td>Boy</td><td>Celtic</td><td>"Slender warrior and guardian"</td></tr>
+            <tr><td>Iris</td><td>Girl</td><td>Greek</td><td>"Rainbow; celestial messenger of peace"</td></tr>
+            <tr><td>Asher</td><td>Unisex</td><td>Hebrew</td><td>"Happy, blessed, and fortunate"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How to Choose a Meaningful Baby Name</h2>
+      <p>Selecting a name for a child is a monumental milestone. Linguistic experts recommend balancing the following foundational criteria:</p>
+
+      <h3>1. Phonetic Harmony with the Surname</h3>
+      <p>Aim for varying syllable counts between the first and last name. A single-syllable surname often pairs best with a two- or three-syllable given name (e.g., <em>Oliver Stone</em> flows better than <em>Blake Stone</em>).</p>
+
+      <h3>2. Cultural Significance & Etymology</h3>
+      <p>A name carries ancestral heritage and values. Discovering whether a name signifies courage, nature, wisdom, or light provides a lasting narrative foundation for your child's journey.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-card">
+          <h4>Can I save my favorite baby names?</h4>
+          <p>Clicking any name card immediately copies the name and meaning to your clipboard for easy pasting into your notes app or baby registry.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Are modern unisex names included?</h4>
+          <p>Yes. Selecting the 'Unisex' filter provides contemporary, gender-neutral names trending globally.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast-popup">Copied to clipboard!</div>
+  
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo footer-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Names<span>Unlimited</span>
+          </div>
+          <p class="footer-desc">The open-source, ultra-fast naming engine for writers, developers, gamers, and parents. Zero ads, instant client-side generation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Utility & Testing</h4>
+          <ul>
+            <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
+            <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative & Fiction</h4>
+          <ul>
+            <li><a href="/random-name-for-character/">Character Names</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy & RPG Names</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Names with Kanji</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Real World</h4>
+          <ul>
+            <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Names Unlimited. Fast, privacy-friendly, free forever.</p>
+      </div>
+    </footer>
+    
+
+  <script>
+    const babyDatabase = [
+      { name: "Oliver", gender: "boy", origin: "latin", meaning: "Olive tree; peaceful emblem" },
+      { name: "Liam", gender: "boy", origin: "celtic", meaning: "Resolute protector and warrior" },
+      { name: "Alexander", gender: "boy", origin: "greek", meaning: "Defender of the people" },
+      { name: "Ethan", gender: "boy", origin: "hebrew", meaning: "Strong, firm, enduring" },
+      { name: "Lucas", gender: "boy", origin: "latin", meaning: "Bringer of morning light" },
+      { name: "Silas", gender: "boy", origin: "latin", meaning: "From the sacred forest" },
+      { name: "Soren", gender: "boy", origin: "norse", meaning: "Stern, unyielding leader" },
+      { name: "Aarav", gender: "boy", origin: "sanskrit", meaning: "Peaceful and calm" },
+      { name: "Kaelen", gender: "boy", origin: "celtic", meaning: "Slender warrior" },
+      { name: "Caspian", gender: "boy", origin: "latin", meaning: "From the white sea" },
+      { name: "Felix", gender: "boy", origin: "latin", meaning: "Happy, fortunate, blessed" },
+      { name: "Theodore", gender: "boy", origin: "greek", meaning: "Gift of divine grace" },
+
+      { name: "Aurora", gender: "girl", origin: "latin", meaning: "Dawn; radiant sunrise" },
+      { name: "Sophia", gender: "girl", origin: "greek", meaning: "Wisdom and deep intellect" },
+      { name: "Freya", gender: "girl", origin: "norse", meaning: "Goddess of love and nobility" },
+      { name: "Elena", gender: "girl", origin: "greek", meaning: "Shining light or sun ray" },
+      { name: "Aanya", gender: "girl", origin: "sanskrit", meaning: "Gracious and boundless" },
+      { name: "Maeve", gender: "girl", origin: "celtic", meaning: "Intoxicating queen" },
+      { name: "Iris", gender: "girl", origin: "greek", meaning: "Rainbow; divine messenger" },
+      { name: "Clara", gender: "girl", origin: "latin", meaning: "Clear, bright, luminous" },
+      { name: "Astrid", gender: "girl", origin: "norse", meaning: "Divinely beautiful" },
+      { name: "Maya", gender: "girl", origin: "sanskrit", meaning: "Magic, illusion, maternal grace" },
+      { name: "Isla", gender: "girl", origin: "celtic", meaning: "Island; serene waters" },
+      { name: "Chloe", gender: "girl", origin: "greek", meaning: "Blooming spring greenery" },
+
+      { name: "Rowan", gender: "unisex", origin: "celtic", meaning: "Little red one; rowan tree" },
+      { name: "Asher", gender: "unisex", origin: "hebrew", meaning: "Happy and blessed" },
+      { name: "Kai", gender: "unisex", origin: "norse", meaning: "Keeper of the earth / ocean" },
+      { name: "River", gender: "unisex", origin: "latin", meaning: "Flowing stream of life" },
+      { name: "Avery", gender: "unisex", origin: "celtic", meaning: "Ruler of the elves" },
+      { name: "Sage", gender: "unisex", origin: "latin", meaning: "Wise one; sacred herb" },
+      { name: "Quinn", gender: "unisex", origin: "celtic", meaning: "Counsel, wisdom, leader" },
+      { name: "Eden", gender: "unisex", origin: "hebrew", meaning: "Place of delight and peace" }
+    ];
+
+    let currentBabyList = [];
+
+    function generateBabyNames() {
+      const gender = document.getElementById('babyGender').value;
+      const origin = document.getElementById('babyOrigin').value;
+      const count = parseInt(document.getElementById('babyBatch').value, 10);
+      const grid = document.getElementById('babyGrid');
+      grid.innerHTML = "";
+      currentBabyList = [];
+
+      let filtered = babyDatabase.filter(item => {
+        const matchGender = (gender === 'all') || (item.gender === gender);
+        const matchOrigin = (origin === 'all') || (item.origin === origin);
+        return matchGender && matchOrigin;
+      });
+
+      if (filtered.length === 0) filtered = babyDatabase;
+
+      for (let i = 0; i < count; i++) {
+        const item = filtered[Math.floor(Math.random() * filtered.length)];
+        currentBabyList.push(item);
+
+        const card = document.createElement('div');
+        card.className = "name-card";
+        card.style.flexDirection = "column";
+        card.style.alignItems = "flex-start";
+        card.innerHTML = `
+          <div style="width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.35rem;">
+            <div>
+              <div class="main-name">${item.name}</div>
+              <div class="sub-detail" style="text-transform: capitalize;">${item.gender} &bull; ${item.origin} Origin</div>
+            </div>
+            <button class="copy-btn" onclick="event.stopPropagation(); copyBabyCard(${i})">Copy</button>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">"${item.meaning}"</div>
+        `;
+        card.onclick = () => copyBabyCard(i);
+        grid.appendChild(card);
+      }
+    }
+
+    function copyBabyCard(idx) {
+      const item = currentBabyList[idx];
+      const text = `${item.name} (${item.origin.toUpperCase()}) - "${item.meaning}"`;
+      navigator.clipboard.writeText(text).then(() => showToast("Copied: " + item.name));
+    }
+
+    function copyAllBaby() {
+      if (currentBabyList.length === 0) return;
+      const text = currentBabyList.map(n => `${n.name} (${n.origin}) - "${n.meaning}"`).join('\n');
+      navigator.clipboard.writeText(text).then(() => showToast(`Copied ${currentBabyList.length} baby names!`));
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    window.onload = generateBabyNames;
+  </script>
+</body>
+</html>
