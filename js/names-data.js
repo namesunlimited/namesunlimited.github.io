@@ -1,4 +1,4 @@
-/* Names Unlimited — name database
+/* Names Unlimited - name database
    Curated lists of genuine, commonly used first and last names.
    Not tied to any real, specific individual when combined. */
 

@@ -4,13 +4,13 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fake Name Generator – Complete Random Identity & Persona Creator (Free)</title>
-  <meta name="description" content="Generate realistic fake identities, mock credentials, and dummy profiles for QA testing, form mockups, and writing. Filter by country and export batch CSV/JSON.">
+  <title>Fake Name Generator for Testing and Mockups | Names Unlimited</title>
+  <meta name="description" content="Free fake name generator for software testing and mockups. Sample profiles with usernames, emails, addresses and phone numbers; export as CSV or JSON.">
   <link rel="canonical" href="https://namesunlimited.github.io/fake-name-generator/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Fake Name Generator – Complete Random Identity & Persona Creator (Free)">
-  <meta property="og:description" content="Generate realistic fake identities, mock credentials, and dummy profiles for QA testing, form mockups, and writing. Filter by country and export batch CSV/JSON.">
+  <meta property="og:title" content="Fake Name Generator for Testing and Mockups | Names Unlimited">
+  <meta property="og:description" content="Free fake name generator for software testing and mockups. Sample profiles with usernames, emails, addresses and phone numbers; export as CSV or JSON.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/fake-name-generator/">
   <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
@@ -140,42 +140,85 @@
     .detail-label { color: var(--text-muted); font-weight: 500; }
     .detail-value { color: #e2e8f0; font-family: monospace; font-size: 0.85rem; }
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/unified-page-theme.css">
+
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Fake Name & Persona Generator",
-        "url": "https://namesunlimited.github.io/fake-name-generator/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "Enterprise-grade synthetic dummy identity generator for software development, QA testing, and database seeding."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Fake Name & Persona Generator",
+      "url": "https://namesunlimited.github.io/fake-name-generator/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are these generated fake identities real people?",
-            "answer": "No. All generated names, street addresses, phone numbers, and profile details are programmatically synthesized using randomized datasets."
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use these fake names for software testing and UI mockups?",
-            "answer": "Yes. These identities are designed specifically for QA testing, database seeding, graphic design mockups, and fiction writing."
-          },
-          {
-            "@type": "Question",
-            "name": "How do I export multiple generated names to Excel or CSV?",
-            "answer": "Select your desired batch size (up to 24 identities per click), click Generate, and use the Export CSV or Export JSON button."
+      "description": "Generates fake names and sample profiles for software testing, mockups and fiction."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the generated people real?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Each profile is assembled at random from short lists of first names, surnames, streets, cities and job titles. Any match with a real person, address or number is a coincidence, so never treat the data as real."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use fake names in software tests and mockups?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. That is what the tool is for. Use the data in test databases, UI mockups, demos, screenshots and sample forms, and follow the Terms of Service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the addresses, emails and phone numbers real?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but they can resemble real ones. Addresses combine a street and a city from lists. Emails use sample domains, and US numbers use a 555 prefix. Other countries use realistic formats, so do not send messages to, or call, generated contact details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a fake name to sign up for a real account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This tool is meant for testing, demos and fiction. Many services require accurate details, and giving false ones can break their rules. Do not use generated data to deceive or impersonate anyone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I download several profiles at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose 6, 12 or 24 identities, click Generate Identities, then use Export CSV or Export JSON. You can also save profiles to a shortlist and download it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my shortlist stored anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saved profiles are kept in your browser on your own device and are not sent to a server. Clearing the shortlist or your browser data removes them."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -196,7 +239,7 @@
   <div class="container">
     <header class="hero">
       <h1>Fake Name & <span>Random Persona</span> Generator</h1>
-      <p>Instantly generate realistic dummy profiles, test credentials, and localized identities for software developers, QA testers, UI mockups, and authors.</p>
+      <p>Generate fake names and sample profiles with usernames, emails, addresses and phone numbers for software testing, mockups, demos and fiction. Export the results as CSV or JSON.</p>
     </header>
 
     <!-- Shortlist Drawer -->
@@ -259,19 +302,34 @@
     <div id="resultsGrid" class="names-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));"></div>
 
     <section class="editorial">
-      <h2>Curated Sample Profiles by Region (Mock Reference Table)</h2>
-      <p>Below is a pre-indexed directory of verified sample identities formatted for immediate QA database testing, UI design wireframing, and localized character reference.</p>
-      
+      <h2>What is a fake name generator?</h2>
+      <p>A fake name generator creates sample people: a name plus matching details such as a username, email, address, phone number and job title. They are realistic enough to fill a form or a database, but they are not real individuals. Pick a gender and one of seven regions (United States, United Kingdom, India, Japan, Germany, Spain or France), choose a batch of 6, 12 or 24, and copy, save or export the results.</p>
+
+      <h2>When should you use a fake name for testing?</h2>
+      <p>Use a fake name whenever you need realistic placeholder data that is not tied to a real person. Common legitimate uses include:</p>
+      <ul>
+        <li><strong>Software testing and seed data.</strong> Fill registration flows, search indexes and pagination tests without using real customer records.</li>
+        <li><strong>UI mockups and demos.</strong> Show a design or a product with believable names instead of "Lorem Ipsum" or "John Doe".</li>
+        <li><strong>Sample forms and training.</strong> Give learners and reviewers example data they can enter safely.</li>
+        <li><strong>Fiction and games.</strong> Create names for novels, scripts and non-player characters. For named characters, the <a href="/random-name-for-character/" style="color:var(--accent);text-decoration:underline">character name generator</a> offers genre options.</li>
+      </ul>
+
+      <h2>What does each generated profile include?</h2>
+      <p>It works as a fake person generator for sample users and as a fake address generator for form tests, with the caveats below. Each profile has a full name, gender, country, city, street address, email address, username, phone number and job title. A few details about how the data is built help you use it correctly:</p>
+      <ul>
+        <li>Names come from short regional lists, so results repeat if you generate many batches.</li>
+        <li>Addresses are a random street number, a street name and a city from the chosen region. They are not checked against real addresses.</li>
+        <li>Emails use sample domains such as mockmail.dev. Domains like these may exist in the real world, so do not use them for accounts you care about.</li>
+        <li>US phone numbers use a 555 prefix. Numbers for other countries follow a realistic format and could belong to a real person.</li>
+        <li>Job titles are mostly office and technology roles.</li>
+      </ul>
+
+      <h2>Example sample profiles</h2>
+      <p>These example rows show the kind of data a profile contains. They are illustrations, not real individuals.</p>
       <div class="curated-table-wrap">
         <table class="curated-table">
           <thead>
-            <tr>
-              <th>Full Name</th>
-              <th>Gender</th>
-              <th>Region</th>
-              <th>Sample Username</th>
-              <th>Realistic Job Title</th>
-            </tr>
+            <tr><th>Full name</th><th>Gender</th><th>Region</th><th>Sample username</th><th>Example job title</th></tr>
           </thead>
           <tbody>
             <tr><td>Alexander Vance</td><td>Male</td><td>United States</td><td>alex_vance92</td><td>Full Stack Engineer</td></tr>
@@ -281,40 +339,48 @@
             <tr><td>Charlotte Dubois</td><td>Female</td><td>France</td><td>charlotte_db</td><td>Brand Strategy Director</td></tr>
             <tr><td>Maximilian Schmidt</td><td>Male</td><td>Germany</td><td>max_schmidt</td><td>Cybersecurity Analyst</td></tr>
             <tr><td>Sofia Morales</td><td>Female</td><td>Spain</td><td>sofia_mora</td><td>Product Marketing Manager</td></tr>
-            <tr><td>Priya Patel</td><td>Female</td><td>India</td><td>priya_designs</td><td>Data Quality Analyst</td></tr>
             <tr><td>Marcus Sterling</td><td>Male</td><td>United Kingdom</td><td>marcus_sterl</td><td>Infrastructure Architect</td></tr>
-            <tr><td>Yuki Tanaka</td><td>Female</td><td>Japan</td><td>yuki_t</td><td>Mobile App Developer</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Why Use a Fake Name & Persona Generator?</h2>
-      <p>Generating synthetic identities solves key technical, privacy, and creative challenges across industries. Unlike basic random string generators, a structured identity generator produces linguistically coherent names with matching email addresses, phone structures, and occupational titles.</p>
-      
-      <h3>1. Automated Software Testing & Seed Data</h3>
-      <p>Developers and quality assurance engineers frequently require realistic seed databases to stress-test registration flows, search indexing, and pagination. Hand-crafting test data is inefficient. This tool allows instant export of hundreds of mock profiles in structured CSV or JSON formats without relying on real customer information.</p>
+      <h2>How do you export or save test data?</h2>
+      <p>Use Copy All to paste a batch into a document, Export CSV for spreadsheets and database imports, or Export JSON for code and APIs. The shortlist feature lets you save favourite profiles across several batches and download them together. The shortlist is kept in your browser only.</p>
 
-      <h3>2. Privacy Shielding & Form Testing</h3>
-      <p>Entering personal details into unverified third-party services or demonstration apps exposes users to unwanted tracking and spam. Using throwaway, synthetic profiles ensures workflows can be validated while keeping real-world identities private.</p>
+      <h2>What should you not use fake identities for?</h2>
+      <p>Do not use generated data for fraud, impersonation, identity theft or to mislead people or services. The data is for testing, demonstrations and fiction. If a site or authority asks for accurate information, give it accurately.</p>
 
-      <h3>3. Screenwriting, Novel Writing, and NPC Generation</h3>
-      <p>Fiction authors, role-playing game masters, and screenwriters frequently require non-cliché names matching specific geographic regions. Having regional phonetic rules built into the generator ensures characters feel natural to their designated origins.</p>
+      <h2>Which tool should you use for other kinds of names?</h2>
+      <p>For a plain list of random first, last or full names, use the <a href="/random-name-for-baby/" style="color:var(--accent);text-decoration:underline">random name generator</a> (it works for any purpose, not only babies). To pick a name from your own list at random, use the <a href="/random-name-wheel/" style="color:var(--accent);text-decoration:underline">random name wheel</a>. For usernames, try the <a href="/random-username-generator/" style="color:var(--accent);text-decoration:underline">random username generator</a>. Read more in the guide to <a href="/guides/fake-names-for-testing-and-privacy/" style="color:var(--accent);text-decoration:underline">using fake names for testing and privacy</a>.</p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Are these generated fake identities real people?</h4>
-          <p>No. Every profile generated on Names Unlimited is synthesized algorithmically through randomized cross-combination of regional names, streets, and domains. Any match to real-world individuals is strictly coincidental.</p>
+          <h4>Are the generated people real?</h4>
+          <p>No. Each profile is assembled at random from short lists of first names, surnames, streets, cities and job titles. Any match with a real person, address or number is a coincidence, so never treat the data as real.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I use these fake names in commercial applications?</h4>
-          <p>Yes. All generated names and datasets are public domain and royalty-free. You can use them in mockups, templates, open-source software tests, and commercial video games without attribution.</p>
+          <h4>Can I use fake names in software tests and mockups?</h4>
+          <p>Yes. That is what the tool is for. Use the data in test databases, UI mockups, demos, screenshots and sample forms, and follow the Terms of Service.</p>
         </div>
         <div class="faq-card">
-          <h4>How do I download multiple records at once?</h4>
-          <p>Select your desired batch size from the dropdown (up to 24 at a time), click "Generate", and hit "Export CSV" or "Export JSON" to immediately download the dataset to your device.</p>
+          <h4>Are the addresses, emails and phone numbers real?</h4>
+          <p>No, but they can resemble real ones. Addresses combine a street and a city from lists. Emails use sample domains, and US numbers use a 555 prefix. Other countries use realistic formats, so do not send messages to, or call, generated contact details.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Can I use a fake name to sign up for a real account?</h4>
+          <p>This tool is meant for testing, demos and fiction. Many services require accurate details, and giving false ones can break their rules. Do not use generated data to deceive or impersonate anyone.</p>
+        </div>
+        <div class="faq-card">
+          <h4>How do I download several profiles at once?</h4>
+          <p>Choose 6, 12 or 24 identities, click Generate Identities, then use Export CSV or Export JSON. You can also save profiles to a shortlist and download it.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Is my shortlist stored anywhere?</h4>
+          <p>Saved profiles are kept in your browser on your own device and are not sent to a server. Clearing the shortlist or your browser data removes them.</p>
         </div>
       </div>
+
     </section>
   </div>
 
@@ -327,14 +393,14 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             Names<span>Unlimited</span>
           </div>
-          <p class="footer-desc">The high-velocity, privacy-first naming suite engineered for authors, software engineers, tabletop gamers, and creators worldwide. Powered by open algorithmic phonetics.</p>
+          <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
             <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
           </ul>
         </div>
@@ -349,16 +415,16 @@
         <div class="footer-col">
           <h4>Platform & Legal</h4>
           <ul>
-            <li><a href="/about/">About Us & Methodology</a></li>
+            <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
-            <li><a href="/contact/">Contact & Feedback</a></li>
+            <li><a href="/contact/">Contact</a></li>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Names Unlimited. Zero tracking cookies. 100% client-side computation. All rights reserved.</p>
+        <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
     

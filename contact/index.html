@@ -4,13 +4,13 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us – Names Unlimited</title>
-  <meta name="description" content="Get in touch with the Names Unlimited development team for feature requests, name dataset submissions, and feedback.">
+  <title>Contact Names Unlimited | Feedback and Suggestions</title>
+  <meta name="description" content="How to report a mistake, suggest a name generator or ask a question about Names Unlimited.">
   <link rel="canonical" href="https://namesunlimited.github.io/contact/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Contact Us – Names Unlimited">
-  <meta property="og:description" content="Get in touch with the Names Unlimited development team for feature requests, name dataset submissions, and feedback.">
+  <meta property="og:title" content="Contact Names Unlimited | Feedback and Suggestions">
+  <meta property="og:description" content="How to report a mistake, suggest a name generator or ask a question about Names Unlimited.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/contact/">
   <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
@@ -134,6 +134,12 @@
     .form-group input, .form-group textarea { width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/unified-page-theme.css">
+
 </head>
 <body>
   
@@ -151,11 +157,14 @@
     
   <div class="container">
     <header class="hero">
-      <h1>Get in <span>Touch</span></h1>
-      <p>Have a suggestion for a new generator, cultural dialect, or feature? We welcome feedback from writers and engineers.</p>
+      <h1>Contact <span>Names Unlimited</span></h1>
+      <p>Report a mistake, suggest a name generator or ask a question about the site.</p>
     </header>
 
     <div class="contact-box">
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;color:#cbd5e1;font-size:0.95rem;line-height:1.6;">
+        <strong style="color:#fff;">How to reach us.</strong> The form below does not send your message anywhere, and no email address is published. To report a bug, suggest a tool or ask a question, open an issue on the project's <a href="https://github.com/namesunlimited/namesunlimited.github.io/issues/new" rel="noopener" style="color:var(--accent);text-decoration:underline">public GitHub issues page</a>. Issues are public, so please do not include personal details.
+      </div>
       <form onsubmit="handleContact(event)">
         <div class="form-group">
           <label for="contactName">Your Name</label>
@@ -170,11 +179,11 @@
           <textarea id="contactMessage" rows="5" required placeholder="Describe the feature or name category you would like to see added..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%;">
-          Send Feedback Message
+          Submit (not sent, use GitHub link above)
         </button>
       </form>
       <div id="contactConfirm" style="display: none; text-align: center; color: var(--success); font-weight: 700; margin-top: 1rem;">
-        Thank you! Your feedback has been recorded locally.
+        This form does not send messages. Please use the GitHub issues link above.
       </div>
     </div>
   </div>
@@ -186,14 +195,14 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             Names<span>Unlimited</span>
           </div>
-          <p class="footer-desc">The high-velocity, privacy-first naming suite engineered for authors, software engineers, tabletop gamers, and creators worldwide. Powered by open algorithmic phonetics.</p>
+          <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
             <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
           </ul>
         </div>
@@ -208,16 +217,16 @@
         <div class="footer-col">
           <h4>Platform & Legal</h4>
           <ul>
-            <li><a href="/about/">About Us & Methodology</a></li>
+            <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
-            <li><a href="/contact/">Contact & Feedback</a></li>
+            <li><a href="/contact/">Contact</a></li>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Names Unlimited. Zero tracking cookies. 100% client-side computation. All rights reserved.</p>
+        <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
     

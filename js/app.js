@@ -1,4 +1,4 @@
-/* Names Unlimited — shared generator UI logic
+/* Names Unlimited - shared generator UI logic
    Each page includes a <div data-generator> block configured via
    data-* attributes. This script wires up the controls, runs the
    generator, and renders the ledger output. */
@@ -125,7 +125,7 @@
           copyBtn.textContent = "Copied ✓";
           setTimeout(() => (copyBtn.textContent = old), 1400);
         } catch (e) {
-          alert("Couldn't copy automatically — select and copy the list manually.");
+          alert("Couldn't copy automatically. Select and copy the list manually.");
         }
       });
     }

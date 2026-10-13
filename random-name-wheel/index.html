@@ -4,13 +4,13 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Name Wheel – Interactive Spinner with Sound & Confetti (Free)</title>
-  <meta name="description" content="Spin the wheel to pick random names, raffle winners, classroom choices, and giveaway winners. Real ticking sound effects, victory fanfare, and confetti celebrations!">
+  <title>Random Name Picker Wheel | Names Unlimited</title>
+  <meta name="description" content="Free random name picker wheel. Paste your names, spin to choose, remove winners to avoid repeats. Presets for classrooms, raffles and decisions.">
   <link rel="canonical" href="https://namesunlimited.github.io/random-name-wheel/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Random Name Wheel – Interactive Spinner with Sound & Confetti (Free)">
-  <meta property="og:description" content="Spin the wheel to pick random names, raffle winners, classroom choices, and giveaway winners. Real ticking sound effects, victory fanfare, and confetti celebrations!">
+  <meta property="og:title" content="Random Name Picker Wheel | Names Unlimited">
+  <meta property="og:description" content="Free random name picker wheel. Paste your names, spin to choose, remove winners to avoid repeats. Presets for classrooms, raffles and decisions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/random-name-wheel/">
   <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
@@ -155,37 +155,85 @@
     .winner-announcement .winner-name { font-size: 2.2rem; font-weight: 900; color: #fff; margin: 0.35rem 0; letter-spacing: -0.02em; }
     @keyframes zoomWinner { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/unified-page-theme.css">
+
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Random Name Wheel Spinner with Sound & Confetti",
-        "url": "https://namesunlimited.github.io/random-name-wheel/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "Gamified random name spinner featuring physics deceleration, audio tick synthesizer, and victory confetti."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Random Name Wheel Spinner with Sound & Confetti",
+      "url": "https://namesunlimited.github.io/random-name-wheel/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does the sound work without downloading external audio files?",
-            "answer": "We utilize the browser's native Web Audio API to synthesize authentic analog click frequencies and victory fanfares in real-time."
-          },
-          {
-            "@type": "Question",
-            "name": "Is the wheel outcome mathematically fair?",
-            "answer": "Yes. Each rotation calculates dynamic randomized velocities with cubic friction curves, ensuring each slice has an identical chance to win."
+      "description": "Spinning wheel that picks a random name from a list you provide."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the random name picker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It is free to use and does not need an account. You can create and spin as many lists as you like."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the wheel truly random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every name gets an equal slice, and the spin starts with a random speed that slows until a wedge stops under the pointer. It uses the browser’s standard random function, which is fine for classrooms, games and casual picks. For prize draws with legal requirements, use a method that meets your rules and keep a record of the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pick names without repeats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After each spin, click Remove Winner. The name is taken out of the list, so it cannot be picked again until you add it back."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my names saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The list is stored in your browser on your own device so it is still there after a reload. It is not sent to a server. Clear your browser data to remove it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mute the sound?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click the Sound button to switch the audio on or off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are some names shortened on the wheel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Long names are shortened so they fit on a wedge. The winner panel shows the name from your list."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -207,8 +255,8 @@
 
   <div class="container">
     <header class="hero">
-      <h1>Random Name Wheel <span>& Spinner</span></h1>
-      <p>The gamified random name picker with synthesized physics, ticking audio sound effects, and confetti celebrations. Designed for giveaways, raffles, and classrooms.</p>
+      <h1>Random Name Picker <span>Wheel Spinner</span></h1>
+      <p>Paste a list of names, spin the wheel and pick one at random. Remove winners as you go, shuffle the list, and use presets for quick classroom or yes/no picks.</p>
     </header>
 
     <div class="wheel-app-layout">
@@ -277,49 +325,71 @@ Julian Thorne</textarea>
 
     <!-- Editorial & Static Snippet Section -->
     <section class="editorial">
-      <h2>Curated Preset Templates for Giveaways and Classroom Raffles</h2>
-      <p>Below is a quick reference table of standard wheel templates for teachers, content streamers, and event coordinators.</p>
+      <h2>What is a random name picker?</h2>
+      <p>A random name picker, also called a random name selector or chooser, picks one entry from a list without any bias from you. Type or paste your names, one per line, and press Spin. The wheel turns and stops on a winner, with optional sound and a confetti effect. It works for names, numbers or any short text.</p>
+      <ol>
+        <li>Enter your names in the box, one per line, or load a preset (Classroom, Numbers 1 to 20, or Yes / No / Maybe).</li>
+        <li>Press Spin Wheel and wait for the wheel to stop.</li>
+        <li>Click Remove Winner to take the name off the list, or Spin Again to keep it in.</li>
+        <li>Use Shuffle to reorder the list, and the Sound button to turn audio on or off.</li>
+      </ol>
 
+      <h2>How does the random name wheel work?</h2>
+      <p>Each name gets an equal slice of the wheel. When you spin, the wheel starts at a randomly chosen speed and slows down until it stops, and the name under the pointer wins. The randomness comes from your browser's standard random function, so it suits classrooms, games and casual picks rather than regulated prize draws.</p>
+      <p>Your list is saved in your browser on your device so it survives a reload. It is not sent to a server.</p>
+
+      <h2>When is a name wheel useful?</h2>
+      <p>A wheel is useful whenever a group wants a pick that everyone can see is fair. Here are common situations and a tip for each.</p>
       <div class="curated-table-wrap">
         <table class="curated-table">
           <thead>
-            <tr>
-              <th>Template Category</th>
-              <th>Common Use Case</th>
-              <th>Recommended Entry Size</th>
-              <th>Fairness Mechanism</th>
-            </tr>
+            <tr><th>Use</th><th>Tip</th></tr>
           </thead>
           <tbody>
-            <tr><td>Classroom Cold Calling</td><td>Student presentation order & recitation</td><td>15 - 35 Students</td><td>Remove winner upon call</td></tr>
-            <tr><td>Secret Santa Gift Exchange</td><td>Holiday gift giver pairing</td><td>8 - 25 Participants</td><td>Shuffle before each spin</td></tr>
-            <tr><td>Livestream Giveaway</td><td>Chat subscriber raffle</td><td>50 - 200 Handles</td><td>Cryptographic angular RNG</td></tr>
-            <tr><td>Chore / Task Assigning</td><td>Household chore delegation</td><td>4 - 8 Family Members</td><td>Equal slice weighting</td></tr>
-            <tr><td>Team Standup Picker</td><td>Scrum agile meeting speaking sequence</td><td>5 - 12 Engineers</td><td>Non-repeating sequence</td></tr>
+            <tr><td>Classroom turns</td><td>Remove the winner after each spin so every student is called once before anyone repeats.</td></tr>
+            <tr><td>Secret Santa pairing</td><td>A wheel picks one name at a time. Draw privately so nobody sees who has whom, and re-draw if someone gets themselves.</td></tr>
+            <tr><td>Giveaway or raffle</td><td>Paste the entries, show the screen, and state the rules first. Check any legal rules for prize draws in your area.</td></tr>
+            <tr><td>Chores and tasks</td><td>List the tasks as entries, or list the people and spin once per task.</td></tr>
+            <tr><td>Meeting speaking order</td><td>Spin with Remove Winner on until everyone has a slot, or use Shuffle to get a full order at once.</td></tr>
+            <tr><td>Quick decisions</td><td>Use the Yes / No / Maybe preset or enter your own options.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>How the Random Name Wheel Beats Traditional Competitors</h2>
-      <p>Legacy spinner sites like Wheel of Names rely on external network requests and tracking scripts that introduce audio stutter and page slowdown. Our wheel solves this with zero latency:</p>
+      <h2>How do you pick a random name without repeats?</h2>
+      <p>Use Remove Winner after every spin. Each winner leaves the list, so the next spin can only land on someone new. When you want the whole order at once, press Shuffle and read the list from top to bottom instead.</p>
 
-      <h3>1. Web Audio API Click Synthesizer</h3>
-      <p>Rather than loading heavy MP3 audio assets over high-latency connections, our wheel synthesizes audio waveforms directly on your hardware using pure JavaScript <code>AudioContext</code>. Each wedge crossing triggers an authentic mechanical click with zero audio delay.</p>
-
-      <h3>2. Dynamic High-Performance Confetti Particle Engine</h3>
-      <p>Upon resting on a winning wedge, a hardware-accelerated 2D canvas particle explosion generates over 120 individualized velocity-driven confetti ribbons across the viewport, giving users an exciting and memorable winning experience.</p>
+      <h2>Other ways to get random names</h2>
+      <p>If you want invented names instead of picking from your own list, use the <a href="/random-name-for-baby/" style="color:var(--accent);text-decoration:underline">random name generator</a>, the <a href="/fake-name-generator/" style="color:var(--accent);text-decoration:underline">fake name generator</a> for sample profiles, or the <a href="/random-username-generator/" style="color:var(--accent);text-decoration:underline">random username generator</a> for handles.</p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Is this random name spinner completely free?</h4>
-          <p>Yes. There are no fees, subscriptions, or login requirements. You can create and spin as many custom lists as you need.</p>
+          <h4>Is the random name picker free?</h4>
+          <p>Yes. It is free to use and does not need an account. You can create and spin as many lists as you like.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I mute the sound effects?</h4>
-          <p>Yes. Click the 'Sound ON' button in the controls panel to toggle audio mute at any time.</p>
+          <h4>Is the wheel truly random?</h4>
+          <p>Every name gets an equal slice, and the spin starts with a random speed that slows until a wedge stops under the pointer. It uses the browser’s standard random function, which is fine for classrooms, games and casual picks. For prize draws with legal requirements, use a method that meets your rules and keep a record of the result.</p>
+        </div>
+        <div class="faq-card">
+          <h4>How do I pick names without repeats?</h4>
+          <p>After each spin, click Remove Winner. The name is taken out of the list, so it cannot be picked again until you add it back.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Are my names saved?</h4>
+          <p>The list is stored in your browser on your own device so it is still there after a reload. It is not sent to a server. Clear your browser data to remove it.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Can I mute the sound?</h4>
+          <p>Yes. Click the Sound button to switch the audio on or off.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Why are some names shortened on the wheel?</h4>
+          <p>Long names are shortened so they fit on a wedge. The winner panel shows the name from your list.</p>
         </div>
       </div>
+
     </section>
   </div>
 
@@ -332,14 +402,14 @@ Julian Thorne</textarea>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             Names<span>Unlimited</span>
           </div>
-          <p class="footer-desc">The high-velocity, privacy-first naming suite engineered for authors, software engineers, tabletop gamers, and creators worldwide. Powered by open algorithmic phonetics.</p>
+          <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
             <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
           </ul>
         </div>
@@ -354,16 +424,16 @@ Julian Thorne</textarea>
         <div class="footer-col">
           <h4>Platform & Legal</h4>
           <ul>
-            <li><a href="/about/">About Us & Methodology</a></li>
+            <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
-            <li><a href="/contact/">Contact & Feedback</a></li>
+            <li><a href="/contact/">Contact</a></li>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Names Unlimited. Zero tracking cookies. 100% client-side computation. All rights reserved.</p>
+        <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
     

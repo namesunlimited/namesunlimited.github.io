@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baby Name Generator – Boy, Girl & Unisex Names with Meanings</title>
-  <meta name="description" content="Discover meaningful baby names for boys and girls. Filter by gender, cultural origin (Latin, Greek, Norse, Sanskrit, Hebrew), and syllables with etymological meanings.">
+  <title>Baby Name Generator with Meanings | Names Unlimited</title>
+  <meta name="description" content="Browse baby names with origins and short meanings. Filter boy, girl and unisex names by Latin, Greek, Hebrew, Norse, Sanskrit or Celtic roots.">
   <link rel="canonical" href="https://namesunlimited.github.io/baby-name-generator/">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -112,37 +112,85 @@
     }
     
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/unified-page-theme.css">
+
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Baby Name Generator with Meanings",
-        "url": "https://namesunlimited.github.io/baby-name-generator/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "Curated baby name exploration engine with origins, syllables, and etymologies."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Baby Name Generator with Meanings",
+      "url": "https://namesunlimited.github.io/baby-name-generator/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How are the name meanings verified?",
-            "answer": "All etymologies and origins are cross-referenced with established historical onomastic dictionaries and linguistic registries."
-          },
-          {
-            "@type": "Question",
-            "name": "Can I filter baby names by starting letter?",
-            "answer": "Yes. You can select specific starting letters from A to Z or explore by cultural roots."
+      "description": "Shows baby names with origin and short meaning, filtered by gender and heritage."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you choose a baby name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shortlist names you like the sound of, test them with your surname, nicknames and initials, then consider meaning and family significance. Giving yourself a few days with a short list usually makes the final choice clearer."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "How important is the meaning of a baby name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on what matters to you. Meaning can make a name feel personal, but many parents choose primarily for sound, heritage or family connection. Meanings are often approximate, so use them as one factor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I see the same name more than once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool picks from a set of 32 names, and each pick is random, so a batch of 12 to 48 can include repeats, especially with narrow filters. For longer lists, try the random baby name generator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are gender-neutral baby names?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are names used for any gender, such as Rowan, Asher, Kai, River, Avery, Sage, Quinn and Eden. Select Unisex in the gender filter to see them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do the origins and meanings come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are short, commonly cited summaries written for this tool. They are not a scholarly source, and many names have more than one proposed origin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I copy names with their meanings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click a name card to copy it with its meaning, or use Copy All to copy the whole batch."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -163,7 +211,7 @@
   <div class="container">
     <header class="hero">
       <h1>Baby Name Generator <span>& Meanings</span></h1>
-      <p>Explore timeless, rare, and modern baby names for boys, girls, and unisex with verified linguistic origins and deep etymological roots.</p>
+      <p>Browse baby names with their origin and a short meaning. Filter by boy, girl or unisex and by heritage, and copy the names you like.</p>
     </header>
 
     <div class="tool-panel">
@@ -213,54 +261,82 @@
     <div id="babyGrid" class="names-grid"></div>
 
     <section class="editorial">
-      <h2>Curated Index of Timeless & Modern Baby Names (2026 Registry)</h2>
-      <p>A reference table of enduring baby names featuring verified origins, gender classifications, and symbolic translations.</p>
+      <h2>What does the baby name generator do?</h2>
+      <p>It shows baby names together with their origin and a short meaning. Filter by boy, girl or unisex and by heritage (Latin, Greek, Hebrew, Norse, Sanskrit or Celtic), choose a batch of 12, 24 or 48, and click a name to copy it with its meaning.</p>
+      <p>The tool works from a small built-in set of 32 names, so batches repeat names, and a narrow filter such as boy plus Sanskrit will keep returning the same few. If you want a long, shuffled list of first names to browse, use the <a href="/random-name-for-baby/" style="color:var(--accent);text-decoration:underline">random baby name generator</a>, or go straight to <a href="/random-boy-names/" style="color:var(--accent);text-decoration:underline">boy names</a> or <a href="/random-girl-names/" style="color:var(--accent);text-decoration:underline">girl names</a>.</p>
 
+      <h2>How do you choose a baby name?</h2>
+      <p>Start with names you genuinely like the sound of, then test each one against your surname, likely nicknames and initials, and only then weigh meaning and family connections. A simple order of steps keeps the list manageable:</p>
+      <ol>
+        <li><strong>Collect.</strong> Generate a few batches and note every name that makes you pause.</li>
+        <li><strong>Say it with the surname.</strong> Read the full name aloud. Names often flow better when the first and last name differ in length or rhythm, though there is no fixed rule.</li>
+        <li><strong>Check the nicknames and initials.</strong> Consider what the name is likely to be shortened to and what the initials spell.</li>
+        <li><strong>Look at meaning and origin.</strong> Use these as one factor, and confirm anything that matters to you with more than one source.</li>
+        <li><strong>Live with it.</strong> Keep a short list for a few days before deciding.</li>
+      </ol>
+
+      <h2>How important is the meaning of a baby name?</h2>
+      <p>Meaning matters as much as you want it to. Some parents choose a name for what it means, others for how it sounds or who it honours. A meaning can make a name feel personal, but it rarely decides how the name will be heard or used day to day.</p>
+
+      <h2>How reliable are baby name meanings and origins?</h2>
+      <p>Treat them as approximate. Many names have several proposed origins, and a short meaning is a simplification. Newer or modern-style names often have loosely attributed origins. The meanings in this tool are short, commonly cited summaries, so check a second source for any name you are seriously considering, and ask relatives about family traditions.</p>
+
+      <h2>Examples with origin and meaning</h2>
+      <p>These are examples of the kind of information the generator shows. The meanings are commonly cited summaries, not definitive translations.</p>
       <div class="curated-table-wrap">
         <table class="curated-table">
           <thead>
-            <tr>
-              <th>Name</th>
-              <th>Gender</th>
-              <th>Origin</th>
-              <th>Linguistic Meaning</th>
-            </tr>
+            <tr><th>Name</th><th>Gender</th><th>Origin</th><th>Commonly cited meaning</th></tr>
           </thead>
           <tbody>
-            <tr><td>Oliver</td><td>Boy</td><td>Latin / French</td><td>"Olive tree; peaceful emblem of vitality"</td></tr>
-            <tr><td>Aurora</td><td>Girl</td><td>Latin</td><td>"Dawn; radiant morning light"</td></tr>
-            <tr><td>Aarav</td><td>Boy</td><td>Sanskrit</td><td>"Peaceful, calm, and insightful spirit"</td></tr>
-            <tr><td>Elena</td><td>Girl</td><td>Greek</td><td>"Shining light or sun ray"</td></tr>
-            <tr><td>Rowan</td><td>Unisex</td><td>Celtic</td><td>"Little red one; protective rowan tree"</td></tr>
-            <tr><td>Silas</td><td>Boy</td><td>Latin</td><td>"Of the forest; woodsman"</td></tr>
-            <tr><td>Freya</td><td>Girl</td><td>Norse</td><td>"Noble woman; Norse goddess of love and beauty"</td></tr>
-            <tr><td>Kaelen</td><td>Boy</td><td>Celtic</td><td>"Slender warrior and guardian"</td></tr>
-            <tr><td>Iris</td><td>Girl</td><td>Greek</td><td>"Rainbow; celestial messenger of peace"</td></tr>
-            <tr><td>Asher</td><td>Unisex</td><td>Hebrew</td><td>"Happy, blessed, and fortunate"</td></tr>
+            <tr><td>Oliver</td><td>Boy</td><td>Latin or French</td><td>Commonly linked to the olive tree; the origin is debated</td></tr>
+            <tr><td>Aurora</td><td>Girl</td><td>Latin</td><td>Dawn</td></tr>
+            <tr><td>Aarav</td><td>Boy</td><td>Sanskrit-derived</td><td>Often given as "peaceful" or "calm"</td></tr>
+            <tr><td>Elena</td><td>Girl</td><td>Greek</td><td>A form of Helen; the meaning is debated, often given as "shining light"</td></tr>
+            <tr><td>Rowan</td><td>Unisex</td><td>Irish or Celtic</td><td>Linked to the rowan tree and to an Irish name meaning "little red one"</td></tr>
+            <tr><td>Silas</td><td>Boy</td><td>Latin</td><td>Short form of Silvanus, "of the forest"</td></tr>
+            <tr><td>Freya</td><td>Girl</td><td>Old Norse</td><td>Means "lady"; also the name of a Norse goddess</td></tr>
+            <tr><td>Iris</td><td>Girl</td><td>Greek</td><td>Rainbow</td></tr>
+            <tr><td>Asher</td><td>Unisex</td><td>Hebrew</td><td>Often given as "happy" or "blessed"</td></tr>
+            <tr><td>Theodore</td><td>Boy</td><td>Greek</td><td>"Gift of God"</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>How to Choose a Meaningful Baby Name</h2>
-      <p>Selecting a name for a child is a monumental milestone. Linguistic experts recommend balancing the following foundational criteria:</p>
+      <h2>What are unisex names and gender-neutral baby names?</h2>
+      <p>Unisex names, also called gender-neutral baby names, are names used for both boys and girls. Choose "Unisex / Gender-Neutral" in the filter to see examples such as Rowan, Asher, Kai, River, Avery, Sage, Quinn and Eden. How strongly a name is associated with one gender varies by country and changes over time, so check how it is used where you live.</p>
 
-      <h3>1. Phonetic Harmony with the Surname</h3>
-      <p>Aim for varying syllable counts between the first and last name. A single-syllable surname often pairs best with a two- or three-syllable given name (e.g., <em>Oliver Stone</em> flows better than <em>Blake Stone</em>).</p>
-
-      <h3>2. Cultural Significance & Etymology</h3>
-      <p>A name carries ancestral heritage and values. Discovering whether a name signifies courage, nature, wisdom, or light provides a lasting narrative foundation for your child's journey.</p>
+      <h2>How can you compare similar baby names?</h2>
+      <p>Compare them side by side: write the full name for each option, say each one aloud, note the likely nickname, and look at spelling variants. If two names are close, the one that feels easier to say and spell for your family and community is often the better fit.</p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Can I save my favorite baby names?</h4>
-          <p>Clicking any name card immediately copies the name and meaning to your clipboard for easy pasting into your notes app or baby registry.</p>
+          <h4>How do you choose a baby name?</h4>
+          <p>Shortlist names you like the sound of, test them with your surname, nicknames and initials, then consider meaning and family significance. Giving yourself a few days with a short list usually makes the final choice clearer.</p>
         </div>
         <div class="faq-card">
-          <h4>Are modern unisex names included?</h4>
-          <p>Yes. Selecting the 'Unisex' filter provides contemporary, gender-neutral names trending globally.</p>
+          <h4>How important is the meaning of a baby name?</h4>
+          <p>It depends on what matters to you. Meaning can make a name feel personal, but many parents choose primarily for sound, heritage or family connection. Meanings are often approximate, so use them as one factor.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Why do I see the same name more than once?</h4>
+          <p>The tool picks from a set of 32 names, and each pick is random, so a batch of 12 to 48 can include repeats, especially with narrow filters. For longer lists, try the random baby name generator.</p>
+        </div>
+        <div class="faq-card">
+          <h4>What are gender-neutral baby names?</h4>
+          <p>They are names used for any gender, such as Rowan, Asher, Kai, River, Avery, Sage, Quinn and Eden. Select Unisex in the gender filter to see them.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Where do the origins and meanings come from?</h4>
+          <p>They are short, commonly cited summaries written for this tool. They are not a scholarly source, and many names have more than one proposed origin.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Can I copy names with their meanings?</h4>
+          <p>Yes. Click a name card to copy it with its meaning, or use Copy All to copy the whole batch.</p>
         </div>
       </div>
+
     </section>
   </div>
 
@@ -273,14 +349,14 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             Names<span>Unlimited</span>
           </div>
-          <p class="footer-desc">The open-source, ultra-fast naming engine for writers, developers, gamers, and parents. Zero ads, instant client-side generation.</p>
+          <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Utility & Testing</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -309,7 +385,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Names Unlimited. Fast, privacy-friendly, free forever.</p>
+        <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
     

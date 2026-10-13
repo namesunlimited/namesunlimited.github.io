@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japanese Name Generator – Authentic Names with Kanji & Meanings</title>
-  <meta name="description" content="Generate authentic Japanese names for characters, anime, and manga. Includes accurate Kanji characters, Romaji pronunciations, and etymological meanings.">
+  <title>Japanese Name Generator with Kanji | Names Unlimited</title>
+  <meta name="description" content="Free Japanese name generator with kanji, romaji and meanings. Male, female and unisex names with Japanese last names, for anime and manga characters.">
   <link rel="canonical" href="https://namesunlimited.github.io/japanese-name-generator/">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -114,42 +114,85 @@
     .kanji-display { font-size: 1.45rem; font-weight: 700; color: var(--accent); margin-bottom: 0.2rem; font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; }
     .meaning-display { font-size: 0.88rem; color: var(--text-muted); font-style: italic; }
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/unified-page-theme.css">
+
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Japanese Name Generator with Kanji & Meanings",
-        "url": "https://namesunlimited.github.io/japanese-name-generator/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "Authentic Japanese name generator providing Japanese Kanji characters, romanized script, and literal English translations."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Japanese Name Generator with Kanji & Meanings",
+      "url": "https://namesunlimited.github.io/japanese-name-generator/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do these Japanese names follow real kanji conventions?",
-            "answer": "Yes. Each generated identity pairs culturally attested surnames (myōji) with authentic given names (namae) and accurate Jinmeiyō Kanji combinations."
-          },
-          {
-            "@type": "Question",
-            "name": "How is the naming order formatted?",
-            "answer": "Names are displayed in Western order (Given Name followed by Surname) with Romaji pronunciation and native Japanese Kanji."
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use these names for anime, manga, and gaming characters?",
-            "answer": "Yes. These names are ideal for novelists, manga artists, VTubers, and game designers looking for culturally authentic character naming."
+      "description": "Generates Japanese names with kanji, romaji and given-name meanings."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do Japanese names work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Japanese name is written with the family name first and the given name second, normally in kanji. The meaning comes from the kanji chosen, and the same sound can be written with different kanji."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Japanese names have one fixed meaning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The meaning depends on the kanji used. A short English phrase is only a simplification, so the same pronunciation can carry different meanings in different families."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the family name or the given name first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Japan the family name comes first. In English-language writing the order is often reversed, so this generator shows the kanji with the family name first and the romaji with the given name first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these names suitable for anime and manga characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. They are real-sounding Japanese names that suit anime, manga, games and fiction. They are selected examples, so check readings and meanings if accuracy matters for published work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I copy both the romaji and the kanji?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click a card or its Copy button to copy the romaji name, the kanji and the meaning together, or use Copy All for the whole batch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do the kanji in names represent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kanji are characters that originated in Chinese writing. In names they often stand for nature, seasons, virtues or hopes for the child."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -170,7 +213,7 @@
   <div class="container">
     <header class="hero">
       <h1>Japanese Name Generator <span>with Kanji</span></h1>
-      <p>Generate authentic male, female, and clan names complete with genuine Kanji calligraphy, romanized spelling, and literal English meanings.</p>
+      <p>Generate Japanese names with kanji, romaji and a short meaning for each given name. Choose male, female or unisex names for anime and manga characters, stories or naming inspiration.</p>
     </header>
 
     <div class="tool-panel">
@@ -216,58 +259,96 @@
     <div id="jpResultsGrid" class="names-grid"></div>
 
     <section class="editorial">
-      <h2>Curated Table: Top Japanese Names with Meaning and Kanji</h2>
-      <p>A reference catalog of classic and modern Japanese given names, showing authentic kanji combinations and etymological origins.</p>
+      <h2>What does this Japanese name generator do?</h2>
+      <p>It creates Japanese-style full names and shows each one in kanji and in romaji, with a short meaning for the given name. Choose male, female or unisex given names and a batch of 12, 24 or 48 names, then click a card to copy the romaji, the kanji and the meaning together.</p>
+      <p>The names come from a small built-in list (12 male, 12 female and 6 unisex given names, and 12 common surnames) that is recombined at random. It is a source of ideas for characters, anime and manga projects, and stories, not a complete or official naming database.</p>
 
+      <h2>How do Japanese names work?</h2>
+      <p>A Japanese name has a family name followed by a given name, and it is usually written in kanji. The generator shows both orders: the kanji line puts the family name first, the way a name is written in Japan, while the romaji line puts the given name first, the way it is often written in English.</p>
+      <h3>Why does the same name have different meanings?</h3>
+      <p>The meaning of a Japanese name depends on the kanji used, not only on how it sounds. The same pronunciation can be written with different characters, and parents often choose the characters for both sound and meaning. This generator lists <strong>Aoi</strong> twice for that reason: 葵 refers to a hollyhock-type flower, while 碧 refers to a blue-green colour.</p>
+      <p>A short English phrase can only summarise a name. Treat the meaning shown on each card as one common reading of its kanji, not the single correct translation.</p>
+      <h3>How do kanji readings affect a name?</h3>
+      <p>One kanji can be read several ways, and names sometimes use unusual readings. That is why a name written in kanji cannot always be read correctly by guessing, and why Japanese forms often ask for a name in kana (the phonetic script) as well.</p>
+
+      <h2>Examples from the generator</h2>
+      <p>Each row shows a given name, its kanji and a simplified meaning. The first column is written given name first, the kanji column family name first.</p>
       <div class="curated-table-wrap">
         <table class="curated-table">
           <thead>
-            <tr>
-              <th>Romaji Name</th>
-              <th>Kanji Characters</th>
-              <th>Gender</th>
-              <th>Literal Meaning / Etymology</th>
-            </tr>
+            <tr><th>Romaji name</th><th>Kanji</th><th>Gender</th><th>Meaning of given name</th></tr>
           </thead>
           <tbody>
-            <tr><td>Ren Takahashi</td><td>高橋 蓮</td><td>Male</td><td>"Lotus flower by the tall bridge"</td></tr>
-            <tr><td>Sakura Tanaka</td><td>田中 桜</td><td>Female</td><td>"Cherry blossom amidst the rice paddies"</td></tr>
-            <tr><td>Haruto Sato</td><td>佐藤 陽翔</td><td>Male</td><td>"Sunlight soaring high with great ambition"</td></tr>
-            <tr><td>Aoi Watanabe</td><td>渡辺 葵</td><td>Female</td><td>"Hollyhock flower; quiet resilience and grace"</td></tr>
-            <tr><td>Kaito Nakamura</td><td>中村 海翔</td><td>Male</td><td>"Ocean flyer soaring across the open seas"</td></tr>
-            <tr><td>Hina Kobayashi</td><td>小林 陽菜</td><td>Female</td><td>"Sunlit greens; radiant warmth and youth"</td></tr>
-            <tr><td>Souta Yamamoto</td><td>山本 颯太</td><td>Male</td><td>"Brisk refreshing wind; great strength"</td></tr>
-            <tr><td>Yui Ito</td><td>伊藤 結衣</td><td>Female</td><td>"Binding ties and gentle woven robes"</td></tr>
-            <tr><td>Daiki Saito</td><td>斎藤 大輝</td><td>Male</td><td>"Great radiance; immense shining spirit"</td></tr>
-            <tr><td>Mei Kato</td><td>加藤 芽依</td><td>Female</td><td>"Sprouting bud; reliant on blooming spring"</td></tr>
+            <tr><td>Ren Takahashi</td><td>高橋 蓮</td><td>Male</td><td>Lotus</td></tr>
+            <tr><td>Haruto Sato</td><td>佐藤 陽翔</td><td>Male</td><td>Sunlight soaring high</td></tr>
+            <tr><td>Kaito Nakamura</td><td>中村 海翔</td><td>Male</td><td>Ocean flight</td></tr>
+            <tr><td>Souta Yamamoto</td><td>山本 颯太</td><td>Male</td><td>Brisk, refreshing wind</td></tr>
+            <tr><td>Sakura Tanaka</td><td>田中 桜</td><td>Female</td><td>Cherry blossom</td></tr>
+            <tr><td>Aoi Watanabe</td><td>渡辺 葵</td><td>Female</td><td>Hollyhock flower</td></tr>
+            <tr><td>Hina Kobayashi</td><td>小林 陽菜</td><td>Female</td><td>Sunlit greens and warmth</td></tr>
+            <tr><td>Mei Kato</td><td>加藤 芽依</td><td>Female</td><td>Sprouting bud of spring</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Understanding Japanese Naming Traditions (On-Page Guide)</h2>
-      <p>In Japanese culture, names carry profound spiritual, aesthetic, and genealogical significance. Understanding how names are constructed elevates character design in creative writing and authentic roleplay.</p>
+      <h2>What do common Japanese last names mean?</h2>
+      <p>Many Japanese surnames are built from kanji that describe a place or a landscape feature. The table lists the parts of the surnames this generator uses. These are the meanings of the individual kanji, and the history of a surname can be more complicated than its parts suggest.</p>
+      <div class="curated-table-wrap">
+        <table class="curated-table">
+          <thead>
+            <tr><th>Surname</th><th>Kanji</th><th>Kanji parts</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Takahashi</td><td>高橋</td><td>high + bridge</td></tr>
+            <tr><td>Tanaka</td><td>田中</td><td>rice field + middle</td></tr>
+            <tr><td>Yamamoto</td><td>山本</td><td>mountain + origin or base</td></tr>
+            <tr><td>Nakamura</td><td>中村</td><td>middle + village</td></tr>
+            <tr><td>Kobayashi</td><td>小林</td><td>small + forest</td></tr>
+            <tr><td>Suzuki</td><td>鈴木</td><td>bell + tree</td></tr>
+            <tr><td>Yoshida</td><td>吉田</td><td>lucky or good + rice field</td></tr>
+            <tr><td>Yamada</td><td>山田</td><td>mountain + rice field</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h3>1. The Structure: Myōji and Namae</h3>
-      <p>Traditionally, Japanese names place the family name (<em>myōji</em>) first, followed by the given name (<em>namae</em>). Surnames often derive from geographical landscapes (e.g., <strong>Tanaka</strong> meaning "center of rice paddy", <strong>Yamamoto</strong> meaning "base of the mountain"). In Western localization, names are frequently inverted to Given Name + Family Name.</p>
-
-      <h3>2. Kanji Combinations & Wordplay (Ateji)</h3>
-      <p>The beauty of Japanese names lies in the kanji chosen. The same phonetic name (e.g., <em>Kaoru</em>) can be written with kanji meaning "fragrance" (薫) or "artistic flow" depending on parental intent. Our generator respects authentic kanji pairing conventions to prevent unnatural linguistic clashes.</p>
+      <h2>How do you choose a Japanese name for a character?</h2>
+      <p>Used as an anime name generator, the tool gives you names that sound natural for a Japanese setting. Pick a name that fits the character's age, setting and personality, then check that the kanji combination makes sense. Some practical points:</p>
+      <ul>
+        <li><strong>Match the era.</strong> A name that is common for children today may feel out of place in a story set a century ago.</li>
+        <li><strong>Choose meaning on purpose.</strong> Because meaning depends on kanji, you can pick characters that reflect personality, such as strength, light or the seasons.</li>
+        <li><strong>Mind the order.</strong> Decide whether your story gives names in Japanese order or Western order, and stay consistent.</li>
+        <li><strong>Check important names.</strong> For published work, ask someone who reads Japanese or use a kanji dictionary to confirm readings and meanings.</li>
+      </ul>
+      <p>For other character names, try the <a href="/random-name-for-character/" style="color:var(--accent);text-decoration:underline">character name generator</a> or the <a href="/fantasy-name-generator/" style="color:var(--accent);text-decoration:underline">fantasy name generator</a>. If you need a handle rather than a character name, see the <a href="/instagram-username-generator/" style="color:var(--accent);text-decoration:underline">aesthetic username generator</a>.</p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Can I copy both the Romaji and Kanji characters?</h4>
-          <p>Yes. Clicking any name card or the "Copy" icon instantly transfers the Romaji, Kanji script, and English meaning directly to your clipboard.</p>
+          <h4>How do Japanese names work?</h4>
+          <p>A Japanese name is written with the family name first and the given name second, normally in kanji. The meaning comes from the kanji chosen, and the same sound can be written with different kanji.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Do Japanese names have one fixed meaning?</h4>
+          <p>No. The meaning depends on the kanji used. A short English phrase is only a simplification, so the same pronunciation can carry different meanings in different families.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Is the family name or the given name first?</h4>
+          <p>In Japan the family name comes first. In English-language writing the order is often reversed, so this generator shows the kanji with the family name first and the romaji with the given name first.</p>
         </div>
         <div class="faq-card">
           <h4>Are these names suitable for anime and manga characters?</h4>
-          <p>Absolutely. The database includes popular contemporary names and dramatic archetypes favored in modern shonen, shojo, and seinen narratives.</p>
+          <p>Yes. They are real-sounding Japanese names that suit anime, manga, games and fiction. They are selected examples, so check readings and meanings if accuracy matters for published work.</p>
         </div>
         <div class="faq-card">
-          <h4>What do the kanji symbols represent?</h4>
-          <p>Kanji are logographic characters adopted from Chinese script. In names, they typically represent natural beauty, aspirational virtues, strength, and celestial phenomena.</p>
+          <h4>Can I copy both the romaji and the kanji?</h4>
+          <p>Yes. Click a card or its Copy button to copy the romaji name, the kanji and the meaning together, or use Copy All for the whole batch.</p>
+        </div>
+        <div class="faq-card">
+          <h4>What do the kanji in names represent?</h4>
+          <p>Kanji are characters that originated in Chinese writing. In names they often stand for nature, seasons, virtues or hopes for the child.</p>
         </div>
       </div>
+
     </section>
   </div>
 
@@ -280,14 +361,14 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             Names<span>Unlimited</span>
           </div>
-          <p class="footer-desc">The open-source, ultra-fast naming engine for writers, developers, gamers, and parents. Zero ads, instant client-side generation.</p>
+          <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Utility & Testing</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-            <li><a href="/instagram-username-generator/">Username Generator</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -316,7 +397,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Names Unlimited. Fast, privacy-friendly, free forever.</p>
+        <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
     
