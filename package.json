@@ -1,0 +1,12 @@
+{
+  "name": "namesunlimited-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Names Unlimited: static site (GitHub Pages). No runtime dependencies; audit tooling is Python.",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "check:js": "node --check js/app.js && node --check js/names-data.js",
+    "audit": "bash audit/run_all.sh"
+  },
+  "license": "UNLICENSED"
+}

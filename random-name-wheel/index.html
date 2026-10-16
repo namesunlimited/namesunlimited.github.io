@@ -13,7 +13,12 @@
   <meta property="og:description" content="Free random name picker wheel. Paste your names, spin to choose, remove winners to avoid repeats. Presets for classrooms, raffles and decisions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/random-name-wheel/">
-  <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
+  <meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Names Unlimited: free online name generators">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
   <meta name="theme-color" content="#0b0f19">
     
   <style>
@@ -245,7 +250,7 @@
           Names<span>Unlimited</span>
         </a>
         <div class="nav-links">
-          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link active">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link active" aria-current="page">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
         </div>
       </div>
     </nav>
@@ -269,7 +274,7 @@
         </div>
         
         <div id="winnerBox" class="winner-announcement">
-          <h3>🎉 Winner Selected! 🎉</h3>
+          <h3 role="heading" aria-level="2">🎉 Winner Selected! 🎉</h3>
           <div id="winnerName" class="winner-name">---</div>
           <div style="display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.5rem;">
             <button class="btn btn-primary" style="padding: 0.45rem 1.15rem; font-size: 0.85rem;" onclick="removeWinner()">Remove Winner</button>
@@ -365,27 +370,27 @@ Julian Thorne</textarea>
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Is the random name picker free?</h4>
+          <h4 role="heading" aria-level="3">Is the random name picker free?</h4>
           <p>Yes. It is free to use and does not need an account. You can create and spin as many lists as you like.</p>
         </div>
         <div class="faq-card">
-          <h4>Is the wheel truly random?</h4>
+          <h4 role="heading" aria-level="3">Is the wheel truly random?</h4>
           <p>Every name gets an equal slice, and the spin starts with a random speed that slows until a wedge stops under the pointer. It uses the browser’s standard random function, which is fine for classrooms, games and casual picks. For prize draws with legal requirements, use a method that meets your rules and keep a record of the result.</p>
         </div>
         <div class="faq-card">
-          <h4>How do I pick names without repeats?</h4>
+          <h4 role="heading" aria-level="3">How do I pick names without repeats?</h4>
           <p>After each spin, click Remove Winner. The name is taken out of the list, so it cannot be picked again until you add it back.</p>
         </div>
         <div class="faq-card">
-          <h4>Are my names saved?</h4>
+          <h4 role="heading" aria-level="3">Are my names saved?</h4>
           <p>The list is stored in your browser on your own device so it is still there after a reload. It is not sent to a server. Clear your browser data to remove it.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I mute the sound?</h4>
+          <h4 role="heading" aria-level="3">Can I mute the sound?</h4>
           <p>Yes. Click the Sound button to switch the audio on or off.</p>
         </div>
         <div class="faq-card">
-          <h4>Why are some names shortened on the wheel?</h4>
+          <h4 role="heading" aria-level="3">Why are some names shortened on the wheel?</h4>
           <p>Long names are shortened so they fit on a wedge. The winner panel shows the name from your list.</p>
         </div>
       </div>
@@ -405,7 +410,7 @@ Julian Thorne</textarea>
           <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
-          <h4>Utility & Mock Tools</h4>
+          <h4 role="heading" aria-level="2">Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
@@ -414,7 +419,7 @@ Julian Thorne</textarea>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Creative & Fiction</h4>
+          <h4 role="heading" aria-level="2">Creative & Fiction</h4>
           <ul>
             <li><a href="/random-name-for-character/">Character Name Generator</a></li>
             <li><a href="/fantasy-name-generator/">Fantasy & RPG Races</a></li>
@@ -422,7 +427,7 @@ Julian Thorne</textarea>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Platform & Legal</h4>
+          <h4 role="heading" aria-level="2">Platform & Legal</h4>
           <ul>
             <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
@@ -445,6 +450,7 @@ Julian Thorne</textarea>
     let currentAngle = 0;
     let isSpinning = false;
     let lastWinner = "";
+    let lastWinnerIndex = -1;
     let soundEnabled = true;
     let audioCtx = null;
     let lastSliceIndex = -1;
@@ -679,6 +685,7 @@ Julian Thorne</textarea>
       const normalizedAngle = (2 * Math.PI - (currentAngle % (2 * Math.PI))) % (2 * Math.PI);
       const winningIndex = Math.floor(normalizedAngle / sliceAngle) % names.length;
       lastWinner = names[winningIndex];
+      lastWinnerIndex = winningIndex;
 
       document.getElementById('winnerName').innerText = lastWinner;
       document.getElementById('winnerBox').classList.add('show');
@@ -688,16 +695,22 @@ Julian Thorne</textarea>
 
     function removeWinner() {
       if (!lastWinner) return;
-      names = names.filter(n => n !== lastWinner);
+      // remove only the winning slice (duplicates of the same name stay on the wheel)
+      const idx = names[lastWinnerIndex] === lastWinner ? lastWinnerIndex : names.indexOf(lastWinner);
+      if (idx > -1) names.splice(idx, 1);
       document.getElementById('nameList').value = names.join('\n');
       document.getElementById('winnerBox').classList.remove('show');
-      drawWheel();
+      lastWinner = null;
+      updateWheelFromInput();
     }
 
     function shuffleEntries() {
-      names.sort(() => Math.random() - 0.5);
+      for (let i = names.length - 1; i > 0; i--) { // Fisher-Yates (unbiased, unlike sort(random))
+        const j = Math.floor(Math.random() * (i + 1));
+        [names[i], names[j]] = [names[j], names[i]];
+      }
       document.getElementById('nameList').value = names.join('\n');
-      drawWheel();
+      updateWheelFromInput();
     }
 
     function loadPreset(type) {
@@ -712,7 +725,8 @@ Julian Thorne</textarea>
     }
 
     window.onload = () => {
-      const saved = localStorage.getItem('saved_wheel_names');
+      let saved = null;
+      try { saved = localStorage.getItem('saved_wheel_names'); } catch (e) {}
       if (saved) document.getElementById('nameList').value = saved;
       updateWheelFromInput();
     };

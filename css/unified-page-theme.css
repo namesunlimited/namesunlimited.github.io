@@ -208,3 +208,6 @@ select:focus-visible, textarea:focus-visible {
   .container { padding-left: 20px !important; padding-right: 20px !important; }
   .controls-grid { grid-template-columns: 1fr !important; }
 }
+
+/* WCAG 2.2 SC 2.5.8: minimum 24x24 CSS px target for small action buttons */
+.card-copy-btn, .copy-btn, .fav-btn { min-height: 28px; min-width: 44px; }

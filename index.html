@@ -13,7 +13,12 @@
   <meta property="og:description" content="Free online name generators for baby names, characters, fantasy and Japanese names, usernames, fake test data and a name wheel.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/">
-  <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
+  <meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Names Unlimited: free online name generators">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
   <meta name="theme-color" content="#0b0f19">
     
   <style>
@@ -129,7 +134,7 @@
       .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
     }
     
-    .tools-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem; }
+    .tools-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 1.5rem; margin-bottom: 3.5rem; }
     .hub-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
     .hub-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 15px 35px -10px var(--accent-glow); background: var(--card-hover); }
     .hub-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
@@ -173,7 +178,7 @@
           Names<span>Unlimited</span>
         </a>
         <div class="nav-links">
-          <a href="/" class="nav-link active">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+          <a href="/" class="nav-link active" aria-current="page">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
         </div>
       </div>
     </nav>
@@ -186,7 +191,7 @@
     </header>
 
     <div class="hero-quick-tool">
-      <h3>Need a quick name idea?</h3>
+      <h3 role="heading" aria-level="2">Need a quick name idea?</h3>
       <div id="quickOutput" class="quick-output-pill" onclick="copyQuickName()">Alexander Vance</div>
       <div>
         <button id="quickGenBtn" class="btn btn-primary" onclick="generateQuickName()">
@@ -206,7 +211,7 @@
             </div>
             <span class="hub-badge hot">Testing</span>
           </div>
-          <h3>Fake Name Generator for Testing</h3>
+          <h3 role="heading" aria-level="2">Fake Name Generator for Testing</h3>
           <p>Generate sample profiles with names, usernames, emails, addresses, phone numbers and job titles. Export as CSV or JSON for software testing, mockups and demos.</p>
         </div>
         <div class="card-cta">
@@ -223,7 +228,7 @@
             </div>
             <span class="hub-badge popular">Name Picker</span>
           </div>
-          <h3>Random Name Picker Wheel</h3>
+          <h3 role="heading" aria-level="2">Random Name Picker Wheel</h3>
           <p>Paste a list of names and spin the wheel to pick one at random. Remove winners to avoid repeats. Useful for classroom turns, raffles and quick decisions.</p>
         </div>
         <div class="card-cta">
@@ -240,7 +245,7 @@
             </div>
             <span class="hub-badge">Kanji</span>
           </div>
-          <h3>Japanese Name Generator</h3>
+          <h3 role="heading" aria-level="2">Japanese Name Generator</h3>
           <p>Generate Japanese names with kanji, romaji and a short meaning for each given name. Useful for anime, manga and story characters.</p>
         </div>
         <div class="card-cta">
@@ -257,7 +262,7 @@
             </div>
             <span class="hub-badge">Fantasy</span>
           </div>
-          <h3>Fantasy Name Generator</h3>
+          <h3 role="heading" aria-level="2">Fantasy Name Generator</h3>
           <p>Fantasy-inspired names for elves, drow, dwarves, dragons, tieflings and orcs. Use them for D&amp;D campaigns, RPG characters and fantasy fiction.</p>
         </div>
         <div class="card-cta">
@@ -274,7 +279,7 @@
             </div>
             <span class="hub-badge">Fiction</span>
           </div>
-          <h3>Character Name Generator</h3>
+          <h3 role="heading" aria-level="2">Character Name Generator</h3>
           <p>Character names by genre for novels, screenplays, games and tabletop campaigns: modern, sci-fi, fantasy, Victorian, villain and superhero.</p>
         </div>
         <div class="card-cta">
@@ -291,7 +296,7 @@
             </div>
             <span class="hub-badge">Handles</span>
           </div>
-          <h3>Aesthetic Username Generator</h3>
+          <h3 role="heading" aria-level="2">Aesthetic Username Generator</h3>
           <p>Aesthetic username ideas for Instagram, TikTok, Discord and gaming, in soft, chic, gamer, minimalist and vintage styles, with an optional keyword.</p>
         </div>
         <div class="card-cta">
@@ -308,7 +313,7 @@
             </div>
             <span class="hub-badge">Meanings</span>
           </div>
-          <h3>Baby Name Generator with Meanings</h3>
+          <h3 role="heading" aria-level="2">Baby Name Generator with Meanings</h3>
           <p>Baby names with their origin and a short meaning, filtered by gender and heritage. For longer lists of first names, see the random baby name generator.</p>
         </div>
         <div class="card-cta">
@@ -321,13 +326,13 @@
     <section class="editorial">
       <h2>Which name generator should you use?</h2>
       <p>Choose the tool that matches what the name is for. Here is every generator on the site, grouped by purpose.</p>
-      <h3>People and Baby Names</h3>
+      <h3 role="heading" aria-level="2">People and Baby Names</h3>
       <p>Choose a name for a child or browse real first names. <a href="/baby-name-generator/" style="color:var(--accent);text-decoration:underline">Baby Name Generator</a> (names with origins and meanings); <a href="/random-name-for-baby/" style="color:var(--accent);text-decoration:underline">Random Baby Names</a> (long shuffled lists of first names); <a href="/random-boy-names/" style="color:var(--accent);text-decoration:underline">Random Boy Names</a> (boy names, first or full); <a href="/random-girl-names/" style="color:var(--accent);text-decoration:underline">Random Girl Names</a> (girl names, first or full).</p>
-      <h3>Fiction and Creative Writing</h3>
+      <h3 role="heading" aria-level="2">Fiction and Creative Writing</h3>
       <p>Names for characters, peoples and places in stories, games and campaigns. <a href="/random-name-for-character/" style="color:var(--accent);text-decoration:underline">Character Names</a> (by genre); <a href="/fantasy-name-generator/" style="color:var(--accent);text-decoration:underline">Fantasy Names</a> (elves, dwarves, dragons and more); <a href="/elf-name-generator/" style="color:var(--accent);text-decoration:underline">Elf Names</a> (high, wood and half-elf styles); <a href="/japanese-name-generator/" style="color:var(--accent);text-decoration:underline">Japanese Names</a> (with kanji and meanings); <a href="/city-name-generator/" style="color:var(--accent);text-decoration:underline">City Names</a> (cities, towns and villages); <a href="/school-name-generator/" style="color:var(--accent);text-decoration:underline">School Names</a> (elementary to academy); <a href="/band-name-generator/" style="color:var(--accent);text-decoration:underline">Band Names</a> (for music groups).</p>
-      <h3>Online Identity</h3>
+      <h3 role="heading" aria-level="2">Online Identity</h3>
       <p>Handles and usernames for accounts and profiles. <a href="/random-username-generator/" style="color:var(--accent);text-decoration:underline">Random Usernames</a> (name-based handles); <a href="/instagram-username-generator/" style="color:var(--accent);text-decoration:underline">Aesthetic Usernames</a> (for Instagram, TikTok and Discord).</p>
-      <h3>Random and Utility Tools</h3>
+      <h3 role="heading" aria-level="2">Random and Utility Tools</h3>
       <p>Sample data and random picks. <a href="/fake-name-generator/" style="color:var(--accent);text-decoration:underline">Fake Name Generator</a> (test data and mockups); <a href="/random-name-wheel/" style="color:var(--accent);text-decoration:underline">Random Name Wheel</a> (pick a name from your list).</p>
 
       <h2>How do the name generators work?</h2>
@@ -361,31 +366,31 @@
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>What is a name generator?</h4>
+          <h4 role="heading" aria-level="3">What is a name generator?</h4>
           <p>A name generator produces names at random from lists, following a pattern for a purpose such as baby names, fantasy characters, usernames or test data. The results are ideas to start from, not definitive choices.</p>
         </div>
         <div class="faq-card">
-          <h4>Which name generator should I use?</h4>
+          <h4 role="heading" aria-level="3">Which name generator should I use?</h4>
           <p>Use the baby, boy and girl generators for real first names, the character and fantasy generators for fiction, the username generators for handles, and the fake name generator for test data. The list above shows every tool by purpose.</p>
         </div>
         <div class="faq-card">
-          <h4>Are the names real?</h4>
+          <h4 role="heading" aria-level="3">Are the names real?</h4>
           <p>The baby, boy and girl generators use lists of real first names. Fantasy, elf and character generators combine invented or story-style names. Fake profiles are made up and are not real people.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I use the generated names in my own projects?</h4>
+          <h4 role="heading" aria-level="3">Can I use the generated names in my own projects?</h4>
           <p>Generated names are combinations drawn from word lists, and you can use them in your own projects. A name that matches a famous character, brand or real organisation can still cause problems, so search any name you plan to publish. See the Terms of Service.</p>
         </div>
         <div class="faq-card">
-          <h4>How do I spin custom names on the Random Name Wheel?</h4>
+          <h4 role="heading" aria-level="3">How do I spin custom names on the Random Name Wheel?</h4>
           <p>Open the random name wheel, paste your names into the box (one per line), and press Spin Wheel. Use Remove Winner to avoid repeats.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I export a list of names?</h4>
+          <h4 role="heading" aria-level="3">Can I export a list of names?</h4>
           <p>Yes. The baby, boy, girl, username, elf, city, school and band generators have Copy All and Download CSV. The fake name generator also exports JSON.</p>
         </div>
         <div class="faq-card">
-          <h4>Are my names stored anywhere?</h4>
+          <h4 role="heading" aria-level="3">Are my names stored anywhere?</h4>
           <p>Names are generated in your browser. The wheel list and any saved fake-profile shortlist are kept in your browser on your own device. See the Privacy Policy for details.</p>
         </div>
       </div>
@@ -405,7 +410,7 @@
           <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
-          <h4>Utility & Mock Tools</h4>
+          <h4 role="heading" aria-level="2">Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
@@ -414,7 +419,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Creative & Fiction</h4>
+          <h4 role="heading" aria-level="2">Creative & Fiction</h4>
           <ul>
             <li><a href="/random-name-for-character/">Character Name Generator</a></li>
             <li><a href="/fantasy-name-generator/">Fantasy & RPG Races</a></li>
@@ -422,7 +427,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Platform & Legal</h4>
+          <h4 role="heading" aria-level="2">Platform & Legal</h4>
           <ul>
             <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>

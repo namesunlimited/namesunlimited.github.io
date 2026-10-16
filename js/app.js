@@ -24,6 +24,7 @@
     const copyBtn = root.querySelector("[data-copy]");
     const downloadBtn = root.querySelector("[data-download]");
     const emptyState = root.querySelector("[data-empty]");
+    const copyLabel = copyBtn ? copyBtn.textContent : "";
 
     function setActive(buttons, val, dataAttr) {
       buttons.forEach((b) => {
@@ -94,8 +95,26 @@
       }
     }
 
-    function updateCountLabel() {
+    let note = null;
+    function setNote(msg) {
+      if (!countLabel) return;
+      if (!note) {
+        note = document.createElement("span");
+        note.className = "entry-note";
+        note.setAttribute("role", "status");
+        note.style.cssText = "display:block;font-size:0.85rem;opacity:0.8;margin-top:0.25rem;";
+        countLabel.insertAdjacentElement("afterend", note);
+      }
+      note.textContent = msg;
+    }
+
+    function updateCountLabel(requested) {
       if (countLabel) countLabel.innerHTML = `<b>${state.results.length}</b> ${RESULT_NOUN[mode] || "names"} generated`;
+      if (requested && state.results.length < requested) {
+        setNote(`Only ${state.results.length} unique ${RESULT_NOUN[mode] || "names"} are available for these settings (you asked for ${requested}).`);
+      } else if (note) {
+        setNote("");
+      }
     }
 
     if (generateBtn) {
@@ -103,7 +122,7 @@
         const n = Math.max(1, Math.min(5000, state.count || 50));
         state.results = runGenerator(n);
         render(state.results);
-        updateCountLabel();
+        updateCountLabel(n);
         if (searchBox) searchBox.value = "";
       });
     }
@@ -125,7 +144,8 @@
           copyBtn.textContent = "Copied ✓";
           setTimeout(() => (copyBtn.textContent = old), 1400);
         } catch (e) {
-          alert("Couldn't copy automatically. Select and copy the list manually.");
+          copyBtn.textContent = "Copy failed: select the list manually";
+          setTimeout(() => (copyBtn.textContent = copyLabel), 2500);
         }
       });
     }

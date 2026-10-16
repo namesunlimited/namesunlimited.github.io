@@ -13,7 +13,12 @@
   <meta property="og:description" content="Free fake name generator for software testing and mockups. Sample profiles with usernames, emails, addresses and phone numbers; export as CSV or JSON.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://namesunlimited.github.io/fake-name-generator/">
-  <meta property="og:image" content="https://namesunlimited.github.io/favicon.svg">
+  <meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Names Unlimited: free online name generators">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
   <meta name="theme-color" content="#0b0f19">
     
   <style>
@@ -129,13 +134,13 @@
       .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
     }
     
-    .identity-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: transform 0.15s ease, border-color 0.15s ease; position: relative; }
+    .identity-card { min-width: 0; overflow-wrap: anywhere; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: transform 0.15s ease, border-color 0.15s ease; position: relative; }
     .identity-card:hover { transform: translateY(-2px); border-color: var(--accent); }
     .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.9rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
     .card-header .name-box h3 { font-size: 1.25rem; color: #fff; font-weight: 700; }
     .card-header .badge { font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 999px; background: rgba(56, 189, 248, 0.12); color: var(--accent); font-weight: 600; display: inline-block; margin-top: 0.25rem; }
     .identity-details { display: grid; gap: 0.4rem; font-size: 0.88rem; }
-    .detail-row { display: flex; justify-content: space-between; cursor: pointer; padding: 0.25rem 0.4rem; border-radius: 4px; }
+    .detail-row { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; min-width: 0; overflow-wrap: anywhere; cursor: pointer; padding: 0.25rem 0.4rem; border-radius: 4px; }
     .detail-row:hover { background: rgba(255,255,255,0.04); }
     .detail-label { color: var(--text-muted); font-weight: 500; }
     .detail-value { color: #e2e8f0; font-family: monospace; font-size: 0.85rem; }
@@ -230,7 +235,7 @@
           Names<span>Unlimited</span>
         </a>
         <div class="nav-links">
-          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link active">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link active" aria-current="page">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Characters</a><a href="/instagram-username-generator/" class="nav-link ">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
         </div>
       </div>
     </nav>
@@ -299,7 +304,7 @@
       </div>
     </div>
 
-    <div id="resultsGrid" class="names-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));"></div>
+    <div id="resultsGrid" class="names-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));"></div>
 
     <section class="editorial">
       <h2>What is a fake name generator?</h2>
@@ -356,27 +361,27 @@
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4>Are the generated people real?</h4>
+          <h4 role="heading" aria-level="3">Are the generated people real?</h4>
           <p>No. Each profile is assembled at random from short lists of first names, surnames, streets, cities and job titles. Any match with a real person, address or number is a coincidence, so never treat the data as real.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I use fake names in software tests and mockups?</h4>
+          <h4 role="heading" aria-level="3">Can I use fake names in software tests and mockups?</h4>
           <p>Yes. That is what the tool is for. Use the data in test databases, UI mockups, demos, screenshots and sample forms, and follow the Terms of Service.</p>
         </div>
         <div class="faq-card">
-          <h4>Are the addresses, emails and phone numbers real?</h4>
+          <h4 role="heading" aria-level="3">Are the addresses, emails and phone numbers real?</h4>
           <p>No, but they can resemble real ones. Addresses combine a street and a city from lists. Emails use sample domains, and US numbers use a 555 prefix. Other countries use realistic formats, so do not send messages to, or call, generated contact details.</p>
         </div>
         <div class="faq-card">
-          <h4>Can I use a fake name to sign up for a real account?</h4>
+          <h4 role="heading" aria-level="3">Can I use a fake name to sign up for a real account?</h4>
           <p>This tool is meant for testing, demos and fiction. Many services require accurate details, and giving false ones can break their rules. Do not use generated data to deceive or impersonate anyone.</p>
         </div>
         <div class="faq-card">
-          <h4>How do I download several profiles at once?</h4>
+          <h4 role="heading" aria-level="3">How do I download several profiles at once?</h4>
           <p>Choose 6, 12 or 24 identities, click Generate Identities, then use Export CSV or Export JSON. You can also save profiles to a shortlist and download it.</p>
         </div>
         <div class="faq-card">
-          <h4>Is my shortlist stored anywhere?</h4>
+          <h4 role="heading" aria-level="3">Is my shortlist stored anywhere?</h4>
           <p>Saved profiles are kept in your browser on your own device and are not sent to a server. Clearing the shortlist or your browser data removes them.</p>
         </div>
       </div>
@@ -396,7 +401,7 @@
           <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
-          <h4>Utility & Mock Tools</h4>
+          <h4 role="heading" aria-level="2">Utility & Mock Tools</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
@@ -405,7 +410,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Creative & Fiction</h4>
+          <h4 role="heading" aria-level="2">Creative & Fiction</h4>
           <ul>
             <li><a href="/random-name-for-character/">Character Name Generator</a></li>
             <li><a href="/fantasy-name-generator/">Fantasy & RPG Races</a></li>
@@ -413,7 +418,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Platform & Legal</h4>
+          <h4 role="heading" aria-level="2">Platform & Legal</h4>
           <ul>
             <li><a href="/about/">About</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
@@ -499,7 +504,11 @@
 
     const domains = ["mockmail.dev", "testinbox.org", "fakedata.io", "sampleuser.net", "placeholder.test", "tempflow.dev"];
     let currentIdentities = [];
-    let savedFavorites = JSON.parse(localStorage.getItem('user_saved_personas') || '[]');
+    let savedFavorites = [];
+    try {
+      const parsed = JSON.parse(localStorage.getItem('user_saved_personas') || '[]');
+      if (Array.isArray(parsed)) savedFavorites = parsed;
+    } catch (e) { /* corrupted or unavailable storage: start with an empty shortlist */ }
 
     function updateFavoritesUI() {
       const bar = document.getElementById('favoritesBar');
@@ -522,14 +531,14 @@
         savedFavorites.push(id);
         showToast("Added to shortlist!");
       }
-      localStorage.setItem('user_saved_personas', JSON.stringify(savedFavorites));
+      try { localStorage.setItem('user_saved_personas', JSON.stringify(savedFavorites)); } catch (e) {}
       updateFavoritesUI();
       renderCards();
     }
 
     function clearFavorites() {
       savedFavorites = [];
-      localStorage.removeItem('user_saved_personas');
+      try { localStorage.removeItem('user_saved_personas'); } catch (e) {}
       updateFavoritesUI();
       renderCards();
       showToast("Shortlist cleared");

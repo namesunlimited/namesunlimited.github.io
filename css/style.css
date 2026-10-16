@@ -102,7 +102,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   font-family:var(--font-mono); font-size:.75rem; color:var(--ink-soft);
   padding:10px 0; border-bottom:1px dashed var(--line);
 }
-.breadcrumb a{ text-decoration:none; color:var(--navy); }
+.breadcrumb a{ text-decoration:none; color:var(--navy); display:inline-block; min-height:24px; padding:5px 4px; margin:-5px 0; } /* WCAG 2.2 SC 2.5.8 target size */
 .breadcrumb a:hover{ text-decoration:underline; }
 
 /* ============ hero ============ */
