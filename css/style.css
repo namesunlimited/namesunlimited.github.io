@@ -328,3 +328,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
 .guide-card p{ font-size:.88rem; margin-bottom:0; }
 .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 @media (max-width:700px){ .grid-2{ grid-template-columns:1fr; } }
+
+/* compact hero on phones (pages using .site-header) */
+@media (max-width:760px){
+  .hero{ padding:22px 0 18px; }
+  .hero h1{ font-size:1.7rem; }
+  .hero .lede{ font-size:.98rem; }
+  /* guide/article pages */
+  .article-body h1{ font-size:1.5rem; line-height:1.25; }
+  section.section[style*="padding-top:44px"]{ padding-top:18px !important; }
+}
