@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* FAQs */
     .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
     .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
-    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
+    .faq-card h3 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; font-weight: 600; }
     .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
 
     /* Toast */
@@ -332,27 +332,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">What makes a good username?</h4>
+          <h3>What makes a good username?</h3>
           <p>A good Instagram username is easy to read, spell, type and remember. Choose words that fit your profile, avoid confusing number strings, and think carefully before including personal details such as your full name, birth year or location.</p>
         </div>
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">How do you create a memorable username?</h4>
+          <h3>How do you create a memorable username?</h3>
           <p>Combine a simple word that fits your style with a name, hobby or topic you care about. Keep the handle readable, use punctuation sparingly, and say it aloud to check whether it is easy to share.</p>
         </div>
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">Should a username include your real name?</h4>
+          <h3>Should a username include your real name?</h3>
           <p>Using a first name or familiar nickname can help people recognize you, especially if you are a creator or run a public-facing business. If privacy matters to you, avoid including your full name, birth year, school or location unless you are comfortable sharing those details publicly.</p>
         </div>
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">Are these usernames guaranteed to be untaken?</h4>
+          <h3>Are these usernames guaranteed to be untaken?</h3>
           <p>No. This generator does not check live Instagram availability, reserve handles or confirm that every suggestion follows current platform rules. Check your preferred username directly on Instagram before using it.</p>
         </div>
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">Can I add my own keyword?</h4>
+          <h3>Can I add my own keyword?</h3>
           <p>Yes. Enter a name or keyword in the optional field. The generator keeps letters and numbers from your input and uses them in suggestions. Leave the field blank to use built-in seed words.</p>
         </div>
         <div class="faq-card">
-          <h4 role="heading" aria-level="3">Can I use these handles on YouTube, Discord or gaming platforms?</h4>
+          <h3>Can I use these handles on YouTube, Discord or gaming platforms?</h3>
           <p>You can try the same idea on YouTube, Discord, TikTok or gaming platforms, but each service has its own naming rules and availability. Check the handle separately on every platform where you want to use it, and edit it to meet that service’s requirements.</p>
         </div>
       </div>
@@ -447,7 +447,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const vData = userStyles[vibe];
       const fallbackSeeds = ["luna", "star", "bloom", "nova", "vibe", "haze", "sol", "wave", "gem", "dusk"];
 
-      for (let i = 0; i < count; i++) {
+      const uniqueSet = new Set();
+      let attempts = 0;
+      const maxAttempts = count * 10;
+
+      while (uniqueSet.size < count && attempts < maxAttempts) {
+        attempts++;
         const base = seed.length > 0 ? seed : fallbackSeeds[Math.floor(Math.random() * fallbackSeeds.length)];
         const pref = vData.prefixes[Math.floor(Math.random() * vData.prefixes.length)];
         const suff = vData.suffixes[Math.floor(Math.random() * vData.suffixes.length)];
@@ -455,7 +460,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const patterns = [
           `@${pref}.${base}`,
           `@${base}_${suff}`,
-          `@${pref}_${suff}`,
+          `@${pref}_${base}`,
           `@the.${base}`,
           `@${base}.archive`,
           `@its${base}_${suff}`,
@@ -463,8 +468,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ];
 
         const handle = patterns[Math.floor(Math.random() * patterns.length)];
-        currentUserList.push(handle);
+        uniqueSet.add(handle);
+      }
 
+      currentUserList = Array.from(uniqueSet);
+
+      currentUserList.forEach(handle => {
         const card = document.createElement('div');
         card.className = "name-card";
         card.innerHTML = `
@@ -476,7 +485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         `;
         card.onclick = () => copyUser(handle);
         grid.appendChild(card);
-      }
+      });
     }
 
     function copyUser(handle) {
