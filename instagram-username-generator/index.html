@@ -24,7 +24,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:alt" content="Names Unlimited: free online name generators">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
-    
     :root {
       --bg: #0b0f19;
       --card-bg: #151d30;
@@ -68,6 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
     .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
     .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
     .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
@@ -77,7 +77,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
     .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
     .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
-    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .name-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; font-family: 'IBM Plex Mono', monospace, sans-serif; }
     .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
     .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
     .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
@@ -107,11 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
     .toast-popup.visible { opacity: 1; transform: translateY(0); }
 
-    /* Footer */
+    /* Footer - 5 Columns Support */
     .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
-    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
     .footer-logo { margin-bottom: 1rem; }
-    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 320px; }
     .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .footer-col ul { list-style: none; margin: 0; padding: 0; }
     .footer-col li { margin-bottom: 0.65rem; }
@@ -119,20 +120,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-col a:hover { color: var(--accent); }
     .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
 
+    @media (max-width: 992px) {
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
     @media (max-width: 768px) {
       .footer-container { grid-template-columns: 1fr; gap: 2rem; }
       header.hero h1 { font-size: 2rem; }
       .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
       .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+      .actions-bar { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .btn-cluster { width: 100%; }
+      .btn-cluster .btn { width: 100%; }
     }
-    
   </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/unified-page-theme.css">
-
 
   <script type="application/ld+json">
 {
@@ -221,11 +227,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Names<span>Unlimited</span>
         </a>
         <div class="nav-links">
-          <a href="/" class="nav-link ">Home</a><a href="/fake-name-generator/" class="nav-link ">Fake Identity</a><a href="/random-name-wheel/" class="nav-link ">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link ">Japanese Names</a><a href="/fantasy-name-generator/" class="nav-link ">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link ">Character Names</a><a href="/instagram-username-generator/" class="nav-link active" aria-current="page">Usernames</a><a href="/baby-name-generator/" class="nav-link ">Baby Names</a>
+          <a href="/" class="nav-link">Home</a><a href="/fake-name-generator/" class="nav-link">Fake Identity</a><a href="/random-name-wheel/" class="nav-link">Name Wheel</a><a href="/japanese-name-generator/" class="nav-link">Japanese Names</a><a href="/fantasy-name-generator/" class="nav-link">Fantasy RPG</a><a href="/random-name-for-character/" class="nav-link">Character Names</a><a href="/instagram-username-generator/" class="nav-link active" aria-current="page">Usernames</a><a href="/baby-name-generator/" class="nav-link">Baby Names</a>
         </div>
       </div>
     </nav>
-    
 
   <div class="container">
     <header class="hero">
@@ -247,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="control-group">
           <label for="seedWord">Your Name / Keyword (Optional)</label>
-          <input type="text" id="seedWord" placeholder="e.g. luna, star, glow" />
+          <input type="text" id="seedWord" placeholder="e.g. luna, star, glow" maxlength="20" autocomplete="off" />
         </div>
         <div class="control-group">
           <label for="userBatch">Batch Count</label>
@@ -270,7 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div id="usernameGrid" class="names-grid"></div>
+    <div id="usernameGrid" class="names-grid" aria-live="polite"></div>
 
     <section class="editorial">
       <h2>What is an aesthetic username generator?</h2>
@@ -360,7 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
   </div>
 
-  <div id="toast" class="toast-popup">Copied to clipboard!</div>
+  <div id="toast" class="toast-popup" role="status" aria-live="polite">Copied to clipboard!</div>
   
     <footer class="site-footer">
       <div class="footer-container">
@@ -372,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div class="footer-col">
-          <h4 role="heading" aria-level="3">Utility & Testing</h4>
+          <h4>Utility & Testing</h4>
           <ul>
             <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
@@ -380,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 role="heading" aria-level="2">Creative & Fiction</h4>
+          <h4>Creative & Fiction</h4>
           <ul>
             <li><a href="/random-name-for-character/">Character Names</a></li>
             <li><a href="/fantasy-name-generator/">Fantasy & RPG Names</a></li>
@@ -388,14 +393,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 role="heading" aria-level="3">Real World</h4>
+          <h4>Real World</h4>
           <ul>
             <li><a href="/baby-name-generator/">Baby Names & Meanings</a></li>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 role="heading" aria-level="2">Platform & Legal</h4>
+          <h4>Platform & Legal</h4>
           <ul>
             <li><a href="/about/">About Us</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
@@ -408,48 +413,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>&copy; 2026 Names Unlimited. Free to use.</p>
       </div>
     </footer>
-    
 
   <script>
     const userStyles = {
       aesthetic: {
-        prefixes: ["soft", "dear", "pure", "golden", "velvet", "cloud", "ethereal", "gentle", "honey", "blushing"],
-        suffixes: ["vibes", "bloom", "aura", "daze", "glow", "whisper", "haze", "core", "archive", "soul"]
+        prefixes: ["soft", "dear", "pure", "golden", "velvet", "cloud", "ethereal", "gentle", "honey", "blushing", "silent", "pastel", "silk", "lunar", "peachy", "misty", "cozy", "sol", "opal", "tender"],
+        suffixes: ["vibes", "bloom", "aura", "daze", "glow", "whisper", "haze", "core", "archive", "soul", "muse", "meadow", "petals", "haven", "notes", "tales", "essence", "field", "drift", "light"]
       },
       baddie: {
-        prefixes: ["vivid", "glam", "toxic", "boujee", "bad", "femme", "savage", "luxe", "iconic", "divine"],
-        suffixes: ["doll", "babe", "couture", "addict", "rebel", "brat", "slay", "energy", "kiss", "era"]
+        prefixes: ["vivid", "glam", "toxic", "boujee", "bad", "femme", "savage", "luxe", "iconic", "divine", "rebel", "boss", "posh", "fatal", "drippy", "elite", "classy", "spicy", "raw", "siren"],
+        suffixes: ["doll", "babe", "couture", "addict", "rebel", "brat", "slay", "energy", "kiss", "era", "mood", "glitz", "rules", "vixen", "affair", "rush", "vision", "attitude", "prada", "charm"]
       },
       gamer: {
-        prefixes: ["pixel", "phantom", "cyber", "shadow", "apex", "frost", "hyper", "void", "ghost", "snipe"],
-        suffixes: ["byte", "playz", "pulse", "fps", "gg", "zone", "nexus", "tactics", "edge", "bot"]
+        prefixes: ["pixel", "phantom", "cyber", "shadow", "apex", "frost", "hyper", "void", "ghost", "snipe", "omega", "matrix", "toxic", "vortex", "zenith", "warp", "reaper", "stealth", "turbo", "pulse"],
+        suffixes: ["byte", "playz", "pulse", "fps", "gg", "zone", "nexus", "tactics", "edge", "bot", "strike", "clutch", "glitch", "zero", "reaper", "clans", "aim", "phase", "mod", "rush"]
       },
       minimal: {
-        prefixes: ["the", "just", "its", "iam", "mono", "raw", "clean", "simply", "true", "sole"],
-        suffixes: ["studio", "space", "lab", "notes", "view", "daily", "life", "room", "craft", "club"]
+        prefixes: ["the", "just", "its", "iam", "mono", "raw", "clean", "simply", "true", "sole", "pure", "urban", "basic", "plain", "nordic", "fine", "neat", "open", "pale", "blank"],
+        suffixes: ["studio", "space", "lab", "notes", "view", "daily", "life", "room", "craft", "club", "line", "form", "state", "feed", "grid", "work", "frame", "point", "type", "box"]
       },
       vintage: {
-        prefixes: ["retro", "nostalgic", "classic", "antique", "sepia", "polaroid", "analog", "cozy", "velvet"],
-        suffixes: ["radio", "tape", "film", "memories", "record", "gram", "chronicle", "attic", "vibe"]
+        prefixes: ["retro", "nostalgic", "classic", "antique", "sepia", "polaroid", "analog", "cozy", "velvet", "faded", "rusty", "golden", "vinyl", "warm", "dusty", "old", "timeless", "noble", "silk", "amber"],
+        suffixes: ["radio", "tape", "film", "memories", "record", "gram", "chronicle", "attic", "vibe", "journal", "prints", "cinema", "cassette", "era", "post", "tales", "press", "reels", "archive", "folio"]
       }
     };
 
     let currentUserList = [];
 
+    function cleanInput(str) {
+      if (!str) return "";
+      return str.toLowerCase().replace(/[^a-z0-9_.]/g, '').replace(/\.{2,}/g, '.').slice(0, 15);
+    }
+
+    function formatHandle(str) {
+      let h = str.toLowerCase().replace(/[^a-z0-9_.]/g, '');
+      h = h.replace(/\.{2,}/g, '.');
+      h = h.replace(/^\.+|\.+$/g, '');
+      if (h.length > 30) {
+        h = h.slice(0, 30).replace(/\.+$/, '');
+      }
+      return h;
+    }
+
     function generateUsernames() {
       const vibe = document.getElementById('userVibe').value;
-      const seed = document.getElementById('seedWord').value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const rawSeed = document.getElementById('seedWord').value;
+      const seed = cleanInput(rawSeed);
       const count = parseInt(document.getElementById('userBatch').value, 10);
       const grid = document.getElementById('usernameGrid');
+      
       grid.innerHTML = "";
       currentUserList = [];
 
-      const vData = userStyles[vibe];
-      const fallbackSeeds = ["luna", "star", "bloom", "nova", "vibe", "haze", "sol", "wave", "gem", "dusk"];
-
+      const vData = userStyles[vibe] || userStyles.aesthetic;
+      const fallbackSeeds = ["luna", "star", "bloom", "nova", "vibe", "haze", "sol", "wave", "gem", "dusk", "clover", "petal", "flora", "glow", "faye", "iris"];
+      
       const uniqueSet = new Set();
       let attempts = 0;
-      const maxAttempts = count * 10;
+      const maxAttempts = count * 20;
 
       while (uniqueSet.size < count && attempts < maxAttempts) {
         attempts++;
@@ -458,43 +479,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const suff = vData.suffixes[Math.floor(Math.random() * vData.suffixes.length)];
 
         const patterns = [
-          `@${pref}.${base}`,
-          `@${base}_${suff}`,
-          `@${pref}_${base}`,
-          `@the.${base}`,
-          `@${base}.archive`,
-          `@its${base}_${suff}`,
-          `@${base}x${suff}`
+          `${pref}.${base}`,
+          `${base}_${suff}`,
+          `${pref}_${base}`,
+          `the.${base}`,
+          `${base}.${suff}`,
+          `${base}.archive`,
+          `its${base}_${suff}`,
+          `${pref}.${base}.${suff}`,
+          `${base}x${suff}`,
+          `${pref}${base}`
         ];
 
-        const handle = patterns[Math.floor(Math.random() * patterns.length)];
-        uniqueSet.add(handle);
+        const candidate = patterns[Math.floor(Math.random() * patterns.length)];
+        const clean = formatHandle(candidate);
+
+        if (clean && clean.length >= 3 && clean.length <= 30) {
+          uniqueSet.add(clean);
+        }
       }
 
       currentUserList = Array.from(uniqueSet);
 
       currentUserList.forEach(handle => {
+        const fullHandle = "@" + handle;
         const card = document.createElement('div');
         card.className = "name-card";
-        card.innerHTML = `
-          <div class="name-info">
-            <div class="main-name">${handle}</div>
-            <div class="sub-detail">${vibe.toUpperCase()} Style</div>
-          </div>
-          <button class="copy-btn" onclick="event.stopPropagation(); copyUser('${handle}')">Copy</button>
-        `;
-        card.onclick = () => copyUser(handle);
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", "Copy username " + fullHandle);
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = "name-info";
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = "main-name";
+        nameDiv.textContent = fullHandle;
+
+        const subDiv = document.createElement('div');
+        subDiv.className = "sub-detail";
+        subDiv.textContent = vibe.toUpperCase() + " Style";
+
+        infoDiv.appendChild(nameDiv);
+        infoDiv.appendChild(subDiv);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = "copy-btn";
+        copyBtn.type = "button";
+        copyBtn.textContent = "Copy";
+        copyBtn.onclick = (e) => {
+          e.stopPropagation();
+          copyUser(fullHandle);
+        };
+
+        card.appendChild(infoDiv);
+        card.appendChild(copyBtn);
+
+        card.onclick = () => copyUser(fullHandle);
+        card.onkeydown = (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            copyUser(fullHandle);
+          }
+        };
+
         grid.appendChild(card);
       });
     }
 
+    function fallbackCopy(text, msg) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(msg);
+      } catch (err) {
+        showToast("Press Ctrl+C to copy");
+      }
+      document.body.removeChild(textArea);
+    }
+
     function copyUser(handle) {
-      navigator.clipboard.writeText(handle).then(() => showToast("Copied: " + handle));
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(handle)
+          .then(() => showToast("Copied: " + handle))
+          .catch(() => fallbackCopy(handle, "Copied: " + handle));
+      } else {
+        fallbackCopy(handle, "Copied: " + handle);
+      }
     }
 
     function copyAllUsernames() {
       if (currentUserList.length === 0) return;
-      navigator.clipboard.writeText(currentUserList.join('\n')).then(() => showToast(`Copied ${currentUserList.length} usernames!`));
+      const allText = currentUserList.map(h => "@" + h).join('\n');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(allText)
+          .then(() => showToast(`Copied ${currentUserList.length} usernames!`))
+          .catch(() => fallbackCopy(allText, `Copied ${currentUserList.length} usernames!`));
+      } else {
+        fallbackCopy(allText, `Copied ${currentUserList.length} usernames!`);
+      }
     }
 
     function showToast(msg) {
@@ -503,6 +594,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       toast.classList.add("visible");
       setTimeout(() => toast.classList.remove("visible"), 2000);
     }
+
+    document.getElementById('seedWord').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        generateUsernames();
+      }
+    });
 
     window.onload = generateUsernames;
   </script>
