@@ -1,7 +1,0 @@
-Counter({('chromium', 'pass'): 343, ('firefox', 'blocked'): 1, ('webkit', 'blocked'): 1})
-BLOCKED firefox browser run | Error: BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/firefox-1495/firefox/firefox
-╔════════════════════════════════════════════════════════════╗
-║ L
-BLOCKED webkit browser run | Error: BrowserType.launch: Executable doesn't exist at /opt/pw-browsers/webkit-2215/pw_run.sh
-╔════════════════════════════════════════════════════════════╗
-║ Looks li

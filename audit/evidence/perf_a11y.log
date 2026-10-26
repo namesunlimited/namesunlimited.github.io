@@ -1,3 +1,0 @@
-/home/claude/work/namesunlimited.github.io-main/audit/perf_a11y_audit.py:20: SyntaxWarning: invalid escape sequence '\('
-  CONTRAST_JS = '''()=>{
-104 pass / 0 fail
