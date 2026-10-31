@@ -6,32 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/fake-name-generator/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/random-name-wheel/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/japanese-name-generator/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/fantasy-name-generator/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/random-name-for-character/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/instagram-username-generator/</loc>
+    <loc>https://namesunlimited.github.io/guides/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
@@ -41,7 +16,42 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/random-name-for-baby/</loc>
+    <loc>https://namesunlimited.github.io/band-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/city-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/elf-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/fake-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/fantasy-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/gender-neutral-names/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/instagram-username-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/japanese-name-generator/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
@@ -56,22 +66,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/elf-name-generator/</loc>
+    <loc>https://namesunlimited.github.io/random-name-for-baby/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/city-name-generator/</loc>
+    <loc>https://namesunlimited.github.io/random-name-for-character/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/school-name-generator/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/band-name-generator/</loc>
+    <loc>https://namesunlimited.github.io/random-name-wheel/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
@@ -81,7 +86,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/guides/</loc>
+    <loc>https://namesunlimited.github.io/school-name-generator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://namesunlimited.github.io/guides/baby-naming-trends/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.6</priority>
   </url>
@@ -91,17 +101,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://namesunlimited.github.io/guides/baby-naming-trends/</loc>
+    <loc>https://namesunlimited.github.io/guides/choosing-a-good-username/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://namesunlimited.github.io/guides/fake-names-for-testing-and-privacy/</loc>
-    <lastmod>2026-10-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://namesunlimited.github.io/guides/choosing-a-good-username/</loc>
     <lastmod>2026-10-31</lastmod>
     <priority>0.6</priority>
   </url>

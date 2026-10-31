@@ -172,15 +172,7 @@
     setActive(genderButtons, state.gender, "gender");
   }
 
-  function initMobileNav() {
-    const toggle = document.querySelector("[data-nav-toggle]");
-    const nav = document.querySelector("[data-nav-tabs]");
-    if (!toggle || !nav) return;
-    toggle.addEventListener("click", () => nav.classList.toggle("is-open"));
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-generator]").forEach(initGenerator);
-    initMobileNav();
   });
 })();
