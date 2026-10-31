@@ -1,0 +1,102 @@
+/* site-shell.css
+   Load this LAST on every page, after /css/style.css and /css/unified-page-theme.css:
+   <link rel="stylesheet" href="/css/site-shell.css">
+   Layout only. It sets sizes, spacing and alignment. It does not set any colors. */
+
+/* ---------- Header ---------- */
+.site-nav .nav-container {
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+.site-nav .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.site-nav .nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.site-nav .nav-link {
+  white-space: nowrap;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+/* Narrow screens: logo on top, links scroll sideways on one line */
+@media (max-width: 1180px) {
+  .site-nav .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .site-nav .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+}
+
+/* ---------- Page content alignment ---------- */
+html, body { overflow-x: hidden; }
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  box-sizing: border-box;
+}
+.container > *,
+.editorial {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.editorial {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.editorial h1, .editorial h2, .editorial h3, .editorial h4,
+.editorial p, .editorial ul, .editorial ol {
+  overflow-wrap: anywhere;
+}
+.curated-table-wrap { max-width: 100%; overflow-x: auto; }
+
+@media (max-width: 600px) {
+  .container { padding: 1.5rem 1rem 3rem; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem 1.5rem 2rem;
+}
+.site-footer .footer-container {
+  max-width: 1560px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.site-footer .footer-bottom { text-align: center; }
+@media (max-width: 768px) {
+  .site-footer .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+}
