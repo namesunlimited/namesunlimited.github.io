@@ -172,6 +172,21 @@ def process(path):
     else:
         print("!! no footer found:", path)
 
+    # ---- Google Fonts: load without blocking first paint (same pattern the other pages already use)
+    s = re.sub(
+        r'(?<!<noscript>)<link rel="stylesheet" href="(https://fonts\.googleapis\.com/css2[^"]+)">',
+        lambda m: ('<link rel="preload" as="style" href="%s" onload="this.onload=null;this.rel=\'stylesheet\'">\n'
+                   '<noscript><link rel="stylesheet" href="%s"></noscript>') % (m.group(1), m.group(1)),
+        s)
+
+    s = re.sub(r'<noscript><link rel="preload" as="style" href="([^"]+)"[^>]*></noscript>',
+               lambda m: '<noscript><link rel="stylesheet" href="%s"></noscript>' % m.group(1), s)
+
+    # ---- <main> landmark (pages that do not have one wrap everything between header and footer)
+    if "<main" not in s:
+        s = s.replace("<!-- /shell:header -->", '<!-- /shell:header -->\n<main id="main">', 1)
+        s = s.replace("<!-- shell:footer -->", "</main>\n<!-- shell:footer -->", 1)
+
     # ---- nav script (mobile menu) on every page
     if "/js/nav.js" not in s:
         s = s.replace("</body>", '<script src="/js/nav.js" defer></script>\n</body>', 1)
