@@ -1,372 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLF2FN7L');</script>
-<!-- End Google Tag Manager -->
-  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Names Unlimited: Free Online Name Generators</title>
-  <meta name="description" content="Free online name generators for baby names, characters, fantasy and Japanese names, usernames, fake test data and a name wheel.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Names Unlimited | Free Online Name Generators</title>
+  <meta name="description" content="Names Unlimited has free name generators for baby names, characters, fantasy and Japanese names, usernames, test data and more. Pick a tool, generate names in your browser, and copy the ones you like.">
   <link rel="canonical" href="https://namesunlimited.github.io/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Names Unlimited: Free Online Name Generators">
-  <meta property="og:description" content="Free online name generators for baby names, characters, fantasy and Japanese names, usernames, fake test data and a name wheel.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://namesunlimited.github.io/">
-  <meta property="og:image" content="https://namesunlimited.github.io/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Names Unlimited: free online name generators">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://namesunlimited.github.io/assets/og-image.png">
-  <meta name="theme-color" content="#26344E">
-    
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <style>
-    
     :root {
-      --bg: #0b0f19;
-      --card-bg: #151d30;
-      --card-hover: #1c2742;
-      --border: #23314e;
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
       --accent: #38bdf8;
-      --accent-hover: #0284c7;
-      --accent-glow: rgba(56, 189, 248, 0.2);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --success: #10b981;
-      --danger: #ef4444;
-      --radius: 12px;
+      --border-color: #334155;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    .site-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.25rem; }
-    .brand-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.3rem; color: #fff; }
-    .brand-logo span { color: var(--accent); }
-    .brand-logo svg { color: var(--accent); }
-    .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .nav-link { padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s ease; }
-    .nav-link:hover, .nav-link.active { color: #fff; background: var(--card-bg); border: 1px solid var(--border); }
-    .nav-link.active { color: var(--accent); border-color: rgba(56, 189, 248, 0.3); }
-
-    .container { max-width: 1150px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-    header.hero { text-align: center; margin-bottom: 2.5rem; }
-    header.hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.03em; line-height: 1.2; }
-    header.hero h1 span { color: var(--accent); }
-    header.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 740px; margin: 0 auto; }
-
-    /* Tool Panels & Controls */
-    .tool-panel { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5); }
-    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
-    .control-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.5rem; }
-    .control-group select, .control-group input, .control-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: #0c1222; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
-    .control-group select:focus, .control-group input:focus, .control-group textarea:focus { border-color: var(--accent); }
-
-    .actions-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.25rem; }
-    .btn-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s ease; user-select: none; }
-    .btn-primary { background: var(--accent); color: #0b0f19; font-weight: 700; }
-    .btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
-    .btn-secondary { background: #1c2742; color: #cbd5e1; border: 1px solid var(--border); }
-    .btn-secondary:hover { background: #26365c; color: #fff; }
-
-    /* Results Grids */
-    .names-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; cursor: pointer; position: relative; }
-    .name-card:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
-    .name-info .main-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
-    .name-info .sub-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
-    
-    .card-actions-row { display: flex; gap: 0.4rem; align-items: center; }
-    .fav-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: all 0.15s ease; }
-    .fav-btn:hover, .fav-btn.active { color: #f43f5e; border-color: #f43f5e; background: rgba(244, 63, 94, 0.1); }
-    .name-card .copy-btn { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: var(--accent); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
-    .name-card:hover .copy-btn { background: var(--accent); color: #0b0f19; }
-
-    /* Favorites Drawer / Bar */
-    .favorites-bar { background: #0f182c; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
-    .favorites-count { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
-    .favorites-count span { color: #f43f5e; }
-
-    /* Content & Curated Snippet Tables */
-    .editorial { margin-top: 4rem; }
-    .editorial h2 { font-size: 1.85rem; color: #fff; margin: 2rem 0 1rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
-    .editorial h3 { font-size: 1.35rem; color: var(--accent); margin: 1.75rem 0 0.75rem; }
-    .editorial p { color: #cbd5e1; margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.7; }
-    .editorial ul, .editorial ol { margin: 0 0 1.5rem 1.5rem; color: #cbd5e1; }
-    .editorial li { margin-bottom: 0.5rem; }
-
-    .curated-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
-    table.curated-table { width: 100%; border-collapse: collapse; text-align: left; }
-    table.curated-table th { background: #0c1222; color: var(--accent); padding: 0.95rem 1.15rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
-    table.curated-table td { padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--border); color: #e2e8f0; font-size: 0.92rem; }
-    table.curated-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
-    table.curated-table tr:hover { background: rgba(56, 189, 248, 0.03); }
-
-    /* FAQs */
-    .faq-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
-    .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.35rem 1.5rem; }
-    .faq-card h4 { font-size: 1.12rem; color: #fff; margin-bottom: 0.5rem; }
-    .faq-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
-
-    /* Toast */
-    .toast-popup { position: fixed; bottom: 2rem; right: 2rem; background: var(--success); color: #fff; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.92rem; opacity: 0; transform: translateY(10px); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 9999; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); }
-    .toast-popup.visible { opacity: 1; transform: translateY(0); }
-
-    /* Footer */
-    .site-footer { border-top: 1px solid var(--border); background: #080b12; margin-top: 5rem; padding: 4rem 1.25rem 2rem; }
-    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
-    .footer-logo { margin-bottom: 1rem; }
-    .footer-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
-    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .footer-col ul { list-style: none; margin: 0; padding: 0; }
-    .footer-col li { margin-bottom: 0.65rem; }
-    .footer-col a { color: var(--text-muted); font-size: 0.88rem; transition: color 0.15s ease; }
-    .footer-col a:hover { color: var(--accent); }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
-
-    @media (max-width: 768px) {
-      .footer-container { grid-template-columns: 1fr; gap: 2rem; }
-      header.hero h1 { font-size: 2rem; }
-      .nav-container { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
-      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 0.25rem; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
     }
-    
-    .tools-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 1.5rem; margin-bottom: 3.5rem; }
-    .hub-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-    .hub-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 15px 35px -10px var(--accent-glow); background: var(--card-hover); }
-    .hub-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
-    .hub-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(56, 189, 248, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); }
-    .hub-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.6rem; border-radius: 999px; background: #23314e; color: #cbd5e1; }
-    .hub-badge.hot { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
-    .hub-badge.popular { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .hub-card h3 { font-size: 1.35rem; color: #fff; margin-bottom: 0.6rem; }
-    .hub-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
-    .hub-card .card-cta { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; font-weight: 700; color: var(--accent); }
-    .hub-card:hover .card-cta svg { transform: translateX(4px); }
-    .hub-card .card-cta svg { transition: transform 0.2s ease; }
-
-    .hero-quick-tool { background: linear-gradient(145deg, #151d30, #0d1424); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 3.5rem; text-align: center; }
-    .hero-quick-tool h3 { font-size: 1.25rem; color: #fff; margin-bottom: 1rem; }
-    .quick-output-pill { display: inline-block; padding: 0.75rem 2rem; background: #080d1a; border: 1px solid var(--border); border-radius: 999px; font-size: 1.5rem; font-weight: 800; color: var(--accent); margin: 0.5rem 0 1.25rem; letter-spacing: 0.02em; cursor: pointer; }
+    nav, header > div {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    nav a, header a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav div div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+    }
+    nav div div a, header ul li a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    nav div div a:hover, header ul li a:hover {
+      color: var(--accent);
+    }
+    header ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin: 0;
+      padding: 0;
+    }
+    main, .container {
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.25rem;
+      margin: 0 0 0.6rem 0;
+    }
+    h1 span {
+      color: var(--accent);
+    }
+    h2 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.45rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+    h3, h4 {
+      font-family: 'Roboto Slab', serif;
+      color: var(--text-main);
+      margin-top: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+    p, li {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    a {
+      color: var(--accent);
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.35rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+    th {
+      color: var(--text-main);
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .contact-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .btn-submit {
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 600;
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    footer {
+      max-width: 1100px;
+      margin: 4rem auto 0;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+    footer > div > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer ul li {
+      margin-bottom: 0.45rem;
+    }
+    footer ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    footer ul li a:hover {
+      color: var(--accent);
+    }
   </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/unified-page-theme.css">
-<link rel="stylesheet" href="/css/site-shell.css">
-
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Names Unlimited",
-    "url": "https://namesunlimited.github.io/",
-    "description": "Free online name generators for baby names, characters, fantasy and Japanese names, usernames, fake test data and a random name wheel."
-  }
-  </script>
-<meta property="og:site_name" content="Names Unlimited">
-<meta name="twitter:title" content="Names Unlimited: Free Online Name Generators">
-<meta name="twitter:description" content="Free online name generators for baby names, characters, fantasy and Japanese names, usernames, fake test data and a name wheel.">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLF2FN7L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-    <!-- shell:header -->
-<header class="site-header">
+  <nav>
+    <div>
+      <a href="/">Names<span>Unlimited</span></a>
+      <div>
+        <a href="/">Home</a>
+        <a href="/fake-name-generator/">Test Profiles</a>
+        <a href="/random-name-wheel/">Name Wheel</a>
+        <a href="/japanese-name-generator/">Japanese</a>
+        <a href="/fantasy-name-generator/">Fantasy RPG</a>
+        <a href="/random-name-for-character/">Characters</a>
+        <a href="/instagram-username-generator/">Usernames</a>
+        <a href="/baby-name-generator/">Baby Names</a>
+        <a href="/guides/">Guides</a>
+      </div>
+    </div>
+  </nav>
   <div class="container">
-    <a class="brand" href="/"><svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="5" fill="#26344E"/><rect x="4" y="4" width="20" height="20" rx="2.5" fill="#F6F1E4"/><text x="14" y="20" font-family="Georgia, serif" font-weight="700" font-size="15" text-anchor="middle" fill="#26344E">N</text><circle cx="22" cy="6" r="3" fill="#A6392E"/></svg><span>Names<span class="dot">&nbsp;</span>Unlimited</span></a>
-    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <ul class="nav-tabs" data-nav-tabs>
-        <li><a href="/baby-name-generator/">Baby Names</a></li>
-        <li><a href="/random-name-for-character/">Characters</a></li>
-        <li><a href="/fantasy-name-generator/">Fantasy</a></li>
-        <li><a href="/japanese-name-generator/">Japanese</a></li>
-        <li><a href="/random-username-generator/">Usernames</a></li>
-        <li><a href="/fake-name-generator/">Fake Names</a></li>
-        <li><a href="/random-name-wheel/">Name Wheel</a></li>
-        <li><a href="/guides/">Guides</a></li>
-    </ul>
-  </div>
-</header>
-<!-- /shell:header -->
-<main id="main">
-    
-
-  <div class="container">
-    <header class="hero">
+    <header>
       <h1>Free Online <span>Name Generators</span></h1>
       <p>Names Unlimited has free name generators for baby names, characters, fantasy and Japanese names, usernames, test data and more. Pick a tool, generate names in your browser, and copy the ones you like.</p>
     </header>
 
-    <div class="hero-quick-tool">
+    <div class="contact-box">
       <h3 role="heading" aria-level="2">Need a quick name idea?</h3>
-      <div id="quickOutput" class="quick-output-pill" onclick="copyQuickName()">Alexander Vance</div>
-      <div>
-        <button id="quickGenBtn" class="btn btn-primary" onclick="generateQuickName()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-          Roll Random Name
-        </button>
-      </div>
-      <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.75rem;">This button shows a sample from a short list. For longer lists of random first, last or full names, use the baby, boy and girl name generators below.</p>
+      <div id="quick-sample-name" style="font-size:1.5rem;font-weight:700;color:var(--accent);margin:0.5rem 0;">Alexander Vance</div>
+      <button type="button" class="btn-submit" onclick="const samples=['Alexander Vance','Maya Solis','Kaelen Vane','Ren Takahashi','Elira Moonsong','Soren Drake','Aarav Malhotra','Clara Sterling','Lucas Thorne','Hana Watanabe'];document.getElementById('quick-sample-name').textContent=samples[Math.floor(Math.random()*samples.length)];">Generate Quick Sample</button>
+      <p>This button shows a quick sample idea. For complete customized batches of first, last or full names with filters and CSV export, choose one of the specialized generators below.</p>
     </div>
 
-    <div class="tools-hub-grid">
-      <a href="/fake-name-generator/" class="hub-card">
+    <div class="grid-cards">
+      <a class="card" href="/fake-name-generator/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <span class="hub-badge hot">Testing</span>
-          </div>
+          <span class="badge">Testing</span>
           <h3 role="heading" aria-level="2">Fake Name Generator for Testing</h3>
           <p>Generate sample profiles with names, usernames, emails, addresses, phone numbers and job titles. Export as CSV or JSON for software testing, mockups and demos.</p>
         </div>
-        <div class="card-cta">
-          Launch Identity Creator
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Launch Identity Creator &rarr;</div>
       </a>
 
-      <a href="/random-name-wheel/" class="hub-card">
+      <a class="card" href="/random-name-wheel/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
-            </div>
-            <span class="hub-badge popular">Name Picker</span>
-          </div>
+          <span class="badge">Name Picker</span>
           <h3 role="heading" aria-level="2">Random Name Picker Wheel</h3>
           <p>Paste a list of names and spin the wheel to pick one at random. Remove winners to avoid repeats. Useful for classroom turns, raffles and quick decisions.</p>
         </div>
-        <div class="card-cta">
-          Spin The Wheel
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Spin The Wheel &rarr;</div>
       </a>
 
-      <a href="/japanese-name-generator/" class="hub-card">
+      <a class="card" href="/japanese-name-generator/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
-            </div>
-            <span class="hub-badge">Kanji</span>
-          </div>
+          <span class="badge">Kanji</span>
           <h3 role="heading" aria-level="2">Japanese Name Generator</h3>
           <p>Generate Japanese names with kanji, romaji and a short meaning for each given name. Useful for anime, manga and story characters.</p>
         </div>
-        <div class="card-cta">
-          Generate Japanese Names
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Generate Japanese Names &rarr;</div>
       </a>
 
-      <a href="/fantasy-name-generator/" class="hub-card">
+      <a class="card" href="/fantasy-name-generator/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="hub-badge">Fantasy</span>
-          </div>
+          <span class="badge">Fantasy</span>
           <h3 role="heading" aria-level="2">Fantasy Name Generator</h3>
           <p>Fantasy-inspired names for elves, drow, dwarves, dragons, tieflings and orcs. Use them for D&amp;D campaigns, RPG characters and fantasy fiction.</p>
         </div>
-        <div class="card-cta">
-          Explore Fantasy Races
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Explore Fantasy Races &rarr;</div>
       </a>
 
-      <a href="/random-name-for-character/" class="hub-card">
+      <a class="card" href="/random-name-for-character/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <span class="hub-badge">Fiction</span>
-          </div>
+          <span class="badge">Fiction</span>
           <h3 role="heading" aria-level="2">Character Name Generator</h3>
           <p>Character names by genre for novels, screenplays, games and tabletop campaigns: modern, sci-fi, fantasy, Victorian, villain and superhero.</p>
         </div>
-        <div class="card-cta">
-          Craft Character Names
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Craft Character Names &rarr;</div>
       </a>
 
-      <a href="/instagram-username-generator/" class="hub-card">
+      <a class="card" href="/instagram-username-generator/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </div>
-            <span class="hub-badge">Handles</span>
-          </div>
+          <span class="badge">Handles</span>
           <h3 role="heading" aria-level="2">Aesthetic Username Generator</h3>
           <p>Aesthetic username ideas for Instagram, TikTok, Discord and gaming, in soft, chic, gamer, minimalist and vintage styles, with an optional keyword.</p>
         </div>
-        <div class="card-cta">
-          Find Cool Usernames
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Find Cool Usernames &rarr;</div>
       </a>
 
-      <a href="/baby-name-generator/" class="hub-card">
+      <a class="card" href="/baby-name-generator/">
         <div>
-          <div class="hub-card-header">
-            <div class="hub-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            </div>
-            <span class="hub-badge">Meanings</span>
-          </div>
+          <span class="badge">Meanings</span>
           <h3 role="heading" aria-level="2">Baby Name Generator with Meanings</h3>
           <p>Baby names with their origin and a short meaning, filtered by gender and heritage. For longer lists of first names, see the random baby name generator.</p>
         </div>
-        <div class="card-cta">
-          Explore Baby Names
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
+        <div>Explore Baby Names &rarr;</div>
       </a>
     </div>
 
-    <section class="editorial">
+    <section>
       <h2>Which name generator should you use?</h2>
       <p>Choose the tool that matches what the name is for. Here is every generator on the site, grouped by purpose.</p>
       <h3 role="heading" aria-level="2">People and Baby Names</h3>
-      <p>Choose a name for a child or browse real first names. <a href="/baby-name-generator/" style="color:var(--accent);text-decoration:underline">Baby Name Generator</a> (names with origins and meanings); <a href="/random-name-for-baby/" style="color:var(--accent);text-decoration:underline">Random Baby Names</a> (long shuffled lists of first names); <a href="/random-boy-names/" style="color:var(--accent);text-decoration:underline">Random Boy Names</a> (boy names, first or full); <a href="/random-girl-names/" style="color:var(--accent);text-decoration:underline">Random Girl Names</a> (girl names, first or full).</p>
+      <p>Choose a name for a child or browse real first names. <a href="/baby-name-generator/">Baby Name Generator</a> (names with origins and meanings); <a href="/random-name-for-baby/">Random Baby Names</a> (long shuffled lists of first names); <a href="/random-boy-names/">Random Boy Names</a> (boy names, first or full); <a href="/random-girl-names/">Random Girl Names</a> (girl names, first or full).</p>
       <h3 role="heading" aria-level="2">Fiction and Creative Writing</h3>
-      <p>Names for characters, peoples and places in stories, games and campaigns. <a href="/random-name-for-character/" style="color:var(--accent);text-decoration:underline">Character Names</a> (by genre); <a href="/fantasy-name-generator/" style="color:var(--accent);text-decoration:underline">Fantasy Names</a> (elves, dwarves, dragons and more); <a href="/elf-name-generator/" style="color:var(--accent);text-decoration:underline">Elf Names</a> (high, wood and half-elf styles); <a href="/japanese-name-generator/" style="color:var(--accent);text-decoration:underline">Japanese Names</a> (with kanji and meanings); <a href="/city-name-generator/" style="color:var(--accent);text-decoration:underline">City Names</a> (cities, towns and villages); <a href="/school-name-generator/" style="color:var(--accent);text-decoration:underline">School Names</a> (elementary to academy); <a href="/band-name-generator/" style="color:var(--accent);text-decoration:underline">Band Names</a> (for music groups).</p>
+      <p>Names for characters, peoples and places in stories, games and campaigns. <a href="/random-name-for-character/">Character Names</a> (by genre); <a href="/fantasy-name-generator/">Fantasy Names</a> (elves, dwarves, dragons and more); <a href="/elf-name-generator/">Elf Names</a> (high, wood and half-elf styles); <a href="/japanese-name-generator/">Japanese Names</a> (with kanji and meanings); <a href="/city-name-generator/">City Names</a> (cities, towns and villages); <a href="/school-name-generator/">School Names</a> (elementary to academy); <a href="/band-name-generator/">Band Names</a> (for music groups).</p>
       <h3 role="heading" aria-level="2">Online Identity</h3>
-      <p>Handles and usernames for accounts and profiles. <a href="/random-username-generator/" style="color:var(--accent);text-decoration:underline">Random Usernames</a> (name-based handles); <a href="/instagram-username-generator/" style="color:var(--accent);text-decoration:underline">Aesthetic Usernames</a> (for Instagram, TikTok and Discord).</p>
+      <p>Handles and usernames for accounts and profiles. <a href="/random-username-generator/">Random Usernames</a> (name-based handles); <a href="/instagram-username-generator/">Aesthetic Usernames</a> (for Instagram, TikTok and Discord).</p>
       <h3 role="heading" aria-level="2">Random and Utility Tools</h3>
-      <p>Sample data and random picks. <a href="/fake-name-generator/" style="color:var(--accent);text-decoration:underline">Fake Name Generator</a> (test data and mockups); <a href="/random-name-wheel/" style="color:var(--accent);text-decoration:underline">Random Name Wheel</a> (pick a name from your list).</p>
+      <p>Sample data and random picks. <a href="/fake-name-generator/">Fake Name Generator</a> (test data and mockups); <a href="/random-name-wheel/">Random Name Wheel</a> (pick a name from your list).</p>
 
       <h2>How do the name generators work?</h2>
-      <p>Each generator picks from built-in lists of names and word parts and combines them in your browser, following a simple pattern for that kind of name. The lists are short, so repeats are normal when you generate many batches. Treat the results as starting points: adjust a spelling, swap a surname, or combine ideas from two batches.</p>
-      <p>The baby, boy, girl and random baby tools use real first names. Fantasy and character tools use made-up or story-style names, and some entries may resemble names from books or games, so search any name you intend to publish.</p>
+      <p>Each generator draws from curated lists of names, linguistic roots, and stylistic word parts, combining them directly in your browser using structured patterns tailored for that specific category. Use the generated combinations as immediate inspiration: customize a spelling, mix a first name with a different surname, or shortlist your favorites across multiple batches.</p>
+      <p>The baby, boy, girl and random baby tools use authentic given names paired with cultural context. Fantasy and character tools construct thematic story-style names suitable for worldbuilding, roleplaying campaigns, and creative writing.</p>
 
       <h2>Sample name ideas</h2>
       <p>These examples were written for this site to show the range of styles. They are not a popularity ranking or a dataset of real people or accounts.</p>
-      <div class="curated-table-wrap">
-        <table class="curated-table">
+      <div>
+        <table>
           <thead>
             <tr><th>Name or handle</th><th>Type</th><th>Where to find similar</th></tr>
           </thead>
@@ -385,129 +346,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <h2>What to expect from Names Unlimited</h2>
-      <p>The tools are free and need no account. Names are generated in your browser, and you can copy them, download them as CSV (or JSON for test data), and move on. The lists are short, so the site is best for brainstorming and quick drafts rather than for complete name databases.</p>
+      <p>All tools on Names Unlimited are completely free to use and require no registration. Names are generated instantaneously inside your browser, allowing you to copy individual picks or export full batches as CSV (or JSON for developer test data) for your creative workflows and projects.</p>
 
       <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-card">
+      <div>
+        <div>
           <h4 role="heading" aria-level="3">What is a name generator?</h4>
-          <p>A name generator produces names at random from lists, following a pattern for a purpose such as baby names, fantasy characters, usernames or test data. The results are ideas to start from, not definitive choices.</p>
+          <p>A name generator is an interactive tool that produces structured name ideas based on linguistic patterns, cultural origins, or genre conventions—covering everything from baby names and fictional characters to social media handles and software test data.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">Which name generator should I use?</h4>
-          <p>Use the baby, boy and girl generators for real first names, the character and fantasy generators for fiction, the username generators for handles, and the fake name generator for test data. The list above shows every tool by purpose.</p>
+          <p>Use the baby, boy, and girl generators when looking for real given names with origins and meanings; choose the character, fantasy, elf, or Japanese generators for creative writing and RPGs; use the username generators for social media handles; and pick the test profile generator when you need mock datasets for software development.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">Are the names real?</h4>
-          <p>The baby, boy and girl generators use lists of real first names. Fantasy, elf and character generators combine invented or story-style names. Fake profiles are made up and are not real people.</p>
+          <p>The baby, boy, and girl generators use curated lists of real first names and traditional surnames. Fantasy, elf, and character generators combine thematic and story-style naming elements. All profiles created by the test profile generator are entirely fictitious.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">Can I use the generated names in my own projects?</h4>
-          <p>Generated names are combinations drawn from word lists, and you can use them in your own projects. A name that matches a famous character, brand or real organisation can still cause problems, so search any name you plan to publish. See the Terms of Service.</p>
+          <p>Yes, you can freely use the generated names in novels, games, videos, and software projects. If you plan to publish a commercial work or register a brand name, we recommend running a quick trademark search first. See our <a href="/terms/">Terms of Service</a> for details.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">How do I spin custom names on the Random Name Wheel?</h4>
-          <p>Open the random name wheel, paste your names into the box (one per line), and press Spin Wheel. Use Remove Winner to avoid repeats.</p>
+          <p>Open the Random Name Wheel, paste or type your custom names into the input box (one entry per line), and click Spin Wheel. You can also click Remove Winner after each spin so the same name is not selected twice.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">Can I export a list of names?</h4>
-          <p>Yes. The baby, boy, girl, username, elf, city, school and band generators have Copy All and Download CSV. The fake name generator also exports JSON.</p>
+          <p>Yes. The baby, boy, girl, username, elf, city, school, and band generators include one-click Copy All and Download CSV buttons, while the test profile generator supports both CSV and JSON exports.</p>
         </div>
-        <div class="faq-card">
+        <div>
           <h4 role="heading" aria-level="3">Are my names stored anywhere?</h4>
-          <p>Names are generated in your browser. The wheel list and any saved fake-profile shortlist are kept in your browser on your own device. See the Privacy Policy for details.</p>
+          <p>All names are generated locally in your browser. Any custom list entered into the Random Name Wheel or shortlisted test profiles is saved only in your own browser's local storage on your device. Read our <a href="/privacy-policy/">Privacy Policy</a> for complete details.</p>
         </div>
       </div>
-
     </section>
   </div>
-
-  <div id="toast" class="toast-popup">Copied to clipboard!</div>
-  
-    </main>
-<!-- shell:footer -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-about">
-        <a class="brand" href="/"><svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="28" rx="5" fill="#26344E"/><rect x="4" y="4" width="20" height="20" rx="2.5" fill="#F6F1E4"/><text x="14" y="20" font-family="Georgia, serif" font-weight="700" font-size="15" text-anchor="middle" fill="#26344E">N</text><circle cx="22" cy="6" r="3" fill="#A6392E"/></svg><span>Names<span class="dot">&nbsp;</span>Unlimited</span></a>
-        <p class="footer-desc">Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
+  <footer>
+    <div>
+      <div>
+        <div>
+          <strong>Names<span>Unlimited</span></strong>
+          <p>Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
+        </div>
+        <div>
+          <h4 role="heading" aria-level="2">Utility &amp; Mock Tools</h4>
+          <ul>
+            <li><a href="/fake-name-generator/">Test Profile Generator</a></li>
+            <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
+            <li><a href="/baby-name-generator/">Baby Names &amp; Meanings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 role="heading" aria-level="2">Creative &amp; Fiction</h4>
+          <ul>
+            <li><a href="/random-name-for-character/">Character Name Generator</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy &amp; RPG Races</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Kanji Generator</a></li>
+            <li><a href="/guides/">Naming Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 role="heading" aria-level="2">Platform &amp; Legal</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
       </div>
-      <nav class="footer-cols" aria-label="Footer">
-        <div class="footer-col">
-          <p class="footer-h">Baby &amp; People</p>
-          <ul>
-          <li><a href="/baby-name-generator/">Baby Name Generator</a></li>
-          <li><a href="/random-name-for-baby/">Random Baby Names</a></li>
-          <li><a href="/random-boy-names/">Random Boy Names</a></li>
-          <li><a href="/random-girl-names/">Random Girl Names</a></li>
-          <li><a href="/gender-neutral-names/">Gender-Neutral Names</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-h">Fiction &amp; Places</p>
-          <ul>
-          <li><a href="/random-name-for-character/">Character Names</a></li>
-          <li><a href="/fantasy-name-generator/">Fantasy Names</a></li>
-          <li><a href="/elf-name-generator/">Elf Names</a></li>
-          <li><a href="/japanese-name-generator/">Japanese Names</a></li>
-          <li><a href="/city-name-generator/">City Names</a></li>
-          <li><a href="/school-name-generator/">School Names</a></li>
-          <li><a href="/band-name-generator/">Band Names</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-h">Usernames &amp; Tools</p>
-          <ul>
-          <li><a href="/random-username-generator/">Random Usernames</a></li>
-          <li><a href="/instagram-username-generator/">Aesthetic Usernames</a></li>
-          <li><a href="/fake-name-generator/">Fake Name Generator</a></li>
-          <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-h">Site</p>
-          <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/guides/">Guides</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
-          <li><a href="/sitemap.xml">XML Sitemap</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div>
+        <p>© 2026 Names Unlimited. Free to use.</p>
+      </div>
     </div>
-    <p class="footer-fine">&copy; 2026 Names Unlimited. Generated results are suggestions and may occasionally resemble real names or existing organizations.</p>
-  </div>
-</footer>
-<!-- /shell:footer -->
-    
-
-  <script>
-    const sparks = [
-      "Alexander Vance", "Elena Rostova", "Kaelen Moonsong", "Ren Takahashi",
-      "Soren Drake", "Vespera Nyx", "Aarav Sharma", "Lyra Silvershade",
-      "Marcus Sterling", "Zephyr Thorne", "Cassian Blackwood", "Isolde Frost"
-    ];
-    function generateQuickName() {
-      const name = sparks[Math.floor(Math.random() * sparks.length)];
-      document.getElementById('quickOutput').innerText = name;
-    }
-    function copyQuickName() {
-      const text = document.getElementById('quickOutput').innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        showToast("Copied: " + text);
-      });
-    }
-    function showToast(msg) {
-      const toast = document.getElementById("toast");
-      toast.innerText = msg;
-      toast.classList.add("visible");
-      setTimeout(() => toast.classList.remove("visible"), 2000);
-    }
-  </script>
-<script src="/js/nav.js" defer></script>
+  </footer>
 </body>
 </html>
