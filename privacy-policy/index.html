@@ -7,16 +7,11 @@
   <meta name="description" content="Privacy Policy for Names Unlimited. Learn how our browser-based name generators handle data, local storage, cookies, and Google AdSense advertising.">
   <link rel="canonical" href="https://namesunlimited.github.io/privacy-policy/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Main Site Stylesheet (keep your existing path if different) -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-
   <style>
     :root {
       --bg-color: #0f172a;
@@ -33,76 +28,160 @@
       color: var(--text-main);
       line-height: 1.7;
     }
-    header nav, header > div {
+    nav, header > div {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.2rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
     }
-    header a {
+    nav a, header a {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 600;
+    }
+    nav div div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+    }
+    nav div div a, header ul li a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    nav div div a:hover, header ul li a:hover {
+      color: var(--accent);
     }
     header ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 1.1rem;
       margin: 0;
       padding: 0;
     }
-    header ul li a {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-    header ul li a:hover {
-      color: var(--accent);
-    }
-    main {
-      max-width: 860px;
+    main, .container {
+      max-width: 960px;
       margin: 2.5rem auto;
       padding: 0 1.5rem;
-    }
-    main header {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-color);
     }
     h1 {
       font-family: 'Roboto Slab', serif;
       font-size: 2.25rem;
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.6rem 0;
     }
     h1 span {
       color: var(--accent);
     }
     h2 {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       margin-top: 2.2rem;
       margin-bottom: 0.75rem;
       color: var(--text-main);
+    }
+    h3, h4 {
+      font-family: 'Roboto Slab', serif;
+      color: var(--text-main);
+      margin-top: 1.4rem;
+      margin-bottom: 0.4rem;
     }
     p, li {
       color: var(--text-muted);
       font-size: 1rem;
     }
-    section ul {
-      padding-left: 1.4rem;
-      margin-bottom: 1.2rem;
-    }
-    section ul li {
-      margin-bottom: 0.5rem;
-    }
     a {
       color: var(--accent);
-      text-decoration: underline;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.35rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+    th {
+      color: var(--text-main);
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .contact-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .btn-submit {
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 600;
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
     }
     footer {
       max-width: 1100px;
@@ -111,16 +190,11 @@
       border-top: 1px solid var(--border-color);
       font-size: 0.9rem;
     }
-    footer nav {
+    footer > div > div {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    footer nav p {
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
     footer ul {
       list-style: none;
@@ -128,7 +202,7 @@
       margin: 0;
     }
     footer ul li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
     footer ul li a {
       color: var(--text-muted);
@@ -140,131 +214,103 @@
   </style>
 </head>
 <body>
-
-<header>
-  <div>
-    <a href="/"><span>Names<span> </span>Unlimited</span></a>
-    <ul>
-      <li><a href="/baby-name-generator/">Baby Names</a></li>
-      <li><a href="/random-name-for-character/">Characters</a></li>
-      <li><a href="/fantasy-name-generator/">Fantasy</a></li>
-      <li><a href="/japanese-name-generator/">Japanese</a></li>
-      <li><a href="/random-username-generator/">Usernames</a></li>
-      <li><a href="/fake-name-generator/">Test Profiles</a></li>
-      <li><a href="/random-name-wheel/">Name Wheel</a></li>
-      <li><a href="/guides/">Guides</a></li>
-    </ul>
-  </div>
-</header>
-
-<main>
-  <div>
+  <nav>
+    <div>
+      <a href="/">Names<span>Unlimited</span></a>
+      <div>
+        <a href="/">Home</a>
+        <a href="/fake-name-generator/">Test Profiles</a>
+        <a href="/random-name-wheel/">Name Wheel</a>
+        <a href="/japanese-name-generator/">Japanese</a>
+        <a href="/fantasy-name-generator/">Fantasy RPG</a>
+        <a href="/random-name-for-character/">Characters</a>
+        <a href="/instagram-username-generator/">Usernames</a>
+        <a href="/baby-name-generator/">Baby Names</a>
+        <a href="/guides/">Guides</a>
+      </div>
+    </div>
+  </nav>
+  <main>
     <header>
       <h1>Privacy <span>Policy</span></h1>
-      <p>Last updated: November 1, 2026. This Privacy Policy explains how Names Unlimited ("we", "our", or "us") handles information, cookies, and third-party services when you visit <strong>namesunlimited.github.io</strong>.</p>
+      <p>Last updated: November 1, 2026. This Privacy Policy explains how Names Unlimited ("we", "our", or "us") handles information, browser storage, cookies, and third-party services when you visit <strong>namesunlimited.github.io</strong>.</p>
     </header>
 
     <section>
       <h2>1. How Our Browser-Based Tools Process Data</h2>
-      <p>All name generators and utility tools on Names Unlimited execute directly within your web browser. Any names you enter into the Random Name Wheel, keywords typed into the Username Generator, or mock profiles created with the Test Profile Generator are processed locally on your device. We do not operate a backend database that stores or collects your generated names or tool inputs.</p>
+      <p>All name generators and utility tools on Names Unlimited run directly in your web browser. Any names you type into the Random Name Wheel, keywords entered into the Username Generator, or mock profiles created with the Test Profile Generator are processed locally on your own device. We do not operate a backend server that collects or stores your generated names or inputs.</p>
 
       <h2>2. Local Storage on Your Device</h2>
-      <p>To improve your experience, certain tools use your browser's native <code>localStorage</code> so your settings remain available when you return:</p>
+      <p>Two tools optionally save data in your browser's <code>localStorage</code> so your entries remain available when you return:</p>
       <ul>
-        <li><strong>Random Name Wheel:</strong> Remembers custom name lists you enter so you do not have to retype them between sessions.</li>
-        <li><strong>Test Profile Generator:</strong> Saves shortlisted mock profiles locally inside your browser until you clear them.</li>
+        <li><strong>Random Name Wheel:</strong> Remembers the entries in your custom wheel list between visits.</li>
+        <li><strong>Test Profile Generator:</strong> Remembers mock profiles you save to your personal shortlist.</li>
       </ul>
-      <p>This data remains strictly on your own device and is never transmitted to us. You can erase this data at any time using the "Clear" button inside the tool or by clearing your browser's site data.</p>
+      <p>This data stays strictly on your device. You can clear it at any time using the Clear button inside the tool or by clearing your browser's site data.</p>
 
       <h2>3. Google AdSense &amp; Advertising Cookies</h2>
       <p>We use Google AdSense to display advertisements on Names Unlimited. Third-party vendors, including Google, use cookies (such as the Google advertising cookie and DoubleClick DART cookie) to serve ads based on a user's prior visits to this website or other websites on the internet.</p>
       <ul>
-        <li>Google's use of advertising cookies enables it and its partners to serve personalized or non-personalized ads to our visitors based on their visit to our site and/or other sites on the Internet.</li>
+        <li>Google's use of advertising cookies enables it and its partners to serve personalized or non-personalized ads to visitors based on their visit to our site and/or other sites on the Internet.</li>
         <li>Users may opt out of personalized advertising at any time by visiting <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
-        <li>Alternatively, you can opt out of third-party vendor cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info/choices</a> or <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">www.youronlinechoices.eu</a>.</li>
-        <li>To learn more about how Google processes data when you use partner sites, please review <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>.</li>
+        <li>Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info/choices</a> or <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">www.youronlinechoices.eu</a>.</li>
+        <li>To learn more about how Google processes data when you use partner sites, please read <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>.</li>
       </ul>
 
       <h2>4. Hosting, Analytics &amp; Third-Party Services</h2>
-      <p>This website is hosted on GitHub Pages. Like standard web hosting providers, GitHub may automatically log basic technical request metadata—such as IP addresses, browser user-agent strings, and timestamps—for security, network integrity, and content delivery under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.</p>
-      <p>We also use Google Fonts for typography and Google Tag Manager / Google Analytics on our pages to understand aggregate traffic patterns, page views, and site performance. These services may set first-party or third-party cookies to measure anonymous usage statistics. You can disable cookies at any time through your individual browser settings without affecting the core functionality of our name generators.</p>
+      <p>This website is hosted on GitHub Pages. Like standard web hosts, GitHub may record technical request data such as IP addresses and browser details for security and content delivery under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>. Pages also load typography from Google Fonts.</p>
+      <p>We use Google Tag Manager and Google Analytics to understand aggregate traffic patterns, popular tools, and page performance. These tools may use cookies to collect anonymous usage data. You can disable cookies in your browser settings at any time, and our name generators will continue to work normally.</p>
 
-      <h2>5. Your Data Protection Rights (GDPR &amp; CCPA/CPRA)</h2>
-      <p>Depending on your location, including the European Economic Area (EEA), the United Kingdom, and California (USA), you have specific privacy rights under regulations such as the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA):</p>
-      <ul>
-        <li><strong>Right to Access &amp; Deletion:</strong> Since we do not store personal profiles on our servers, any tool data stored locally on your browser can be viewed and deleted directly by clearing your browser cache and local storage.</li>
-        <li><strong>Right to Manage Consent &amp; Opt-Out:</strong> Visitors from the EEA/UK can manage their advertising and cookie consent preferences via our site consent banner, and California residents may opt out of personalized cross-context behavioral advertising via the Google Ads Settings link above.</li>
-        <li><strong>Do Not Sell My Personal Information:</strong> Names Unlimited does not sell personal contact information to third parties.</li>
-      </ul>
+      <h2>5. Your Data Protection Rights (GDPR &amp; CCPA)</h2>
+      <p>Depending on your location, including the European Economic Area (EEA), the United Kingdom, and California (USA), you have rights regarding transparency, data access, deletion, and opting out of personalized advertising under regulations such as the GDPR and CCPA/CPRA. Because we do not store personal user profiles on our servers, you have full control to clear local browser data or opt out of personalized ad cookies using the links in Section 3.</p>
 
       <h2>6. Children's Privacy</h2>
-      <p>Names Unlimited does not knowingly collect any personally identifiable information from children under the age of 13. If you are a parent or guardian and believe that a child has shared personal information with us via a support inquiry, please contact us immediately so we can remove the communication from our records.</p>
+      <p>Names Unlimited does not knowingly collect any personal information from children under the age of 13. If you believe a child has submitted personal details to us via email, please contact us so we can promptly delete the message.</p>
 
-      <h2>7. Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy periodically to reflect changes in our tools, advertising partners, or legal requirements. Any updates will be posted on this page with a revised "Last updated" date at the top.</p>
-
-      <h2>8. Contact Us</h2>
-      <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or our data practices, please reach out to us through our <a href="/contact/">Contact Us page</a> or email us directly at <a href="mailto:brandsfortheheart01@gmail.com">brandsfortheheart01@gmail.com</a>.</p>
+      <h2>7. Questions &amp; Contact Information</h2>
+      <p>If you have any questions about this Privacy Policy, please reach out via our <a href="/contact/">Contact page</a> or email us directly at <a href="mailto:brandsfortheheart01@gmail.com">brandsfortheheart01@gmail.com</a>.</p>
     </section>
-  </div>
-</main>
-
-<footer>
-  <div>
+  </main>
+  <footer>
     <div>
       <div>
-        <a href="/"><span>Names<span> </span>Unlimited</span></a>
-        <p>Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
-      </div>
-      <nav aria-label="Footer">
         <div>
-          <p>Baby &amp; People</p>
-          <ul>
-            <li><a href="/baby-name-generator/">Baby Name Generator</a></li>
-            <li><a href="/random-name-for-baby/">Random Baby Names</a></li>
-            <li><a href="/random-boy-names/">Random Boy Names</a></li>
-            <li><a href="/random-girl-names/">Random Girl Names</a></li>
-            <li><a href="/gender-neutral-names/">Gender-Neutral Names</a></li>
-          </ul>
+          <strong>Names<span>Unlimited</span></strong>
+          <p>Free online name generators for writers, game masters, parents, developers and anyone who needs a name quickly. Names are generated in your browser.</p>
         </div>
         <div>
-          <p>Fiction &amp; Places</p>
+          <h4 role="heading" aria-level="2">Utility &amp; Mock Tools</h4>
           <ul>
-            <li><a href="/random-name-for-character/">Character Names</a></li>
-            <li><a href="/fantasy-name-generator/">Fantasy Names</a></li>
-            <li><a href="/elf-name-generator/">Elf Names</a></li>
-            <li><a href="/japanese-name-generator/">Japanese Names</a></li>
-            <li><a href="/city-name-generator/">City Names</a></li>
-            <li><a href="/school-name-generator/">School Names</a></li>
-            <li><a href="/band-name-generator/">Band Names</a></li>
-          </ul>
-        </div>
-        <div>
-          <p>Usernames &amp; Tools</p>
-          <ul>
-            <li><a href="/random-username-generator/">Random Usernames</a></li>
-            <li><a href="/instagram-username-generator/">Aesthetic Usernames</a></li>
             <li><a href="/fake-name-generator/">Test Profile Generator</a></li>
             <li><a href="/random-name-wheel/">Random Name Wheel</a></li>
+            <li><a href="/instagram-username-generator/">Aesthetic Username Generator</a></li>
+            <li><a href="/baby-name-generator/">Baby Names &amp; Meanings</a></li>
           </ul>
         </div>
         <div>
-          <p>Site</p>
+          <h4 role="heading" aria-level="2">Creative &amp; Fiction</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/random-name-for-character/">Character Name Generator</a></li>
+            <li><a href="/fantasy-name-generator/">Fantasy &amp; RPG Races</a></li>
+            <li><a href="/japanese-name-generator/">Japanese Kanji Generator</a></li>
+            <li><a href="/guides/">Naming Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 role="heading" aria-level="2">Platform &amp; Legal</h4>
+          <ul>
             <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/contact/">Contact</a></li>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
-      </nav>
+      </div>
+      <div>
+        <p>© 2026 Names Unlimited. Free to use.</p>
+      </div>
     </div>
-    <p>© 2026 Names Unlimited. Generated results are suggestions and may occasionally resemble real names or existing organizations.</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
